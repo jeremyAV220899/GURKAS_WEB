@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PersonalRecursoController;
+use App\Http\Controllers\UnidadComercialController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,10 @@ Route::middleware(['auth'])->group(function(){
 
     Route::controller(UsuarioController::class)->group(function () {
         Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
+    });
+
+    Route::controller(UnidadComercialController::class)->group(function(){
+        Route::get('/comercial/unidad', 'index')->name('comercial.unidad');
     });
 });
 

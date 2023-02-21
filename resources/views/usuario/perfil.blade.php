@@ -3,27 +3,15 @@
 
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center">
-  <div class="breadcrumb-title pe-3 text-white">Pagina</div>
+  <div class="breadcrumb-title pe-3 text-white">Usuario</div>
   <div class="ps-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb mb-0 p-0">
-        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt text-white"></i></a>
+        <li class="breadcrumb-item"><a href="/home"><i class="bx bx-home-alt text-white"></i></a>
         </li>
-        <li class="breadcrumb-item active text-white" aria-current="page">User Profile</li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Perfil</li>
       </ol>
     </nav>
-  </div>
-  <div class="ms-auto">
-    <div class="btn-group">
-      <button type="button" class="btn btn-light">Settings</button>
-      <button type="button" class="btn btn-light split-bg-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-      </button>
-      <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-        <a class="dropdown-item" href="javascript:;">Another action</a>
-        <a class="dropdown-item" href="javascript:;">Something else here</a>
-        <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-      </div>
-    </div>
   </div>
 </div>
 <!--end breadcrumb-->
@@ -34,68 +22,68 @@
   <div class="col-12 col-lg-8">
     <div class="card shadow-sm border-0">
       <div class="card-body">
-          <h5 class="mb-0">My Account</h5>
+          <h5 class="mb-0">Mi Cuenta</h5>
           <hr>
           <div class="card shadow-none border">
             <div class="card-header">
-              <h6 class="mb-0">USER INFORMATION</h6>
+              <h6 class="mb-0">Información del Usuario</h6>
             </div>
             <div class="card-body">
               <form class="row g-3">
                  <div class="col-6">
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control" value="@jhon">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" class="form-control" value="juan">
                  </div>
                  <div class="col-6">
-                  <label class="form-label">Email address</label>
-                  <input type="text" class="form-control" value="xyz@example.com">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" value="juan.ubillusr@gmail.com">
                 </div>
                   <div class="col-6">
-                    <label class="form-label">First Name</label>
-                    <input type="text" class="form-control" value="jhon">
+                    <label class="form-label">Nombres</label>
+                    <input type="text" class="form-control" value="Juan Manuel">
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Last Name</label>
-                    <input type="text" class="form-control" value="">
+                    <label class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" value="Ubillus">
                 </div>
               </form>
             </div>
           </div>
           <div class="card shadow-none border">
             <div class="card-header">
-              <h6 class="mb-0">CONTACT INFORMATION</h6>
+              <h6 class="mb-0">Información de Contacto</h6>
             </div>
             <div class="card-body">
               <form class="row g-3">
                 <div class="col-12">
-                  <label class="form-label">Address</label>
+                  <label class="form-label">Dirección</label>
                   <input type="text" class="form-control" value="47-A, city name, United States">
                  </div>
                  <div class="col-6">
-                    <label class="form-label">City</label>
-                    <input type="text" class="form-control" value="@jhon">
+                    <label class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" value="Lima">
                  </div>
                  <div class="col-6">
-                  <label class="form-label">Country</label>
-                  <input type="text" class="form-control" value="xyz@example.com">
+                  <label class="form-label">Distrito</label>
+                  <input type="text" class="form-control" value="Villa María del Triunfo">
                 </div>
                   <div class="col-6">
-                    <label class="form-label">Pin Code</label>
-                    <input type="text" class="form-control" value="jhon">
+                    <label class="form-label">Telefono</label>
+                    <input type="text" class="form-control" value="940750259">
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Last Name</label>
-                    <input type="text" class="form-control" value="Deo">
+                    <label class="form-label">DNI</label>
+                    <input type="text" class="form-control" value="72585475">
                 </div>
                 <div class="col-12">
-                  <label class="form-label">About Me</label>
-                  <textarea class="form-control" rows="4" cols="4" placeholder="Describe yourself..."></textarea>
+                  <label class="form-label">Sobre Mí</label>
+                  <textarea class="form-control" rows="4" cols="4" placeholder="Información que desees compartir"></textarea>
                  </div>
               </form>
             </div>
           </div>
           <div class="text-start">
-            <button type="button" class="btn btn-primary px-4">Save Changes</button>
+            <button type="button" class="btn btn-primary px-4">Guardar Cambios</button>
           </div>
       </div>
     </div>
@@ -121,7 +109,7 @@
               </div>
           </div>
           <div class="text-center mt-4">
-            <h4 class="mb-1">Jhon Deo, 27</h4>
+            <h4 class="mb-1">{{ Auth::user()->name }}, 27</h4>
             <p class="mb-0 text-secondary">Sydney, Australia</p>
             <div class="mt-4"></div>
             <h6 class="mb-1">HR Manager - Codervent Technology</h6>
@@ -129,24 +117,10 @@
           </div>
           <hr>
           <div class="text-start">
-            <h5 class="">About</h5>
+            <h5 class="">Sobre Mí</h5>
             <p class="mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem.
           </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-top">
-          Followers
-          <span class="badge bg-primary rounded-pill">95</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-          Following
-          <span class="badge bg-primary rounded-pill">75</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
-          Templates
-          <span class="badge bg-primary rounded-pill">14</span>
-        </li>
-      </ul>
     </div>
   </div>
 </div><!--end row-->

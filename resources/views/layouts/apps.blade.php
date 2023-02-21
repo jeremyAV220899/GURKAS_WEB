@@ -698,8 +698,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Unidad</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Creación de Unidad</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Actualización de Unidad</a></li>
+                                <li> <a href="{{ route('comercial.unidad') }}"><i class="bi bi-circle"></i>Creación de Unidad</a></li>
                             </ul>
                         </li>
                     </ul>
