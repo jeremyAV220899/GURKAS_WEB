@@ -543,7 +543,7 @@
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Personal</a>
                             <ul>
                                 <li> <a href="{{ route('personal.index') }}"><i class="bi bi-circle"></i>Registro de Datos Personales</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Registro de Datos Familiares</a></li>
+                                <li> <a href="{{ route('personal.familiares') }}"><i class="bi bi-circle"></i>Registro de Datos Familiares</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Registro de Datos Laborales</a></li>
                             </ul>
                         </li>

@@ -5,106 +5,74 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrar Sede</h5>
+                    <h5 class="modal-title">Registrar Datos Familiares</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos De la Sede</h6>
+                                <h6 class="mb-0 text-uppercase">Datos Del Empleado</h6>
                                 <hr />
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-6">
-                                        <label class="form-label">Código Sede</label>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Nombre Sede</label>
+                                        <label class="form-label">Código Empleado</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Estado</label>
+                                        <label class="form-label">N° Hijos</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Departamento</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Provincia</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Distrito</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Dirección</label>
-                                        <textarea class="form-control" rows="2" cols="4"></textarea>
-                                    </div>
-                                    
-                                    <div class="col-6">
-                                        <label class="form-label">Fech. Activación</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Fech. Baja</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Latitud</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Longitud</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Representante</h6>
+                                    <h6 class="mb-0 text-uppercase">Datos Familiares</h6>
                                     <hr />
                                     <div class="col-6">
-                                        <label class="form-label">Contacto</label>
+                                        <label class="form-label">Esposa(o)/Concubina(o)</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Correo</label>
-                                        <input type="email" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Celular</label>
+                                        <label class="form-label">DNI</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Centro de Costo</label>
+                                        <label class="form-label">Hijo(a) 1</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <h6 class="mb-0 text-uppercase">Unidad Asignada</h6>
-                                    <hr />
-                                    <div class="col-12">
-                                        <label class="form-label">Unidad</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
+                                    <div class="col-6">
+                                        <label class="form-label">DNI 1</label>
+                                        <input type="text" class="form-control">
                                     </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Hijo(a) 2</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">DNI 2</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Hijo(a) 3</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">DNI 3</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Hijo(a) 4</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">DNI 4</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                
                                 </form>
                             </div>
                         </div>
@@ -235,9 +203,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    
-
-
                                 </tbody>
                             </table>
                         </div>
