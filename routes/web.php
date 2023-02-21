@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FamiliaresRecursosController;
+use App\Http\Controllers\LaboralesRecursosController;
 use App\Http\Controllers\PersonalRecursoController;
 use App\Http\Controllers\SedeComercialController;
 use App\Http\Controllers\UnidadComercialController;
@@ -18,6 +19,10 @@ Route::middleware(['auth'])->group(function(){
     
     Route::controller(FamiliaresRecursosController::class)->group(function () {
         Route::get('/personal/familiares', 'index')->name('personal.familiares');
+    });
+    
+    Route::controller(LaboralesRecursosController::class)->group(function () {
+        Route::get('/personal/laborales', 'index')->name('personal.laborales');
     });
 
     Route::controller(UsuarioController::class)->group(function () {

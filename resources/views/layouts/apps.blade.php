@@ -544,7 +544,7 @@
                             <ul>
                                 <li> <a href="{{ route('personal.index') }}"><i class="bi bi-circle"></i>Registro de Datos Personales</a></li>
                                 <li> <a href="{{ route('personal.familiares') }}"><i class="bi bi-circle"></i>Registro de Datos Familiares</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Registro de Datos Laborales</a></li>
+                                <li> <a href="{{ route('personal.laborales') }}"><i class="bi bi-circle"></i>Registro de Datos Laborales</a></li>
                             </ul>
                         </li>
                     </ul>

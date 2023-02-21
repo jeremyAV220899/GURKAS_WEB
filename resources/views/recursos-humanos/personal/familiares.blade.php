@@ -88,13 +88,13 @@
     <!-- END modal -->
 
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Comercial</div>
+        <div class="breadcrumb-title pe-3">Recursos Humanos</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="/home"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Sede</li>
+                    <li class="breadcrumb-item active" aria-current="page">Personal</li>
                 </ol>
             </nav>
         </div>
@@ -105,7 +105,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Sedes</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Datos Familiares</h6>
     <hr>
     <div class="card">
         <div class="card-body">
@@ -121,16 +121,13 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
                                             style="width: 157.641px;">
-                                            Cód. Sede</th>
+                                            Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 260.094px;">Nombre Sede</th>
+                                            style="width: 260.094px;">Esposa(o) / Concubina(a)</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
-                                            style="width: 112.406px;">Nombre Unidad</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Age: activate to sort column ascending"
-                                            style="width: 49.8594px;">Estado</th>
+                                            style="width: 112.406px;">DNI Esposa</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 84.0781px;">Acciones</th>
@@ -140,8 +137,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -162,8 +158,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -184,8 +179,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
