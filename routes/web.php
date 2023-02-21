@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PersonalRecursoController;
+use App\Http\Controllers\SedeComercialController;
 use App\Http\Controllers\UnidadComercialController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
@@ -20,6 +21,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::controller(UnidadComercialController::class)->group(function(){
         Route::get('/comercial/unidad', 'index')->name('comercial.unidad');
+    });
+    Route::controller(SedeComercialController::class)->group(function(){
+        Route::get('/comercial/sede', 'index')->name('comercial.sede');
     });
 });
 

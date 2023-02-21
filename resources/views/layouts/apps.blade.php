@@ -698,15 +698,14 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Unidad</a>
                             <ul>
-                                <li> <a href="{{ route('comercial.unidad') }}"><i class="bi bi-circle"></i>Creación de Unidad</a></li>
+                                <li> <a href="{{ route('comercial.unidad') }}"><i class="bi bi-circle"></i>Lista de Unidad</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Sede</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Creación de Sede</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Actualización de Sede</a></li>
+                                <li> <a href="{{ route('comercial.sede') }}"><i class="bi bi-circle"></i>Lista de Sedes</a></li>
                             </ul>
                         </li>
                     </ul>
