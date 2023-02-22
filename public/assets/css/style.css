@@ -1116,7 +1116,7 @@ a {
 }
 
 .profile-cover {
-    background-image: linear-gradient(to bottom right, rgb(26 30 33 / 50%), rgb(0 0 0 / 50%)), url('/assets/images/error/slayer.PNG');
+    background-image: linear-gradient(to bottom right, rgb(26 30 33 / 50%), rgb(0 0 0 / 50%)), url('/assets/images/error/slayer.jpg');
     background-size: cover;
     height: 24rem;
     background-position: center;

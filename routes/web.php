@@ -7,6 +7,7 @@ use App\Http\Controllers\SedeComercialController;
 use App\Http\Controllers\UnidadComercialController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WebController::class, 'index']);
@@ -40,3 +41,8 @@ Route::middleware(['auth'])->group(function(){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/linkear', function () {
+    Artisan::call('storage:link');
+});
