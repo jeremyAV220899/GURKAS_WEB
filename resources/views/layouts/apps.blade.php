@@ -1036,26 +1036,26 @@
             <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true"
                 data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
                 <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Personalizador de temas</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <h6 class="mb-0">Theme Variation</h6>
+                    <h6 class="mb-0">Variación de tema</h6>
                     <hr>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme"
                             value="option1" checked>
-                        <label class="form-check-label" for="LightTheme">Light</label>
+                        <label class="form-check-label" for="LightTheme">Claro</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme"
                             value="option2">
-                        <label class="form-check-label" for="DarkTheme">Dark</label>
+                        <label class="form-check-label" for="DarkTheme">Oscuro</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme"
                             value="option3">
-                        <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
+                        <label class="form-check-label" for="SemiDarkTheme">Semi Oscuro</label>
                     </div>
                     <hr>
                     <div class="form-check form-check-inline">
@@ -1064,7 +1064,7 @@
                         <label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
                     </div>
                     <hr />
-                    <h6 class="mb-0">Header Colors</h6>
+                    <h6 class="mb-0">Colores de encabezado</h6>
                     <hr />
                     <div class="header-colors-indigators">
                         <div class="row row-cols-auto g-3">
