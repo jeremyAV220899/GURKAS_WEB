@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrar Datos Personales</h5>
+                    <h5 class="modal-title">Registrar Datos Laborales</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -16,13 +16,13 @@
                                 <hr/>
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="col-12">
+                                    <div class="col-">
                                         <label class="form-label">Código Empleado</label>
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
                                     <hr/>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
@@ -30,7 +30,7 @@
                                             <option value="E">Extranjera</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Sede</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
