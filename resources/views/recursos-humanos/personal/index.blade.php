@@ -313,20 +313,20 @@
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Name: activate to sort column descending" style="width: 157.641px;">
+                                            aria-label="Name: activate to sort column descending" style="width: 100.641px;">
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 260.094px;">Nombres</th>
+                                            style="width: 30.094px;">Foto</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 190.094px;">Nombres</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
                                             style="width: 112.406px;">Apellido Paterno</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Age: activate to sort column ascending"
                                             style="width: 49.8594px;">Apellido Materno</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Start date: activate to sort column ascending"
-                                            style="width: 104.922px;">Start date</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 84.0781px;">Acciones</th>
@@ -335,10 +335,12 @@
                                 <tbody>
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
                                         <td>Rivera</td>
-                                        <td>2008/11/28</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -357,11 +359,13 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP75857456</td>
-                                        <td>Jeremy Josue</td>
-                                        <td>Apaico</td>
-                                        <td>Villena</td>
-                                        <td>2008/11/28</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
+                                        <td>Juan Manuel</td>
+                                        <td>Ubillus</td>
+                                        <td>Rivera</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -380,11 +384,13 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP78525475</td>
-                                        <td>Pedro Pablo</td>
-                                        <td>Kuczynski</td>
-                                        <td>Godard</td>
-                                        <td>2008/11/28</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
+                                        <td>Juan Manuel</td>
+                                        <td>Ubillus</td>
+                                        <td>Rivera</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -403,11 +409,13 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
+                                        <td>Juan Manuel</td>
+                                        <td>Ubillus</td>
+                                        <td>Rivera</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -426,11 +434,13 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
+                                        <td>Juan Manuel</td>
+                                        <td>Ubillus</td>
+                                        <td>Rivera</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -449,11 +459,13 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                        </td>
+                                        <td>Juan Manuel</td>
+                                        <td>Ubillus</td>
+                                        <td>Rivera</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -471,121 +483,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    
+                                    
                                 </tbody>
                             </table>
                         </div>

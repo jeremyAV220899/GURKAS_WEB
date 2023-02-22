@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AsistenciaPersonalReportesController;
+use App\Http\Controllers\AsistenciaSedeReportesController;
+use App\Http\Controllers\AsistenciaUnidadReportesController;
+use App\Http\Controllers\C4Controller;
+use App\Http\Controllers\EstadoReportesController;
 use App\Http\Controllers\FamiliaresRecursosController;
 use App\Http\Controllers\LaboralesRecursosController;
 use App\Http\Controllers\PersonalRecursoController;
@@ -36,6 +41,26 @@ Route::middleware(['auth'])->group(function(){
 
     Route::controller(SedeComercialController::class)->group(function(){
         Route::get('/comercial/sede', 'index')->name('comercial.sede');
+    });
+    
+    Route::controller(C4Controller::class)->group(function(){
+        Route::get('/reportes/c4', 'index')->name('reportes.c4');
+    });
+    
+    Route::controller(EstadoReportesController::class)->group(function(){
+        Route::get('/reportes/estado', 'index')->name('reportes.estado');
+    });
+    
+    Route::controller(AsistenciaPersonalReportesController::class)->group(function(){
+        Route::get('/reportes/asistencia/personal', 'index')->name('reportes.asistencia-personal');
+    });
+
+    Route::controller(AsistenciaUnidadReportesController::class)->group(function(){
+        Route::get('/reportes/asistencia/unidad', 'index')->name('reportes.asistencia-unidad');
+    });
+
+    Route::controller(AsistenciaSedeReportesController::class)->group(function(){
+        Route::get('/reportes/asistencia/sede', 'index')->name('reportes.asistencia-sede');
     });
 });
 

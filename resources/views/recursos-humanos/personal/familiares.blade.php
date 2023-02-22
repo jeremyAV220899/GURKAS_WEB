@@ -120,7 +120,7 @@
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
-                                            style="width: 157.641px;">
+                                            style="width: 100.641px;">
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"

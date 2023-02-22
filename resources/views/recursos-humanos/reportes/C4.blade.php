@@ -5,139 +5,137 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrar Datos Laborales</h5>
+                    <h5 class="modal-title">Registrar Personal C4</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos Personales</h6>
-                                <hr/>
+                                <h6 class="mb-0 text-uppercase">Datos Recursos Humanos C4</h6>
+                                <hr />
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="col-">
+                                    <div class="col-6">
                                         <label class="form-label">Código Empleado</label>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
-                                    <hr/>
-                                    <div class="col-12">
-                                        <label class="form-label">Unidad</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Sede</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos de Banco</h6>
-                                    <hr/>
-                                    <div class="col-6">
-                                        <label class="form-label">Tipo Moneda</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Banco Sueldo</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Cta. Bancaria</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos Regimen Pensionario</h6>
-                                    <hr/>
-                                    <div class="col-6">
-                                        <label class="form-label">Regimen Pensionario</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">AFP / ONP</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">AFP CUSPP</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Tipo de Comisión</label>
+                                        <label class="form-label">Estatura</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Grado Institución</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                    <h6 class="mb-0 text-uppercase">Experiencia Recursos Humanos C4</h6>
+                                    <hr />
+                                    <div class="col-12">
+                                        <label class="form-label">Empresa 1</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Cantidad Experiencia</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Movimiento AFP</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos Laborales</h6>
-                                    <hr/>
-                                    <div class="col-6">
-                                        <label class="form-label">Tipo Trabajador</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Sueldo Básico</label>
+                                        <label class="form-label">Fecha Inicio</label>
                                         <input type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Sueldo Bruto</label>
+                                        <label class="form-label">Fecha Fin</label>
                                         <input type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
-                                        <label class="form-label">Asignación Familiar</label>
+                                        <label class="form-label">Estado</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Tipo Pago</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label class="form-label">Periodidad de la Remuneración</label>
+                                        <label class="form-label">Empresa 2</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Cantidad Experiencia</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Fecha Inicio</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Fecha Fin</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Estado</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Empresa 3</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Cantidad Experiencia</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Fecha Inicio</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Fecha Fin</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Estado</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="1">Sin Experiencia</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="4">3</option>
+                                            <option value="5">4</option>
                                         </select>
                                     </div>
                                 </form>
@@ -161,7 +159,7 @@
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="/home"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Personal</li>
+                    <li class="breadcrumb-item active" aria-current="page">Reportes</li>
                 </ol>
             </nav>
         </div>
@@ -172,7 +170,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">REGISTRO DE DATOS Laborales</h6>
+    <h6 class="mb-0 text-uppercase">Lista de PersonaL C4</h6>
     <hr>
     <div class="card">
         <div class="card-body">
@@ -186,17 +184,15 @@
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Name: activate to sort column descending" style="width: 100.641px;">
+                                            aria-label="Name: activate to sort column descending"
+                                            style="width: 80.641px;">
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 200.094px;">Nombres</th>
+                                            style="width: 260.094px;">Nombre</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
-                                            style="width: 112.406px;">Apellido Paterno</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Age: activate to sort column ascending"
-                                            style="width: 49.8594px;">Apellido Materno</th>
+                                            style="width: 112.406px;">Cantidad Experiencia</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 84.0781px;">Acciones</th>
@@ -206,8 +202,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -226,10 +221,9 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP75857456</td>
-                                        <td>Jeremy Josue</td>
-                                        <td>Apaico</td>
-                                        <td>Villena</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>Juan Manuel</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
@@ -248,54 +242,9 @@
                                         </td>
                                     </tr>
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP78525475</td>
-                                        <td>Pedro Pablo</td>
-                                        <td>Kuczynski</td>
-                                        <td>Godard</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
+                                        <td class="sorting_1">AVP71269685</td>
+                                        <td>Juan Manuel</td>
+                                        <td>5854745</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
