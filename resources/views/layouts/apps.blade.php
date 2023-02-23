@@ -586,7 +586,7 @@
                                 <li> <a href="#"><i class="bi bi-circle"></i>Personal por Edad</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Personal por Estatura</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Personal por Turno</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por DNI</a></li>
+                                <li> <a href="{{ route('busqueda.dni') }}"><i class="bi bi-circle"></i>Personal por DNI</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Personal por Fecha de Pago</a></li>
                             </ul>
                         </li>
@@ -835,7 +835,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Personal</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Datos Laborales Empleados</a></li>
+                                <li> <a href="{{ route('planillas.datos') }}"><i class="bi bi-circle"></i>Datos Laborales Empleados</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Actualizar datos Empleados</a></li>
                             </ul>
                         </li>

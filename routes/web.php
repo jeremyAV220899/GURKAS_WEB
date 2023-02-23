@@ -3,11 +3,13 @@
 use App\Http\Controllers\AsistenciaPersonalReportesController;
 use App\Http\Controllers\AsistenciaSedeReportesController;
 use App\Http\Controllers\AsistenciaUnidadReportesController;
+use App\Http\Controllers\BusquedaPersonalDniController;
 use App\Http\Controllers\C4Controller;
 use App\Http\Controllers\EstadoReportesController;
 use App\Http\Controllers\FamiliaresRecursosController;
 use App\Http\Controllers\LaboralesRecursosController;
 use App\Http\Controllers\PersonalRecursoController;
+use App\Http\Controllers\PlanillaPersonalDatosController;
 use App\Http\Controllers\SedeComercialController;
 use App\Http\Controllers\UnidadComercialController;
 use App\Http\Controllers\UsuarioController;
@@ -61,6 +63,14 @@ Route::middleware(['auth'])->group(function(){
 
     Route::controller(AsistenciaSedeReportesController::class)->group(function(){
         Route::get('/reportes/asistencia/sede', 'index')->name('reportes.asistencia-sede');
+    });
+
+    Route::controller(BusquedaPersonalDniController::class)->group(function(){
+        Route::get('/busqueda/dni', 'index')->name('busqueda.dni');
+    });
+    
+    Route::controller(PlanillaPersonalDatosController::class)->group(function(){
+        Route::get('/planillas/datos', 'index')->name('planillas.datos');
     });
 });
 
