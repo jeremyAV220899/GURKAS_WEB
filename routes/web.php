@@ -4,6 +4,13 @@ use App\Http\Controllers\AsistenciaPersonalReportesController;
 use App\Http\Controllers\AsistenciaSedeReportesController;
 use App\Http\Controllers\AsistenciaUnidadReportesController;
 use App\Http\Controllers\BusquedaPersonalDniController;
+use App\Http\Controllers\BusquedaPersonalEdadController;
+use App\Http\Controllers\BusquedaPersonalEmpresaController;
+use App\Http\Controllers\BusquedaPersonalEstaturaController;
+use App\Http\Controllers\BusquedaPersonalIngresoController;
+use App\Http\Controllers\BusquedaPersonalSedeController;
+use App\Http\Controllers\BusquedaPersonalTurnoController;
+use App\Http\Controllers\BusquedaPersonalUnidadController;
 use App\Http\Controllers\C4Controller;
 use App\Http\Controllers\EstadoReportesController;
 use App\Http\Controllers\FamiliaresRecursosController;
@@ -67,6 +74,34 @@ Route::middleware(['auth'])->group(function(){
 
     Route::controller(BusquedaPersonalDniController::class)->group(function(){
         Route::get('/busqueda/dni', 'index')->name('busqueda.dni');
+    });
+
+    Route::controller(BusquedaPersonalTurnoController::class)->group(function(){
+        Route::get('/busqueda/turno', 'index')->name('busqueda.turno');
+    });
+
+    Route::controller(BusquedaPersonalEstaturaController::class)->group(function(){
+        Route::get('/busqueda/estatura', 'index')->name('busqueda.estatura');
+    });
+    
+    Route::controller(BusquedaPersonalEdadController::class)->group(function(){
+        Route::get('/busqueda/edad', 'index')->name('busqueda.edad');
+    });
+    
+    Route::controller(BusquedaPersonalEmpresaController::class)->group(function(){
+        Route::get('/busqueda/empresa', 'index')->name('busqueda.empresa');
+    });
+
+    Route::controller(BusquedaPersonalSedeController::class)->group(function(){
+        Route::get('/busqueda/sede', 'index')->name('busqueda.sede');
+    });
+
+    Route::controller(BusquedaPersonalUnidadController::class)->group(function(){
+        Route::get('/busqueda/unidad', 'index')->name('busqueda.unidad');
+    });
+
+    Route::controller(BusquedaPersonalIngresoController::class)->group(function(){
+        Route::get('/busqueda/ingreso', 'index')->name('busqueda.ingreso');
     });
     
     Route::controller(PlanillaPersonalDatosController::class)->group(function(){

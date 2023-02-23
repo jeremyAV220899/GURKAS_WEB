@@ -580,13 +580,14 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Busqueda de Personal</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Unidad o Sede</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Empresa</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Edad</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Estatura</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Turno</a></li>
+                                <li> <a href="{{ route('busqueda.unidad') }}"><i class="bi bi-circle"></i>Personal por Unidad</a></li>
+                                <li> <a href="{{ route('busqueda.sede') }}"><i class="bi bi-circle"></i>Personal por Sede</a></li>
+                                <li> <a href="{{ route('busqueda.empresa') }}"><i class="bi bi-circle"></i>Personal por Empresa</a></li>
+                                <li> <a href="{{ route('busqueda.edad') }}"><i class="bi bi-circle"></i>Personal por Edad</a></li>
+                                <li> <a href="{{ route('busqueda.estatura') }}"><i class="bi bi-circle"></i>Personal por Estatura</a></li>
+                                <li> <a href="{{ route('busqueda.turno') }}"><i class="bi bi-circle"></i>Personal por Turno</a></li>
                                 <li> <a href="{{ route('busqueda.dni') }}"><i class="bi bi-circle"></i>Personal por DNI</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Personal por Fecha de Pago</a></li>
+                                <li> <a href="{{ route('busqueda.ingreso') }}"><i class="bi bi-circle"></i>Personal por Fecha de Ingreso</a></li>
                             </ul>
                         </li>
                     </ul>
