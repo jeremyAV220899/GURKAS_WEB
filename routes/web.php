@@ -9,6 +9,7 @@ use App\Http\Controllers\EstadoReportesController;
 use App\Http\Controllers\FamiliaresRecursosController;
 use App\Http\Controllers\LaboralesRecursosController;
 use App\Http\Controllers\PersonalRecursoController;
+use App\Http\Controllers\PlanillaAfpComisionController;
 use App\Http\Controllers\PlanillaPersonalDatosController;
 use App\Http\Controllers\SedeComercialController;
 use App\Http\Controllers\UnidadComercialController;
@@ -71,6 +72,10 @@ Route::middleware(['auth'])->group(function(){
     
     Route::controller(PlanillaPersonalDatosController::class)->group(function(){
         Route::get('/planillas/datos', 'index')->name('planillas.datos');
+    });
+     
+    Route::controller(PlanillaAfpComisionController::class)->group(function(){
+        Route::get('/planillas/afp/comision', 'index')->name('planillas.comision');
     });
 });
 

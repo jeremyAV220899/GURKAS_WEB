@@ -842,7 +842,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>AFP</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Actualizar Comisión AFP</a></li>
+                                <li> <a href="{{ route('planillas.comision') }}"><i class="bi bi-circle"></i>Actualizar Comisión AFP</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Actualizar AFP masivo Empleados</a></li>
                             </ul>
                         </li>
