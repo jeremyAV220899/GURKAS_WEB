@@ -32,19 +32,19 @@
               <form class="row g-3">
                  <div class="col-6">
                     <label class="form-label">Usuario</label>
-                    <input type="text" class="form-control" value="juan">
+                    <input type="text" class="form-control" value="">
                  </div>
                  <div class="col-6">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control" value="juan.ubillusr@gmail.com">
+                  <input type="email" class="form-control" value="">
                 </div>
                   <div class="col-6">
                     <label class="form-label">Nombres</label>
-                    <input type="text" class="form-control" value="Juan Manuel">
+                    <input type="text" class="form-control" value="">
                 </div>
                 <div class="col-6">
                     <label class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" value="Ubillus">
+                    <input type="text" class="form-control" value="">
                 </div>
               </form>
             </div>
@@ -61,19 +61,19 @@
                  </div>
                  <div class="col-6">
                     <label class="form-label">Ciudad</label>
-                    <input type="text" class="form-control" value="Lima">
+                    <input type="text" class="form-control" value="">
                  </div>
                  <div class="col-6">
                   <label class="form-label">Distrito</label>
-                  <input type="text" class="form-control" value="Villa María del Triunfo">
+                  <input type="text" class="form-control" value="">
                 </div>
                   <div class="col-6">
                     <label class="form-label">Telefono</label>
-                    <input type="text" class="form-control" value="940750259">
+                    <input type="text" class="form-control" value="">
                 </div>
                 <div class="col-6">
                     <label class="form-label">DNI</label>
-                    <input type="text" class="form-control" value="72585475">
+                    <input type="text" class="form-control" value="">
                 </div>
                 <div class="col-12">
                   <label class="form-label">Sobre Mí</label>
