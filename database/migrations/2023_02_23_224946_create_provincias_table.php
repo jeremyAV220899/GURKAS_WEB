@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('provincias', function (Blueprint $table) {
             $table->id('cod_provincia');
-            $table->foreignId('cod_departamento')->references('cod_departamento')->on('departamentos');
             $table->string('desp_provincia',20);
             $table->timestamps();
         });

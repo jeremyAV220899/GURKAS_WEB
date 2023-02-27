@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('distritos', function (Blueprint $table) {
             $table->id('cod_distrito');
-            $table->foreignId('cod_departamento')->references('cod_departamento')->on('departamentos');
-            $table->foreignId('cod_provincia')->references('cod_provincia')->on('provincias');
             $table->string('desp_distrito',20);
             $table->timestamps();
         });

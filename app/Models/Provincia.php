@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Provincia extends Model
 {
     use HasFactory;
-    public function departamentos(){
-        return $this->hasMany(Departamento::class);
+    public function ubigeos(){
+        return $this->hasMany(Ubigeo::class);
     }
 }

@@ -96,7 +96,7 @@
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
                                         <select class="form-select" id="departamento" name="departamento" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="">--- Seleccionar ---</option>
                                             @foreach ($departamentos as $departamento)
                                             <option value="{{ $departamento->cod_departamento }}">{{ $departamento->desp_departamento }}</option> 
                                             @endforeach
@@ -105,13 +105,13 @@
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
                                         <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
                                         <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -491,8 +491,8 @@
         </div>
     </div>
 @endsection
-@section('script')
 
+@section('script')
 <script language="javascript">
 
     $("#departamento").on('change', function () {
