@@ -761,3 +761,12 @@
     </div>
     <!--end row-->
 @endsection
+@section('script')
+<script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
+<script src="/assets/plugins/chartjs/js/Chart.extension.js"></script>
+<script src="/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+<script src="/assets/js/index2.js"></script>
+<script>
+    new PerfectScrollbar(".best-product")
+</script>
+@endsection

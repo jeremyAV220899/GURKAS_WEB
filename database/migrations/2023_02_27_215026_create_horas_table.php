@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('provincias', function (Blueprint $table) {
-            $table->id('cod_provincia');
-            $table->string('desp_provincia',20);
+        Schema::create('horas', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre',20);
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('provincias');
+        Schema::dropIfExists('horas');
     }
 };

@@ -1114,13 +1114,6 @@
     <script src="/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
     <script src="/assets/js/table-datatable.js"></script>
     <script src="/assets/js/pace.min.js"></script>
-    <script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
-    <script src="/assets/plugins/chartjs/js/Chart.extension.js"></script>
-    <script src="/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
-    <script src="/assets/js/index2.js"></script>
-    <script>
-        new PerfectScrollbar(".best-product")
-    </script>
     <!--app-->
     <script src="/assets/js/app.js"></script>
     @yield('script')

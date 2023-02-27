@@ -44,16 +44,18 @@
                                         <label class="form-label">Sexo</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="M">Masculino</option>
-                                            <option value="F">Femenino</option>
+                                            @foreach ($generos as $genero)
+                                                <option value="{{ $genero->id }}">{{ $genero->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Tipo Documento</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="01">DNI</option>
-                                            <option value="04">Carnet Extranjería</option>
+                                            @foreach ($documentos as $documento)
+                                                <option value="{{ $documento->id }}">{{ $documento->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -76,9 +78,9 @@
                                         <label class="form-label">Categoría Brevete</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="01">AI</option>
-                                            <option value="04">AIIB</option>
-                                            <option value="04">No</option>
+                                            @foreach ($brevetes as $brevete)
+                                                <option value="{{ $brevete->id }}">{{ $brevete->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -89,29 +91,24 @@
                                         <label class="form-label">Nacionalidad</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento" name="departamento" aria-label="Default select example">
-                                            <option value="">--- Seleccionar ---</option>
-                                            @foreach ($departamentos as $departamento)
-                                            <option value="{{ $departamento->cod_departamento }}">{{ $departamento->desp_departamento }}</option> 
+                                            @foreach ($nacionalidades as $nacionalidad)
+                                                <option value="{{ $nacionalidad->id }}">{{ $nacionalidad->nombre }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
+                                        <label class="form-label">Departamento</label>
+                                        <select class="form-select" id="js-departament" aria-label="Default select example">
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
-                                            <option value="">--- Seleccionar ---</option>
+                                        <select class="form-select" id="js-province" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
-                                            <option value="">--- Seleccionar ---</option>
+                                        <select class="form-select" id="js-district" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -134,8 +131,9 @@
                                         <label class="form-label">Horas Laborales</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($horas as $hora)
+                                                <option value="{{ $hora->id }}">{{ $hora->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -176,8 +174,9 @@
                                         <label class="form-label">Empresa</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($empresas as $empresa)
+                                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -216,8 +215,9 @@
                                         <label class="form-label">Turno</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($turnos as $turno)
+                                                <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -234,8 +234,9 @@
                                         <label class="form-label">Talla Camisa</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($tallas as $talla)
+                                                <option value="{{ $talla->id }}">{{ $talla->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -493,27 +494,6 @@
 @endsection
 
 @section('script')
-<script language="javascript">
-
-    $("#departamento").on('change', function () {
-        $("#departamento option:selected").each(function () {
-            let elegido=$(this).val();
-            $.get('/provincias/'+elegido, function(data){
-                $("#provincia").html(data);
-            });
-        });
-   })
-
-    $("#provincia").on('change', function () {
-
-        $("#provincia option:selected").each(function () {
-            let elegido=$(this).val();
-            $.get('/distritos/'+elegido, function(data){
-                $("#distrito").html(data);
-            });
-        });
-    });
-
-</script>
+<script src="/js/script.js"></script>
 
 @endsection

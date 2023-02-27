@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ubigeos', function (Blueprint $table) {
+        Schema::create('tallas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cod_departamento')->references('cod_departamento')->on('departamentos');
-            $table->foreignId('cod_provincia')->references('cod_provincia')->on('provincias');
-            $table->foreignId('cod_distrito')->references('cod_distrito')->on('distritos');
+            $table->string('nombre',20);
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ubigeos');
+        Schema::dropIfExists('tallas');
     }
 };

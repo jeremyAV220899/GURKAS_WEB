@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\AsistenciaPersonalReportesController;
 use App\Http\Controllers\AsistenciaSedeReportesController;
 use App\Http\Controllers\AsistenciaUnidadReportesController;
@@ -112,6 +113,8 @@ Route::middleware(['auth'])->group(function(){
     Route::controller(PlanillaAfpComisionController::class)->group(function(){
         Route::get('/planillas/afp/comision', 'index')->name('planillas.comision');
     });
+
+
 });
 
 

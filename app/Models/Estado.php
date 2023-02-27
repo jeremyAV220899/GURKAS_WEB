@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Provincia extends Model
+class Estado extends Model
 {
     use HasFactory;
-    public function ubigeos(){
-        return $this->hasMany(Ubigeo::class);
-    }
 }

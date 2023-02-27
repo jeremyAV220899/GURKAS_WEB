@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('distritos', function (Blueprint $table) {
-            $table->id('cod_distrito');
-            $table->string('desp_distrito',20);
+        Schema::create('empresas', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre',50);
+            $table->string('ruc',50);
+            $table->foreignId('estado_id')->references('id')->on('estados');
+            $table->string('direccion',200);
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('distritos');
+        Schema::dropIfExists('empresas');
     }
 };
