@@ -570,10 +570,10 @@ var options = {
 
 var options = {
 	series: [{
-		name: "Referral",
+		name: "Asistencia",
 		data: [640, 560, 871, 614, 755, 457, 650]
 	},{
-		name: "Search",
+		name: "Falta",
 		data: [440, 360, 671, 414, 555, 257, 450]
 	}],
 	chart: {
@@ -593,7 +593,7 @@ var options = {
 			left: 14,
 			blur: 4,
 			opacity: .12,
-			color: "#e72e7a"
+			color: "#12BF24"
 		},
 		sparkline: {
 			enabled: !1
@@ -601,7 +601,7 @@ var options = {
 	},
 	markers: {
 		size: 0,
-		colors: ["#e72e7a"],
+		colors: ["#12BF24"],
 		strokeColors: "#fff",
 		strokeWidth: 2,
 		hover: {
@@ -629,7 +629,7 @@ var options = {
           shade: 'light',
           type: "vertical",
           shadeIntensity: 0.5,
-          gradientToColors: ["#e72e7a", "#ff98c2"],
+          gradientToColors: ["#12BF24", "#E72E2E"],
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: 1,
@@ -637,7 +637,7 @@ var options = {
           //colorStops: []
         }
     },
-	colors: ["#e72e7a", "#ff98c2"],
+	colors: ["#12BF24", "#E72E2E"],
 	xaxis: {
 		categories: ["1", "2", "3", "4", "5", "6", "7"]
 	},
@@ -801,7 +801,7 @@ var options = {
     },
     colors: ["#3461ff", "#c1cfff"],
     xaxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        categories: ["Ene", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
     },
 	responsive: [
 		{
