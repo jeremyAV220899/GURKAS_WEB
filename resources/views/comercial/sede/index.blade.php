@@ -34,26 +34,18 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select" id="departamento" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" id="provincia" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" id="distrito" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -235,9 +227,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -246,4 +235,8 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+<script src="/js/script.js"></script>
+
 @endsection
