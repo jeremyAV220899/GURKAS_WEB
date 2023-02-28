@@ -12,6 +12,7 @@ use App\Http\Controllers\BusquedaPersonalIngresoController;
 use App\Http\Controllers\BusquedaPersonalSedeController;
 use App\Http\Controllers\BusquedaPersonalTurnoController;
 use App\Http\Controllers\BusquedaPersonalUnidadController;
+use App\Http\Controllers\Administrador\SistemaController as AdminSistemaController;
 use App\Http\Controllers\C4Controller;
 use App\Http\Controllers\EstadoReportesController;
 use App\Http\Controllers\FamiliaresRecursosController;
@@ -113,6 +114,18 @@ Route::middleware(['auth'])->group(function(){
     Route::controller(PlanillaAfpComisionController::class)->group(function(){
         Route::get('/planillas/afp/comision', 'index')->name('planillas.comision');
     });
+    
+    Route::controller(AdminSistemaController::class)->group(function(){
+        Route::get('/administrador/sistemas/ubigeo', 'index')->name('administrador.sistemas.ubigeo');
+        Route::post('/administrador/sistemas/ubigeo/departamentocarga', 'departamentoImportExcel')->name('carga.departamento');
+        Route::post('/administrador/sistemas/ubigeo/provinciacarga', 'provinciaImportExcel')->name('carga.provincia');
+        Route::post('/administrador/sistemas/ubigeo/distritocarga', 'distritoImportExcel')->name('carga.distrito');
+        Route::get('/servicios/ubigeo/departamento','listaDepartamentos');
+        Route::get('/servicios/ubigeo/provincia/{departamento}','listaProvincias');
+        Route::get('/servicios/ubigeo/distrito/{provincia}','listaDistritos');
+    });
+
+    
 
 
 });

@@ -1003,6 +1003,11 @@
                                 <li> <a href="#"><i class="bi bi-circle"></i>Modificar Asistencia Personal</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Sistemas</a>
+                            <ul>
+                                <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <!-- END ADMINISTRADOR -->

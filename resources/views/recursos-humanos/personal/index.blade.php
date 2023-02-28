@@ -98,17 +98,18 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="js-departament" aria-label="Default select example">
+                                        <select class="form-select" id="departamento" aria-label="Default select example">
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="js-province" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="js-district" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
