@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\RRHH\Personal;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Brevete;
 use App\Models\Documento;
 use App\Models\Empresa;
@@ -10,9 +12,8 @@ use App\Models\Hora;
 use App\Models\Nacionalidad;
 use App\Models\Talla;
 use App\Models\Turno;
-use Illuminate\Http\Request;
 
-class PersonalRecursoController extends Controller
+class PersonalesController extends Controller
 {
     public function index(){
         $dato = [

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\RRHH\BusquedaPersonal;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BusquedaPersonalSedeController extends Controller
+class SedeController extends Controller
 {
     public function index(){
         return view('recursos-humanos.busqueda-personal.sede');
