@@ -21,6 +21,7 @@ use App\Http\Controllers\Comercial\Sede\SedeController as ComercialSedeControlle
 use App\Http\Controllers\Planilla\AFP\ComisionController as AfpComisionController;
 use App\Http\Controllers\Planilla\Personal\LaboralesController as AfpPersonalLaboralesController;
 use App\Http\Controllers\Administrador\SistemaController as AdminSistemaController;
+use App\Http\Controllers\Administrador\TallaController as AdminTallaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -117,6 +118,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/servicios/ubigeo/departamento', 'listaDepartamentos');
         Route::get('/servicios/ubigeo/provincia/{departamento}', 'listaProvincias');
         Route::get('/servicios/ubigeo/distrito/{provincia}', 'listaDistritos');
+    });
+    Route::controller(AdminTallaController::class)->group(function () {
+        Route::get('/administrador/sistemas/tallas', 'index')->name('administrador.sistemas.talla');
+        Route::post('/administrador/sistemas/tallas/guardar', 'store')->name('talla.store');
     });
 });
 

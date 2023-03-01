@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
             DocumentosTableSeeder::class,
             BrevetesTableSeeder::class,
             HorasTableSeeder::class,
-            TallasTableSeeder::class,
             TurnosTableSeeder::class,
             EstadosTableSeeder::class,
             EmpresasTableSeeder::class,

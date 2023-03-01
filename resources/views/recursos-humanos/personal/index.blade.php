@@ -236,7 +236,7 @@
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($tallas as $talla)
-                                                <option value="{{ $talla->id }}">{{ $talla->nombre }}</option>
+                                                <option value="{{ $talla->id }}">{{ $talla->descripcion }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -335,7 +335,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
@@ -360,7 +360,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
@@ -385,7 +385,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
@@ -410,7 +410,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
@@ -435,7 +435,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
@@ -460,7 +460,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">AVP71269685</td>
                                         <td>
-                                            <img src="https://via.placeholder.com/400X300" class="product-img-2" alt="product img">
+                                            <img src="/assets/images/users/a5.jpg" class="product-img-2" alt="product img">
                                         </td>
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>

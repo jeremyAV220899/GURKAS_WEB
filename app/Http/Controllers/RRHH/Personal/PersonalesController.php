@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\RRHH\Personal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administrador\Sistema\Talla;
 use Illuminate\Http\Request;
 use App\Models\Brevete;
 use App\Models\Documento;
@@ -10,7 +11,7 @@ use App\Models\Empresa;
 use App\Models\Genero;
 use App\Models\Hora;
 use App\Models\Nacionalidad;
-use App\Models\Talla;
+
 use App\Models\Turno;
 
 class PersonalesController extends Controller
