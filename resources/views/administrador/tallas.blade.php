@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title titulo">Registrar Tallas</h5>
+                    <h5 class="modal-title titulo">Registrar Talla</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -87,14 +87,14 @@
                                             <td>{{ $talla->descripcion }}</td>
                                             <td>
                                                 <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $talla->id }}" data-bs-toggle="modal" data-bs-target="#EditarTalla">
+                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $talla->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
                                                         <i class="bi bi-pencil-fill">
                                                         </i>
                                                     </button>
-                                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="bottom" title=""
-                                                        data-bs-original-title="Delete" aria-label="Delete"><i
-                                                            class="bi bi-trash-fill"></i></a>
+                                                    <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $talla->id }}">
+                                                        <i class="bi bi-trash-fill">
+                                                        </i>
+                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -112,7 +112,7 @@
     <script type="text/javascript">
         $('.btnCrearTalla').click(function() {
             let val_url = '/administrador/sistemas/tallas/guardar';
-            $('.titulo').html('Registrar Tallas');
+            $('.titulo').html('Registrar Talla');
             $('.btnRegistrar').html('Registrar');
             $('#descripcion').val('');
             $('#formulario').attr('action', val_url);
@@ -121,14 +121,26 @@
 
         $('#tablaTallas').on('click', '.btnEditar', function() {
             let val_id = $(this).data('id');
-            let val_url = '/marcas/editar/' + val_id;
+            let val_url = '/administrador/sistemas/tallas/editar/' + val_id;
             $.get(val_url, function(res) {
-                $('.tituloModal').html('Editar Marca');
-                $('.btnGuardar').html('Editar');
-                $('#nombre').val(res.marca.nombre);
-                $('#formulario').attr('action', '/marcas/actualizar/' + val_id);
-                $('#modalDatos').modal('show');
+                $('.titulo').html('Editar Talla');
+                $('.btnRegistrar').html('Editar');
+                $('#descripcion').val(res.talla.descripcion);
+                $('#formulario').attr('action', '/administrador/sistemas/tallas/actualizar/' + val_id);
+                $('#registrar').modal('show');
             });
         });
+
+        $('#tablaTallas').on('click', '.btnBorrar', function(){
+            let id = $(this).data('id');
+            let url = '/administrador/sistemas/tallas/borrar/'+id;
+            $.get(url,function(res){
+              if(res =='ok'){
+                location.reload();
+              }else{
+                toastr.warning('La Talla esta siendo usado en un registro','Error',{"progressBar": true});
+              }
+            });
+        })
     </script>
 @endsection

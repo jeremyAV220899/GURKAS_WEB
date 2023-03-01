@@ -122,6 +122,9 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(AdminTallaController::class)->group(function () {
         Route::get('/administrador/sistemas/tallas', 'index')->name('administrador.sistemas.talla');
         Route::post('/administrador/sistemas/tallas/guardar', 'store')->name('talla.store');
+        Route::get('/administrador/sistemas/tallas/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/tallas/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/tallas/borrar/{id}', 'delete');
     });
 });
 
