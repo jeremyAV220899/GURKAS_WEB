@@ -22,6 +22,7 @@ use App\Http\Controllers\Planilla\AFP\ComisionController as AfpComisionControlle
 use App\Http\Controllers\Planilla\Personal\LaboralesController as AfpPersonalLaboralesController;
 use App\Http\Controllers\Administrador\SistemaController as AdminSistemaController;
 use App\Http\Controllers\Administrador\TallaController as AdminTallaController;
+use App\Http\Controllers\Administrador\PuestoController as AdminPuestoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -125,6 +126,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/tallas/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/tallas/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/tallas/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminPuestoController::class)->group(function () {
+        Route::get('/administrador/sistemas/puestos', 'index')->name('administrador.sistemas.puesto');
+        Route::post('/administrador/sistemas/puestos/guardar', 'store')->name('puesto.store');
+        Route::get('/administrador/sistemas/puestos/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/puestos/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/puestos/borrar/{id}', 'delete');
     });
 });
 

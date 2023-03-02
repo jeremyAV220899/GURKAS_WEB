@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\RRHH\Personal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administrador\Sistema\Puesto;
 use App\Models\Administrador\Sistema\Talla;
 use Illuminate\Http\Request;
 use App\Models\Brevete;
@@ -26,6 +27,7 @@ class PersonalesController extends Controller
             'tallas' => Talla::all(),
             'turnos' => Turno::all(),
             'empresas' => Empresa::all(),
+            'puestos' => Puesto::all(),
         ];
         return view('recursos-humanos.personal.index',$dato);
     }

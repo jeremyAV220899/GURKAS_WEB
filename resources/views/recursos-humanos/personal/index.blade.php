@@ -167,8 +167,9 @@
                                         <label class="form-label">Cargo Laboral</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($puestos as $puesto)
+                                                <option value="{{ $puesto->id }}">{{ $puesto->descripcionPuesto }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">

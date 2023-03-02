@@ -1007,7 +1007,8 @@
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Sistemas</a>
                             <ul>
                                 <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.talla') }}"><i class="bi bi-circle"></i>Tallas</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.talla') }}"><i class="bi bi-circle"></i>TALLAS</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.puesto') }}"><i class="bi bi-circle"></i>PUESTO</a></li>
                             </ul>
                         </li>
                     </ul>
