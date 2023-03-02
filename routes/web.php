@@ -23,6 +23,9 @@ use App\Http\Controllers\Planilla\Personal\LaboralesController as AfpPersonalLab
 use App\Http\Controllers\Administrador\SistemaController as AdminSistemaController;
 use App\Http\Controllers\Administrador\TallaController as AdminTallaController;
 use App\Http\Controllers\Administrador\PuestoController as AdminPuestoController;
+use App\Http\Controllers\Administrador\GeneroController as AdminGeneroController;
+use App\Http\Controllers\Administrador\DocumentoController as AdminDocumentoController;
+use App\Http\Controllers\Administrador\BreveteController as AdminBreveteController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -133,6 +136,27 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/puestos/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/puestos/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/puestos/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminGeneroController::class)->group(function () {
+        Route::get('/administrador/sistemas/generos', 'index')->name('administrador.sistemas.genero');
+        Route::post('/administrador/sistemas/generos/guardar', 'store')->name('genero.store');
+        Route::get('/administrador/sistemas/generos/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/generos/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/generos/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminDocumentoController::class)->group(function () {
+        Route::get('/administrador/sistemas/documentos', 'index')->name('administrador.sistemas.documento');
+        Route::post('/administrador/sistemas/documentos/guardar', 'store')->name('documento.store');
+        Route::get('/administrador/sistemas/documentos/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/documentos/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/documentos/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminBreveteController::class)->group(function () {
+        Route::get('/administrador/sistemas/brevetes', 'index')->name('administrador.sistemas.brevete');
+        Route::post('/administrador/sistemas/brevetes/guardar', 'store')->name('brevete.store');
+        Route::get('/administrador/sistemas/brevetes/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/brevetes/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/brevetes/borrar/{id}', 'delete');
     });
 });
 

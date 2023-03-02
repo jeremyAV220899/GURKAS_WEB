@@ -1009,6 +1009,9 @@
                                 <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.talla') }}"><i class="bi bi-circle"></i>TALLAS</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.puesto') }}"><i class="bi bi-circle"></i>PUESTO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.genero') }}"><i class="bi bi-circle"></i>GENERO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.documento') }}"><i class="bi bi-circle"></i>DOCUMENTO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.brevete') }}"><i class="bi bi-circle"></i>BREVETE</a></li>
                             </ul>
                         </li>
                     </ul>
