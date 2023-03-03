@@ -1016,6 +1016,11 @@
                                 <li> <a href="{{ route('administrador.sistemas.hora') }}"><i class="bi bi-circle"></i>HORAS LABORALES</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.situacion') }}"><i class="bi bi-circle"></i>SITUACION</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.empresa') }}"><i class="bi bi-circle"></i>EMPRESA</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.turno') }}"><i class="bi bi-circle"></i>TURNO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.contrato') }}"><i class="bi bi-circle"></i>CONTRATO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.estado') }}"><i class="bi bi-circle"></i>ESTADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.grado') }}"><i class="bi bi-circle"></i>GRADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.armado') }}"><i class="bi bi-circle"></i>ARMADO</a></li>
                             </ul>
                         </li>
                     </ul>

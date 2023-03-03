@@ -30,6 +30,11 @@ use App\Http\Controllers\Administrador\NacionalidadController as AdminNacionalid
 use App\Http\Controllers\Administrador\HoraController as AdminHoraController;
 use App\Http\Controllers\Administrador\SituacionController as AdminSituacionController;
 use App\Http\Controllers\Administrador\EmpresaController as AdminEmpresaController;
+use App\Http\Controllers\Administrador\TurnoController as AdminTurnoController;
+use App\Http\Controllers\Administrador\ContratoController as AdminContratoController;
+use App\Http\Controllers\Administrador\EstadoController as AdminEstadoController;
+use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
+use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -189,6 +194,41 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/empresas/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/empresas/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/empresas/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminTurnoController::class)->group(function () {
+        Route::get('/administrador/sistemas/turnos', 'index')->name('administrador.sistemas.turno');
+        Route::post('/administrador/sistemas/turnos/guardar', 'store')->name('turno.store');
+        Route::get('/administrador/sistemas/turnos/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/turnos/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/turnos/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminContratoController::class)->group(function () {
+        Route::get('/administrador/sistemas/contratos', 'index')->name('administrador.sistemas.contrato');
+        Route::post('/administrador/sistemas/contratos/guardar', 'store')->name('contrato.store');
+        Route::get('/administrador/sistemas/contratos/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/contratos/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/contratos/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminEstadoController::class)->group(function () {
+        Route::get('/administrador/sistemas/estados', 'index')->name('administrador.sistemas.estado');
+        Route::post('/administrador/sistemas/estados/guardar', 'store')->name('estado.store');
+        Route::get('/administrador/sistemas/estados/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/estados/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/estados/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminGradoController::class)->group(function () {
+        Route::get('/administrador/sistemas/grados', 'index')->name('administrador.sistemas.grado');
+        Route::post('/administrador/sistemas/grados/guardar', 'store')->name('grado.store');
+        Route::get('/administrador/sistemas/grados/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/grados/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/grados/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminArmadoController::class)->group(function () {
+        Route::get('/administrador/sistemas/armados', 'index')->name('administrador.sistemas.armado');
+        Route::post('/administrador/sistemas/armados/guardar', 'store')->name('armado.store');
+        Route::get('/administrador/sistemas/armados/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/armados/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/armados/borrar/{id}', 'delete');
     });
 });
 
