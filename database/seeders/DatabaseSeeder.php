@@ -12,8 +12,6 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             TurnosTableSeeder::class,
             EstadosTableSeeder::class,
-            EmpresasTableSeeder::class,
-            
         ]);
     }
 }

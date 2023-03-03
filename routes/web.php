@@ -29,6 +29,7 @@ use App\Http\Controllers\Administrador\BreveteController as AdminBreveteControll
 use App\Http\Controllers\Administrador\NacionalidadController as AdminNacionalidadController;
 use App\Http\Controllers\Administrador\HoraController as AdminHoraController;
 use App\Http\Controllers\Administrador\SituacionController as AdminSituacionController;
+use App\Http\Controllers\Administrador\EmpresaController as AdminEmpresaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -181,6 +182,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/situaciones/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/situaciones/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/situaciones/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminEmpresaController::class)->group(function () {
+        Route::get('/administrador/sistemas/empresas', 'index')->name('administrador.sistemas.empresa');
+        Route::post('/administrador/sistemas/empresas/guardar', 'store')->name('empresa.store');
+        Route::get('/administrador/sistemas/empresas/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/empresas/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/empresas/borrar/{id}', 'delete');
     });
 });
 

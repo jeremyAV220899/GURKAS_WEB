@@ -5,21 +5,40 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title titulo">Registrar Situación</h5>
+                    <h5 class="modal-title titulo">Registrar Empresa</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos De la Situación</h6>
+                                <h6 class="mb-0 text-uppercase">Datos de la Empresa</h6>
                                 <hr />
-                                <form id="formulario" class="row g-3" method="POST" action="{{ route('situacion.store') }}">
+                                <form id="formulario" class="row g-3" method="POST" action="{{ route('empresa.store') }}">
                                     @csrf
                                     <div class="col-12">
-                                        <label class="form-label">Descripción</label>
-                                        <input type="text" id="descripcion" name="descripcion" class="form-control"
+                                        <label class="form-label">Nombre de la Empresa</label>
+                                        <input type="text" id="nombre" name="nombre" class="form-control"
                                             required>
+                                    </div>
+                                    <div class="col-12">
+                                    <label class="form-label">RUC de la Empresa</label>
+                                    <input type="text" id="ruc" name="ruc" class="form-control"
+                                        required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Estado de la Empresa</label>
+                                        <select id="estadoid" name="estadoid" class="form-select" aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                          @foreach ($estados as $estado)
+                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Dirección de la Empresa</label>
+                                        <input type="text" id="direccion" name="direccion" class="form-control"
+                                        required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -50,13 +69,13 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearSituacion" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary btnCrearEmpresa" data-bs-toggle="modal"
                     data-bs-target="#registrar">Registrar
                     Nuevo</button>
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Situaciones</h6>
+    <h6 class="mb-0 text-uppercase">Lita de Empresas</h6>
     <hr>
     <div class="card">
         <div class="card-body">
@@ -74,24 +93,32 @@
                                             ID</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 50.094px;">Hora</th>
+                                            style="width: 50.094px;">Nombre</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 50.094px;">RUC</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 50.094px;">Direccion</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 50.0781px;">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($situaciones as $ids => $situacion)
+                                    @foreach ($empresas as $ids => $empresa)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{ $ids + 1 }}</td>
-                                            <td>{{ $situacion->descripcion }}</td>
+                                            <td>{{ $empresa->nombre }}</td>
+                                            <td>{{ $empresa->ruc }}</td>
+                                            <td>{{ $empresa->direccion }}</td>
                                             <td>
                                                 <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $situacion->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
+                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $empresa->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
                                                         <i class="bi bi-pencil-fill">
                                                         </i>
                                                     </button>
-                                                    <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $situacion->id }}">
+                                                    <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $empresa->id }}">
                                                         <i class="bi bi-trash-fill">
                                                         </i>
                                                     </button>
@@ -110,35 +137,41 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        $('.btnCrearSituacion').click(function() {
-            let val_url = '/administrador/sistemas/situaciones/guardar';
-            $('.titulo').html('Registrar Situacion');
+        $('.btnCrearEmpresa').click(function() {
+            let val_url = '/administrador/sistemas/empresas/guardar';
+            $('.titulo').html('Registrar Empresa');
             $('.btnRegistrar').html('Registrar');
-            $('#descripcion').val('');
+            $('#nombre').val('');
+            $('#ruc').val('');
+            $('#estadoid option:first').prop('selected',true);
+            $('#direccion').val('');
             $('#formulario').attr('action', val_url);
             $('#registrar').modal('show');
         })
 
         $('#tablaSituaciones').on('click', '.btnEditar', function() {
             let val_id = $(this).data('id');
-            let val_url = '/administrador/sistemas/situaciones/editar/' + val_id;
+            let val_url = '/administrador/sistemas/empresas/editar/' + val_id;
             $.get(val_url, function(res) {
-                $('.titulo').html('Editar Situacion');
+                $('.titulo').html('Editar Empresa');
                 $('.btnRegistrar').html('Editar');
-                $('#descripcion').val(res.situacion.descripcion);
-                $('#formulario').attr('action', '/administrador/sistemas/situaciones/actualizar/' + val_id);
+                $('#nombre').val(res.empresa.nombre);
+                $('#ruc').val(res.empresa.ruc);
+                $('#estadoid').val(res.empresa.estado_id);
+                $('#direccion').val(res.empresa.direccion);
+                $('#formulario').attr('action', '/administrador/sistemas/empresas/actualizar/' + val_id);
                 $('#registrar').modal('show');
             });
         });
 
         $('#tablaSituaciones').on('click', '.btnBorrar', function(){
             let id = $(this).data('id');
-            let url = '/administrador/sistemas/situaciones/borrar/'+id;
+            let url = '/administrador/sistemas/empresas/borrar/'+id;
             $.get(url,function(res){
               if(res =='ok'){
                 location.reload();
               }else{
-                toastr.warning('La Situacion esta siendo usado en un registro','Error',{"progressBar": true});
+                toastr.warning('La Empresa esta siendo usado en un registro','Error',{"progressBar": true});
               }
             });
         })
