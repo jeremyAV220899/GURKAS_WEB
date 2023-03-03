@@ -26,6 +26,9 @@ use App\Http\Controllers\Administrador\PuestoController as AdminPuestoController
 use App\Http\Controllers\Administrador\GeneroController as AdminGeneroController;
 use App\Http\Controllers\Administrador\DocumentoController as AdminDocumentoController;
 use App\Http\Controllers\Administrador\BreveteController as AdminBreveteController;
+use App\Http\Controllers\Administrador\NacionalidadController as AdminNacionalidadController;
+use App\Http\Controllers\Administrador\HoraController as AdminHoraController;
+use App\Http\Controllers\Administrador\SituacionController as AdminSituacionController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -157,6 +160,27 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/brevetes/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/brevetes/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/brevetes/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminNacionalidadController::class)->group(function () {
+        Route::get('/administrador/sistemas/nacionalidades', 'index')->name('administrador.sistemas.nacionalidad');
+        Route::post('/administrador/sistemas/nacionalidades/guardar', 'store')->name('nacionalidad.store');
+        Route::get('/administrador/sistemas/nacionalidades/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/nacionalidades/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/nacionalidades/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminHoraController::class)->group(function () {
+        Route::get('/administrador/sistemas/horas', 'index')->name('administrador.sistemas.hora');
+        Route::post('/administrador/sistemas/horas/guardar', 'store')->name('hora.store');
+        Route::get('/administrador/sistemas/horas/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/horas/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/horas/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminSituacionController::class)->group(function () {
+        Route::get('/administrador/sistemas/situaciones', 'index')->name('administrador.sistemas.situacion');
+        Route::post('/administrador/sistemas/situaciones/guardar', 'store')->name('situacion.store');
+        Route::get('/administrador/sistemas/situaciones/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/situaciones/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/situaciones/borrar/{id}', 'delete');
     });
 });
 

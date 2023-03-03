@@ -1012,6 +1012,9 @@
                                 <li> <a href="{{ route('administrador.sistemas.genero') }}"><i class="bi bi-circle"></i>GENERO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.documento') }}"><i class="bi bi-circle"></i>DOCUMENTO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.brevete') }}"><i class="bi bi-circle"></i>BREVETE</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.nacionalidad') }}"><i class="bi bi-circle"></i>NACIONALIDAD</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.hora') }}"><i class="bi bi-circle"></i>HORAS LABORALES</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.situacion') }}"><i class="bi bi-circle"></i>SITUACION</a></li>
                             </ul>
                         </li>
                     </ul>
