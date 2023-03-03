@@ -141,16 +141,18 @@
                                         <label class="form-label">Estado Civil</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($situaciones as $situacion)
+                                            <option value="{{ $situacion->id }}">{{ $situacion->descripcion }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Grado Institución</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($grados as $grado)
+                                                <option value="{{ $grado->id }}">{{ $grado->descripcion }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
@@ -159,8 +161,9 @@
                                         <label class="form-label">Estado</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($estados as $estado)
+                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -185,8 +188,9 @@
                                         <label class="form-label">Tipo Contrato</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($contratos as $contrato)
+                                                <option value="{{ $contrato->id }}">{{ $contrato->descripcion }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -226,8 +230,9 @@
                                         <label class="form-label">Armado</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($armados as $armado)
+                                                <option value="{{ $armado->id }}">{{ $armado->descripcion }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Tallas</h6>
