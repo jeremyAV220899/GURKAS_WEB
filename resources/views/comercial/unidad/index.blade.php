@@ -18,19 +18,19 @@
                                     @csrf
                                     <div class="col-6">
                                         <label class="form-label">Código Unidad</label>
-                                        <input type="text" class="form-control" readonly>
+                                        <input id="cod_unidad" name="cod_unidad" type="text" class="form-control" >
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">RUC</label>
-                                        <input type="text" class="form-control">
+                                        <input id="ruc" name="ruc" type="text" class="form-control">
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Razón Social</label>
-                                        <input type="text" class="form-control">
+                                        <input id="razon_social" name="razon_social" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Nombre Comercial</label>
-                                        <input type="text" class="form-control">
+                                        <input id="nombre_comercial" name="nombre_comercial" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
@@ -50,73 +50,75 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Dirección</label>
-                                        <textarea class="form-control" rows="2" cols="4"></textarea>
+                                        <textarea id="direccion" name="direccion" class="form-control" rows="2" cols="4"></textarea>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Empresa</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select id="id_empresa" name="id_empresa" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($empresas as $empresa)
+                                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Estado</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select id="id_estado" name="id_estado"  class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($estados as $estado)
+                                            <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                        @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Fech. Activación UND</label>
-                                        <input type="date" class="form-control">
+                                        <input id="fecha_activacion" name="fecha_activacion" type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Fech. Baja UND</label>
-                                        <input type="date" class="form-control">
+                                        <input id="fecha_baja" name="fecha_baja" type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Latitud</label>
-                                        <input type="text" class="form-control">
+                                        <input id="latitud" name="latitud" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Longitud</label>
-                                        <input type="text" class="form-control">
+                                        <input id="longitud" name="longitud" type="text" class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
                                     <div class="col-6">
                                         <label class="form-label">Representante Legal</label>
-                                        <input type="text" class="form-control">
+                                        <input id="represetante_legal" name="represetante_legal" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI</label>
-                                        <input type="text" class="form-control">
+                                        <input id="doct_ident_repre_leg" name="doct_ident_repre_leg" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Cargo</label>
-                                        <input type="text" class="form-control">
+                                        <input id="cargo_repre_leg" name="cargo_repre_leg" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Contacto</label>
-                                        <input type="text" class="form-control">
+                                        <input id="contacto" name="contacto" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Telefono</label>
-                                        <input type="text" class="form-control">
+                                        <input id="telefono" name="telefono" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Celular</label>
-                                        <input type="text" class="form-control">
+                                        <input id="celular" name="celular" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Correo</label>
-                                        <input type="email" class="form-control">
+                                        <input id="correo" name="correo" type="email" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Centro de Costo</label>
-                                        <input type="text" class="form-control">
+                                        <input id="centro_costo" name="centro_costo" type="text" class="form-control">
                                     </div>
                                 </form>
                             </div>
@@ -145,7 +147,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary btnCrearUnidad" data-bs-toggle="modal"
                     data-bs-target="#registrar">Registrar Nuevo</button>
             </div>
         </div>
@@ -158,7 +160,7 @@
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
                     <div class="row">
                         <div class="col-sm-12">
-                            <table id="example2" class="table table-striped table-bordered dataTable" role="grid"
+                            <table id="tablaUnidad" class="table table-striped table-bordered dataTable" role="grid"
                                 aria-describedby="example2_info">
                                 <thead>
                                     <tr role="row">
@@ -166,7 +168,10 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
                                             style="width: 157.641px;">
-                                            Cód. Unidad</th>
+                                            ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 260.094px;">Cód. Unidad</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
                                             style="width: 260.094px;">Razón Social</th>
@@ -185,190 +190,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach ($unidades as $ids => $unidad)
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
+                                        <td class="sorting_1">{{ $ids + 1 }}</td>
+                                        <td>{{ $unidad->cod_unidad }}</td>
+                                        <td>{{ $unidad->razon_social }}</td>
+                                        <td>{{ $unidad->ruc }}</td>
+                                        <td>{{ $estado->nombre }}</td>
+                                        <td>{{ $empresa->nombre }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
+                                                <button class="btn text-primary btnVer" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
+                                                    <i class="bi bi-eye-fill">
+                                                    </i>
+                                                </button>
+                                                <button class="btn text-warning btnEditar" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
+                                                    <i class="bi bi-pencil-fill">
+                                                    </i>
+                                                </button>
+                                                <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $unidad->id }}">
+                                                    <i class="bi bi-trash-fill">
+                                                    </i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -378,7 +225,88 @@
         </div>
     </div>
 @endsection
-@section('script')
-<script src="/js/script.js"></script>
 
+@section('script')
+    <script src="/js/script.js"></script>
+    <script type="text/javascript">
+        $('.btnCrearUnidad').click(function() {
+            let val_url = '/comercial/unidades/guardar';
+            $('.titulo').html('Registrar Unidad');
+            $('.btnRegistrar').html('Registrar');
+            $('#cod_unidad').val('');
+            $('#razon_social').val('');
+            $('#ruc').val('');
+            $('#nombre_comercial').val('');
+
+            $('#departamento option:first').prop('selected',true);
+            $('#provincia option:first').prop('selected',true);
+            $('#distrito option:first').prop('selected',true);
+
+            $('#direccion').val('');
+            $('#represetante_legal').val('');
+            $('#doct_ident_repre_leg').val('');
+            $('#cargo_repre_leg').val('');
+            $('#contacto').val('');
+            $('#telefono').val('');
+            $('#celular').val('');
+            $('#correo').val('');
+            $('#centro_costo').val('');
+            $('#id_estado').val('');
+            $('#id_empresa').val('');
+            $('#longitud').val('');
+            $('#latitud').val('');
+            $('#fecha_activacion').val('');
+            $('#fecha_baja').val('');
+            $('#formulario').attr('action', val_url);
+            $('#registrar').modal('show');
+        })
+
+        $('#tablaUnidad').on('click', '.btnEditar', function() {
+            let val_id = $(this).data('id');
+            let val_url = '/comercial/unidades/editar/' + val_id;
+            $.get(val_url, function(res) {
+                $('.titulo').html('Editar Unidad');
+                $('.btnRegistrar').html('Editar');
+                $('#cod_unidad').val(res.unidad.cod_unidad);
+                $('#razon_social').val(res.unidad.razon_social);
+                $('#ruc').val(res.unidad.ruc);
+                $('#nombre_comercial').val(res.unidad.nombre_comercial);
+
+                $('#departamento').val(res.unidad.cod_departamento);
+                $('#provincia').val(res.unidad.cod_provincia);
+                $('#distrito').val(res.unidad.cod_distrito);
+
+                $('#direccion').val(res.unidad.direccion);
+                $('#represetante_legal').val(res.unidad.represetante_legal);
+                $('#doct_ident_repre_leg').val(res.unidad.doct_ident_repre_leg);
+                $('#cargo_repre_leg').val(res.unidad.cargo_repre_leg);
+                $('#contacto').val(res.unidad.contacto);
+                $('#telefono').val(res.unidad.telefono);
+                $('#celular').val(res.unidad.celular);
+                $('#correo').val(res.unidad.correo);
+                $('#centro_costo').val(res.unidad.centro_costo);
+                $('#id_estado').val(res.unidad.id_estado);
+                $('#id_empresa').val(res.unidad.id_empresa);
+                $('#longitud').val(res.unidad.longitud);
+                $('#latitud').val(res.unidad.latitud);
+                $('#fecha_activacion').val(res.unidad.fecha_activacion);
+                $('#fecha_baja').val(res.unidad.fecha_baja);
+                $('#formulario').attr('action', '/comercial/unidades/actualizar/' + val_id);
+                $('#registrar').modal('show');
+            });
+        });
+
+        $('#tablaUnidad').on('click', '.btnBorrar', function(){
+            let id = $(this).data('id');
+            let url = '/comercial/unidades/borrar/'+id;
+            $.get(url,function(res){
+              if(res =='ok'){
+                location.reload();
+              }else{
+                toastr.warning('La Unidad esta siendo usado en un registro','Error',{"progressBar": true});
+              }
+            });
+        })
+    </script>
 @endsection
+
