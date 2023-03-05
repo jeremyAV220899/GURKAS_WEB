@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('razon_social',500);
             $table->string('ruc',20);
             $table->string('nombre_comercial',200);
-            $table->char('cod_departamento',4);
-            $table->char('cod_provincia',4);
-            $table->char('cod_distrito',4);
+            $table->char('cod_departamento',10);
+            $table->char('cod_provincia',10);
+            $table->char('cod_distrito',10);
             $table->string('direccion',500);
             $table->string('represetante_legal',150);
             $table->string('doct_ident_repre_leg',20);

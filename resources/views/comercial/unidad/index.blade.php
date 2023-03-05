@@ -14,7 +14,7 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos De la Unidad</h6>
                                 <hr />
-                                <form class="row g-3" method="POST" enctype="multipart/form-data">
+                                <form id="formulario" class="row g-3" method="POST"  action="{{ route('unidad.store') }}">
                                     @csrf
                                     <div class="col-6">
                                         <label class="form-label">Código Unidad</label>
@@ -34,18 +34,18 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento" aria-label="Default select example">
+                                        <select class="form-select" id="departamento" name="departamento" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -120,15 +120,16 @@
                                         <label class="form-label">Centro de Costo</label>
                                         <input id="centro_costo" name="centro_costo" type="text" class="form-control">
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -190,14 +191,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($unidades as $ids => $unidad)
+                                @foreach ($vista as $ids => $unidad)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $ids + 1 }}</td>
                                         <td>{{ $unidad->cod_unidad }}</td>
                                         <td>{{ $unidad->razon_social }}</td>
                                         <td>{{ $unidad->ruc }}</td>
-                                        <td>{{ $estado->nombre }}</td>
-                                        <td>{{ $empresa->nombre }}</td>
+                                        <td>{{ $unidad->est }}</td>
+                                        <td>{{ $unidad->emp }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <button class="btn text-primary btnVer" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
@@ -251,8 +252,8 @@
             $('#celular').val('');
             $('#correo').val('');
             $('#centro_costo').val('');
-            $('#id_estado').val('');
-            $('#id_empresa').val('');
+            $('#id_estado option:first').prop('selected',true);
+            $('#id_empresa option:first').prop('selected',true);
             $('#longitud').val('');
             $('#latitud').val('');
             $('#fecha_activacion').val('');

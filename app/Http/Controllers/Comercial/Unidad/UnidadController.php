@@ -7,18 +7,25 @@ use App\Models\Administrador\Sistema\Empresa;
 use App\Models\Administrador\Sistema\Estado;
 use App\Models\Comercial\Unidad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Response;
 
 class UnidadController extends Controller
 {
     public function index(){
        
+        $vista = DB::table('unidades')
+            ->select('unidades.id','unidades.cod_unidad','unidades.razon_social','unidades.ruc','empresas.nombre as emp','estados.nombre as est')
+            ->join('empresas', 'empresas.id', '=', 'unidades.id_empresa')
+            ->join('estados', 'estados.id', '=', 'unidades.id_estado')
+            ->get();
+
         $datos = [
             'estados' => Estado::all(),
             'empresas' => Empresa::all(),
             'unidades' => Unidad::all(),
         ];
-        return view('comercial.unidad.index', $datos,compact('datos'));
+        return view('comercial.unidad.index', $datos,['vista' => $vista]);
     }
 
     public function store (Request $request){
