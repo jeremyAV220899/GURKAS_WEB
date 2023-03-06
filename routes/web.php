@@ -35,6 +35,9 @@ use App\Http\Controllers\Administrador\ContratoController as AdminContratoContro
 use App\Http\Controllers\Administrador\EstadoController as AdminEstadoController;
 use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
 use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
+use App\Http\Controllers\Administrador\UsuarioController as AdminUsuarioController;
+use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
+
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -116,7 +119,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/comercial/sedes/actualizar/{id}', 'update');
         Route::get('/comercial/sedes/borrar/{id}', 'delete');
     });
-
+    /* ------------------ CENTRO DE CONTROL ------------------ */
+    /* ----- ASISTENCIA PERSONAL ----- */
+    Route::controller(CentroControlController::class)->group(function () {
+        Route::get('/centrocontrol/asistencia', 'index')->name('centrocontrol.asistencia');
+    });
     /* ------------------ PLANILLA ------------------ */
     /* ----- PERSONAL ----- */
     Route::controller(AfpPersonalLaboralesController::class)->group(function () {
@@ -237,6 +244,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/armados/editar/{id}', 'edit');
         Route::post('/administrador/sistemas/armados/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/armados/borrar/{id}', 'delete');
+    });
+    Route::controller(AdminUsuarioController::class)->group(function () {
+        Route::get('/administrador/sistemas/usuario', 'index')->name('administrador.sistemas.usuario');
+    
     });
 });
 

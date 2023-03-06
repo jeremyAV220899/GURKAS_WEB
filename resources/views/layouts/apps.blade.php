@@ -611,7 +611,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Asistencia de Personal</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Tareo de Personal</a></li>
+                                <li> <a href="{{ route('centrocontrol.asistencia') }}"><i class="bi bi-circle"></i>Tareo de Personal</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -992,7 +992,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Usuario</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Crear Usuario</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.usuario') }}"><i class="bi bi-circle"></i>Crear Usuario</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Editar Usuario</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Cambiar Contraseña</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Asignar Unidad</a></li>
