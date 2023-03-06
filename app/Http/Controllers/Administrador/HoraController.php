@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Administrador;
 
 use App\Http\Controllers\Controller;
-use App\Models\Hora;
+use App\Models\Administrador\Sistema\Hora;
 use Illuminate\Http\Request;
 use Response;
 

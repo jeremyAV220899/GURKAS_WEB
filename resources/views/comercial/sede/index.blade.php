@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Estado</label>
-                                        <select id="id_estado" name="id_estado" class="form-select" aria-label="Default select example">
+                                        <select id="estado_id" name="estado_id" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($estados as $estado)
                                                 <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
@@ -168,13 +168,13 @@
                                     </tr>
                                 </thead>
                                 <tbody> 
-                                @foreach ($vista as $ids => $sede)
+                                @foreach ($sedes as $ids => $sede)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $ids + 1 }}</td>
                                         <td>{{ $sede->cod_sede }}</td>
                                         <td>{{ $sede->nombre_sede }}</td>
-                                        <td>{{ $sede->nombre_sede }}</td>
-                                        <td>{{ $sede->est }}</td>
+                                        <td></td>
+                                        <td>{{ $sede->estado->nombre }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <button class="btn text-primary btnVer" type="button" data-id="{{ $sede->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
@@ -212,7 +212,7 @@
             $('.btnRegistrar').html('Registrar');
             $('#cod_sede').val('');
             $('#nombre_sede').val('');
-            $('#id_estado option:first').prop('selected',true);
+            $('#estado_id option:first').prop('selected',true);
             $('#departamento option:first').prop('selected',true);
             $('#provincia option:first').prop('selected',true);
             $('#distrito option:first').prop('selected',true);
@@ -238,7 +238,7 @@
                 $('.btnRegistrar').html('Editar');
                 $('#cod_sede').val(res.sede.cod_sede);
                 $('#nombre_sede').val(res.sede.nombre_sede);
-                $('#id_estado').val(res.sede.id_estado);
+                $('#estado_id').val(res.sede.estado_id);
                 $('#departamento').val(res.sede.cod_departamento);
                 $('#provincia').val(res.sede.cod_provincia);
                 $('#distrito').val(res.sede.cod_distrito);

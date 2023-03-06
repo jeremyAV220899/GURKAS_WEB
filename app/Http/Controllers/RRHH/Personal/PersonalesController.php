@@ -4,21 +4,21 @@ namespace App\Http\Controllers\RRHH\Personal;
 
 use App\Http\Controllers\Controller;
 use App\Models\Administrador\Sistema\Armado;
+use App\Models\Administrador\Sistema\Brevete;
 use App\Models\Administrador\Sistema\Contrato;
+use App\Models\Administrador\Sistema\Documento;
+use App\Models\Administrador\Sistema\Empresa;
 use App\Models\Administrador\Sistema\Estado;
+use App\Models\Administrador\Sistema\Genero;
 use App\Models\Administrador\Sistema\Grado;
+use App\Models\Administrador\Sistema\Hora;
+use App\Models\Administrador\Sistema\Nacionalidad;
 use App\Models\Administrador\Sistema\Puesto;
 use App\Models\Administrador\Sistema\Situacion;
 use App\Models\Administrador\Sistema\Talla;
+use App\Models\Administrador\Sistema\Turno;
 use Illuminate\Http\Request;
-use App\Models\Brevete;
-use App\Models\Documento;
-use App\Models\Empresa;
-use App\Models\Genero;
-use App\Models\Hora;
-use App\Models\Nacionalidad;
 
-use App\Models\Turno;
 
 class PersonalesController extends Controller
 {

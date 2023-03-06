@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cod_sede',20);
             $table->string('nombre_sede',500);
-            $table->foreignId('id_estado')->references('id')->on('estados');
+            $table->foreignId('estado_id')->references('id')->on('estados');
             $table->char('cod_departamento',10);
             $table->char('cod_provincia',10);
             $table->char('cod_distrito',10);
