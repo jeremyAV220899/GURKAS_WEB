@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Empresa</label>
-                                        <select id="id_empresa" name="id_empresa" class="form-select" aria-label="Default select example">
+                                        <select id="empresa_id" name="empresa_id" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($empresas as $empresa)
                                                 <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Estado</label>
-                                        <select id="id_estado" name="id_estado"  class="form-select" aria-label="Default select example">
+                                        <select id="estado_id" name="estado_id"  class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($estados as $estado)
                                             <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
@@ -191,14 +191,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($vista as $ids => $unidad)
+                                @foreach ($unidades as $ids => $unidad)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{ $ids + 1 }}</td>
                                         <td>{{ $unidad->cod_unidad }}</td>
                                         <td>{{ $unidad->razon_social }}</td>
                                         <td>{{ $unidad->ruc }}</td>
-                                        <td>{{ $unidad->est }}</td>
-                                        <td>{{ $unidad->emp }}</td>
+                                        <td>{{ $unidad->estado->nombre }}</td>
+                                        <td>{{ $unidad->empresa->nombre }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <button class="btn text-primary btnVer" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
@@ -238,11 +238,9 @@
             $('#razon_social').val('');
             $('#ruc').val('');
             $('#nombre_comercial').val('');
-
             $('#departamento option:first').prop('selected',true);
             $('#provincia option:first').prop('selected',true);
             $('#distrito option:first').prop('selected',true);
-
             $('#direccion').val('');
             $('#represetante_legal').val('');
             $('#doct_ident_repre_leg').val('');
@@ -252,8 +250,8 @@
             $('#celular').val('');
             $('#correo').val('');
             $('#centro_costo').val('');
-            $('#id_estado option:first').prop('selected',true);
-            $('#id_empresa option:first').prop('selected',true);
+            $('#estado_id option:first').prop('selected',true);
+            $('#empresa_id option:first').prop('selected',true);
             $('#longitud').val('');
             $('#latitud').val('');
             $('#fecha_activacion').val('');
@@ -272,11 +270,9 @@
                 $('#razon_social').val(res.unidad.razon_social);
                 $('#ruc').val(res.unidad.ruc);
                 $('#nombre_comercial').val(res.unidad.nombre_comercial);
-
                 $('#departamento').val(res.unidad.cod_departamento);
                 $('#provincia').val(res.unidad.cod_provincia);
                 $('#distrito').val(res.unidad.cod_distrito);
-
                 $('#direccion').val(res.unidad.direccion);
                 $('#represetante_legal').val(res.unidad.represetante_legal);
                 $('#doct_ident_repre_leg').val(res.unidad.doct_ident_repre_leg);
@@ -286,8 +282,8 @@
                 $('#celular').val(res.unidad.celular);
                 $('#correo').val(res.unidad.correo);
                 $('#centro_costo').val(res.unidad.centro_costo);
-                $('#id_estado').val(res.unidad.id_estado);
-                $('#id_empresa').val(res.unidad.id_empresa);
+                $('#estado_id').val(res.unidad.estado_id);
+                $('#empresa_id').val(res.unidad.empresa_id);
                 $('#longitud').val(res.unidad.longitud);
                 $('#latitud').val(res.unidad.latitud);
                 $('#fecha_activacion').val(res.unidad.fecha_activacion);

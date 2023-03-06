@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Administrador\Sistema;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estado extends Model
+class Hora extends Model
 {
     use HasFactory;
 }

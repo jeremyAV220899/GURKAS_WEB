@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Administrador;
 
 use App\Http\Controllers\Controller;
 use App\Models\Administrador\Sistema\Empresa;
-use App\Models\Estado;
+use App\Models\Administrador\Sistema\Estado;
 use Illuminate\Http\Request;
 use Response;
 

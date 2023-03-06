@@ -15,26 +15,24 @@ use Response;
 class SedeController extends Controller
 {
     public function index(){
-
-        $vista = DB::table('sedes')
-            ->select('sedes.id','sedes.cod_sede','sedes.nombre_sede','unidades.razon_social','estados.nombre as est')
-            ->join('unidades', 'unidades.cod_unidad', '=', 'sedes.cod_unidad')
-            ->join('estados', 'estados.id', '=', 'sedes.id_estado')
-            ->get();
+        $sedes = Sede::all();
+        $unidades = Unidad::all();
+        $estados = Estado::all();
 
         $datos = [
-            'estados' => Estado::all(),
-            'empresas' => Empresa::all(),
-            'unidades' => Unidad::all(),
+            'sedes' => $sedes,
+            'unidades' => $unidades,
+            'estados' => $estados
         ];
-        return view('comercial.sede.index',$datos,['vista' => $vista]);
+
+        return view('comercial.sede.index', $datos);
     }
 
     public function store (Request $request){
         $sede = new Sede();
         $sede->cod_sede=$request->cod_sede;
         $sede->nombre_sede=$request->nombre_sede;
-        $sede->id_estado=$request->id_estado;
+        $sede->estado_id=$request->estado_id;
         $sede->cod_departamento=$request->departamento;
         $sede->cod_provincia=$request->provincia;
         $sede->cod_distrito=$request->distrito;
@@ -64,7 +62,7 @@ class SedeController extends Controller
         $sede = Sede::find($id);
         $sede->cod_sede=$request->cod_sede;
         $sede->nombre_sede=$request->nombre_sede;
-        $sede->id_estado=$request->id_estado;
+        $sede->estado_id=$request->estado_id;
         $sede->cod_departamento=$request->departamento;
         $sede->cod_provincia=$request->provincia;
         $sede->cod_distrito=$request->distrito;

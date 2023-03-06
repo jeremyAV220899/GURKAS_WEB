@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('celular',10);
             $table->string('correo',100);
             $table->string('centro_costo',100);
-            $table->foreignId('id_estado')->references('id')->on('estados');
-            $table->foreignId('id_empresa')->references('id')->on('empresas');
+            $table->foreignId('estado_id')->references('id')->on('estados');
+            $table->foreignId('empresa_id')->references('id')->on('empresas');
             $table->string('longitud',100);
             $table->string('latitud',100);
             $table->date('fecha_activacion');
