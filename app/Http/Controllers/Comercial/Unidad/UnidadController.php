@@ -29,7 +29,7 @@ class UnidadController extends Controller
     }
 
     public function store (Request $request){
-        $unidad = new Unidad;
+        $unidad = new Unidad();
         $unidad->cod_unidad=$request->cod_unidad;
         $unidad->razon_social=$request->razon_social;
         $unidad->ruc=$request->ruc;

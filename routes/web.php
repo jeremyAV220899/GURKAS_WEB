@@ -111,6 +111,10 @@ Route::middleware(['auth'])->group(function () {
     /* ----- SEDE ----- */
     Route::controller(ComercialSedeController::class)->group(function () {
         Route::get('/comercial/sede', 'index')->name('comercial.sede');
+        Route::post('/comercial/sedes/guardar', 'store')->name('sede.store');
+        Route::get('/comercial/sedes/editar/{id}', 'edit');
+        Route::post('/comercial/sedes/actualizar/{id}', 'update');
+        Route::get('/comercial/sedes/borrar/{id}', 'delete');
     });
 
     /* ------------------ PLANILLA ------------------ */

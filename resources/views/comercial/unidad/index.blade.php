@@ -28,7 +28,7 @@
                                         <label class="form-label">Razón Social</label>
                                         <input id="razon_social" name="razon_social" type="text" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Nombre Comercial</label>
                                         <input id="nombre_comercial" name="nombre_comercial" type="text" class="form-control">
                                     </div>

@@ -14,97 +14,99 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos De la Sede</h6>
                                 <hr />
-                                <form class="row g-3" method="POST" enctype="multipart/form-data">
+                                <form id="formulario" class="row g-3" method="POST"  action="{{ route('sede.store') }}">
                                     @csrf
                                     <div class="col-6">
                                         <label class="form-label">Código Sede</label>
-                                        <input type="text" class="form-control" readonly>
+                                        <input id="cod_sede" name="cod_sede" type="text" class="form-control" >
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Nombre Sede</label>
-                                        <input type="text" class="form-control">
+                                        <input id="nombre_sede" name="nombre_sede" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Estado</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select id="id_estado" name="id_estado" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($estados as $estado)
+                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento" aria-label="Default select example">
+                                        <select class="form-select" id="departamento" name="departamento" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Dirección</label>
-                                        <textarea class="form-control" rows="2" cols="4"></textarea>
+                                        <textarea id="direccion" name="direccion"  class="form-control" rows="2" cols="4"></textarea>
                                     </div>
                                     
                                     <div class="col-6">
                                         <label class="form-label">Fech. Activación</label>
-                                        <input type="date" class="form-control">
+                                        <input id="fecha_activacion" name="fecha_activacion" type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Fech. Baja</label>
-                                        <input type="date" class="form-control">
+                                        <input id="fecha_baja" name="fecha_baja" type="date" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Latitud</label>
-                                        <input type="text" class="form-control">
+                                        <input id="latitud" name="latitud" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Longitud</label>
-                                        <input type="text" class="form-control">
+                                        <input id="longitud" name="longitud" type="text" class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
                                     <div class="col-6">
                                         <label class="form-label">Contacto</label>
-                                        <input type="text" class="form-control">
+                                        <input id="contacto" name="contacto" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Correo</label>
-                                        <input type="email" class="form-control">
+                                        <input id="correo" name="correo" type="email" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Celular</label>
-                                        <input type="text" class="form-control">
+                                        <input id="celular" name="celular" type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Centro de Costo</label>
-                                        <input type="text" class="form-control">
+                                        <input id="centro_costo" name="centro_costo"  type="text" class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Unidad Asignada</h6>
                                     <hr />
                                     <div class="col-12">
                                         <label class="form-label">Unidad</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            @foreach ($unidades as $unidad)
+                                                <option value="{{ $unidad->cod_unidad}}">{{ $unidad->razon_social}}</option>
+                                            @endforeach
                                         </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
                 </div>
             </div>
         </div>
@@ -124,7 +126,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary btnCrearSede" data-bs-toggle="modal"
                     data-bs-target="#registrar">Registrar Nuevo</button>
             </div>
         </div>
@@ -137,10 +139,15 @@
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
                     <div class="row">
                         <div class="col-sm-12">
-                            <table id="example2" class="table table-striped table-bordered dataTable" role="grid"
+                            <table id="tablaSede" class="table table-striped table-bordered dataTable" role="grid"
                                 aria-describedby="example2_info">
                                 <thead>
                                     <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Name: activate to sort column descending"
+                                        style="width: 157.641px;">
+                                        ID</th>
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
@@ -160,73 +167,32 @@
                                             style="width: 84.0781px;">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody> 
+                                @foreach ($vista as $ids => $sede)
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
+                                        <td class="sorting_1">{{ $ids + 1 }}</td>
+                                        <td>{{ $sede->cod_sede }}</td>
+                                        <td>{{ $sede->nombre_sede }}</td>
+                                        <td>{{ $sede->nombre_sede }}</td>
+                                        <td>{{ $sede->est }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
+                                                <button class="btn text-primary btnVer" type="button" data-id="{{ $sede->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
+                                                    <i class="bi bi-eye-fill">
+                                                    </i>
+                                                </button>
+                                                <button class="btn text-warning btnEditar" type="button" data-id="{{ $sede->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
+                                                    <i class="bi bi-pencil-fill">
+                                                    </i>
+                                                </button>
+                                                <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $sede->id }}">
+                                                    <i class="bi bi-trash-fill">
+                                                    </i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -236,7 +202,71 @@
         </div>
     </div>
 @endsection
-@section('script')
-<script src="/js/script.js"></script>
 
+@section('script')
+    <script src="/js/script.js"></script>
+    <script type="text/javascript">
+        $('.btnCrearSede').click(function() {
+            let val_url = '/comercial/sedes/guardar';
+            $('.titulo').html('Registrar Sede');
+            $('.btnRegistrar').html('Registrar');
+            $('#cod_sede').val('');
+            $('#nombre_sede').val('');
+            $('#id_estado option:first').prop('selected',true);
+            $('#departamento option:first').prop('selected',true);
+            $('#provincia option:first').prop('selected',true);
+            $('#distrito option:first').prop('selected',true);
+            $('#direccion').val('');
+            $('#fecha_activacion').val('');
+            $('#fecha_baja').val('');       
+            $('#longitud').val('');
+            $('#latitud').val('');
+            $('#contacto').val('');
+            $('#correo').val('');
+            $('#celular').val('');
+            $('#centro_costo').val('');
+            $('#cod_unidad option:first').prop('selected',true);
+            $('#formulario').attr('action', val_url);
+            $('#registrar').modal('show');
+        })
+
+        $('#tablaSede').on('click', '.btnEditar', function() {
+            let val_id = $(this).data('id');
+            let val_url = '/comercial/sedes/editar/' + val_id;
+            $.get(val_url, function(res) {
+                $('.titulo').html('Editar Sede');
+                $('.btnRegistrar').html('Editar');
+                $('#cod_sede').val(res.sede.cod_sede);
+                $('#nombre_sede').val(res.sede.nombre_sede);
+                $('#id_estado').val(res.sede.id_estado);
+                $('#departamento').val(res.sede.cod_departamento);
+                $('#provincia').val(res.sede.cod_provincia);
+                $('#distrito').val(res.sede.cod_distrito);
+                $('#direccion').val(res.sede.direccion);
+                $('#fecha_activacion').val(res.sede.fecha_activacion);
+                $('#fecha_baja').val(res.sede.fecha_baja);
+                $('#longitud').val(res.sede.longitud);
+                $('#latitud').val(res.sede.latitud);
+                $('#contacto').val(res.sede.contacto);
+                $('#correo').val(res.sede.celular);
+                $('#celular').val(res.sede.correo);
+                $('#centro_costo').val(res.sede.centro_costo);
+                $('#cod_unidad').val(res.sede.cod_unidad);
+                $('#formulario').attr('action', '/comercial/sedes/actualizar/' + val_id);
+                $('#registrar').modal('show');
+            });
+        });
+
+        $('#tablaSede').on('click', '.btnBorrar', function(){
+            let id = $(this).data('id');
+            let url = '/comercial/sedes/borrar/'+id;
+            $.get(url,function(res){
+                if(res =='ok'){
+                    location.reload();
+                }else{
+                    toastr.warning('La Unidad esta siendo usado en un registro','Error',{"progressBar": true});
+                }
+            });
+        })
+    </script>
 @endsection
