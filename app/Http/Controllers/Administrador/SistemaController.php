@@ -127,4 +127,57 @@ class SistemaController extends Controller
         $distritos = Distrito::where('codigo','like',$codigo.'%')->get();
         return Response::json($distritos);
     }
+
+    public function seleccionarUbigeo(Request $request){
+        $dep = $request->departamento;
+        $prov = $request->provincia;
+        $dist = $request->distrito;
+        $ubigeo = $request->ubigeo;
+        $htmlDep = '<option value="">--- Seleccionar ---</option>';
+        $htmlProv = '<option value="">--- Seleccionar ---</option>';
+        $htmlDist = '<option value="">--- Seleccionar ---</option>';
+
+        $ubigeoDep = substr($ubigeo,0,-4);
+        $ubigeoProv = substr($ubigeo,0,-2);
+        $ubigeoDist = $ubigeo;
+
+        $departamentos = Departamento::all();
+        foreach ($departamentos as $departamento){
+            if ($departamento->codigo == $ubigeoDep ){
+                $htmlDep .= '<option value="'.$departamento->codigo.'" selected>'.$departamento->nombre.'</option>';
+            }else{
+                $htmlDep .= '<option value="'.$departamento->codigo.'"  >'.$departamento->nombre.'</option>';
+            }
+        }
+
+        $provincias = Provincia::where('codigo','like',$ubigeoDep.'%')->get();
+        foreach ($provincias as $provincia){
+            if ($provincia->codigo == $ubigeoProv ){
+                $htmlProv .= "<option value='".$provincia->codigo."' selected>".$provincia->nombre."</option>";
+            }else{
+                $htmlProv .= "<option value='".$provincia->codigo."' >".$provincia->nombre."</option>";
+            }
+        }
+
+        $distritos = Distrito::where('codigo','like',$ubigeoProv.'%')->get();
+        foreach ($distritos as $distrito){
+            if ($distrito->codigo == $ubigeoDist ){
+                $htmlDist .= "<option value='".$distrito->codigo."' selected>".$distrito->nombre."</option>";
+            }else{
+                $htmlDist .= "<option value='".$distrito->codigo."' >".$distrito->nombre."</option>";
+            }
+        }
+
+        $response = [
+            'dep' => $dep,
+            'prov' => $prov,
+            'dist' => $dist,
+            'htmlDep' => $htmlDep,
+            'htmlProv' => $htmlProv,
+            'htmlDist' => $htmlDist,
+            'ubigeo' => $ubigeo
+
+        ];
+        return Response::json($response);
+    }
 }

@@ -16,11 +16,7 @@
                                 <hr />
                                 <form id="formulario" class="row g-3" method="POST"  action="{{ route('sede.store') }}">
                                     @csrf
-                                    <div class="col-6">
-                                        <label class="form-label">Código Sede</label>
-                                        <input id="cod_sede" name="cod_sede" type="text" class="form-control" >
-                                    </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Nombre Sede</label>
                                         <input id="nombre_sede" name="nombre_sede" type="text" class="form-control">
                                     </div>
@@ -92,7 +88,7 @@
                                     <hr />
                                     <div class="col-12">
                                         <label class="form-label">Unidad</label>
-                                        <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
+                                        <select  id="unidad_id" name="unidad_id" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($unidades as $unidad)
                                                 <option value="{{ $unidad->id}}">{{ $unidad->razon_social}}</option>
@@ -144,11 +140,6 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending"
-                                        style="width: 157.641px;">
-                                        ID</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
                                             style="width: 157.641px;">
@@ -170,10 +161,9 @@
                                 <tbody> 
                                 @foreach ($sedes as $ids => $sede)
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">{{ $ids + 1 }}</td>
-                                        <td>{{ $sede->cod_sede }}</td>
+                                        <td>{{ Util::codigoSede($sede->id) }}</td>
                                         <td>{{ $sede->nombre_sede }}</td>
-                                        <td>{{ $sede->cod_unidad}}</td>
+                                        <td>{{ $sede->unidad->razon_social}}</td>
                                         <td>{{ $sede->estado->nombre }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -210,7 +200,6 @@
             let val_url = '/comercial/sedes/guardar';
             $('.titulo').html('Registrar Sede');
             $('.btnRegistrar').html('Registrar');
-            $('#cod_sede').val('');
             $('#nombre_sede').val('');
             $('#estado_id option:first').prop('selected',true);
             $('#departamento option:first').prop('selected',true);
@@ -225,7 +214,7 @@
             $('#correo').val('');
             $('#celular').val('');
             $('#centro_costo').val('');
-            $('#cod_unidad option:first').prop('selected',true);
+            $('#unidad_id option:first').prop('selected',true);
             $('#formulario').attr('action', val_url);
             $('#registrar').modal('show');
         })
@@ -236,7 +225,6 @@
             $.get(val_url, function(res) {
                 $('.titulo').html('Editar Sede');
                 $('.btnRegistrar').html('Editar');
-                $('#cod_sede').val(res.sede.cod_sede);
                 $('#nombre_sede').val(res.sede.nombre_sede);
                 $('#estado_id').val(res.sede.estado_id);
                 $('#departamento').val(res.sede.cod_departamento);
@@ -251,7 +239,7 @@
                 $('#correo').val(res.sede.celular);
                 $('#celular').val(res.sede.correo);
                 $('#centro_costo').val(res.sede.centro_costo);
-                $('#cod_unidad').val(res.sede.cod_unidad);
+                $('#unidad_id').val(res.sede.unidad_id);
                 $('#formulario').attr('action', '/comercial/sedes/actualizar/' + val_id);
                 $('#registrar').modal('show');
             });

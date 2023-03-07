@@ -30,7 +30,6 @@ class SedeController extends Controller
 
     public function store (Request $request){
         $sede = new Sede();
-        $sede->cod_sede=$request->cod_sede;
         $sede->nombre_sede=$request->nombre_sede;
         $sede->estado_id=$request->estado_id;
         $sede->cod_departamento=$request->departamento;
@@ -45,7 +44,7 @@ class SedeController extends Controller
         $sede->correo=$request->correo;
         $sede->celular=$request->celular;
         $sede->centro_costo=$request->centro_costo;
-        $sede->cod_unidad=$request->cod_unidad;
+        $sede->unidad_id=$request->unidad_id;
         $sede->save();
         return redirect()->route('comercial.sede');
     }
@@ -60,7 +59,6 @@ class SedeController extends Controller
 
     public function update ($id, Request $request){
         $sede = Sede::find($id);
-        $sede->cod_sede=$request->cod_sede;
         $sede->nombre_sede=$request->nombre_sede;
         $sede->estado_id=$request->estado_id;
         $sede->cod_departamento=$request->departamento;
@@ -75,7 +73,7 @@ class SedeController extends Controller
         $sede->correo=$request->correo;
         $sede->celular=$request->celular;
         $sede->centro_costo=$request->centro_costo;
-        $sede->cod_unidad=$request->cod_unidad;
+        $sede->unidad_id=$request->unidad_id;
         $sede->save();
         return redirect()->route('comercial.sede');
     }

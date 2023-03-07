@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     /* ----- PERSONAL ----- */
     Route::controller(DatosPersonalesController::class)->group(function () {
         Route::get('/rrhh/personal/index', 'index')->name('personal.index');
+        Route::post('/rrhh/personales/index/guardar', 'store')->name('personal.store');
     });
     Route::controller(DatosFamiliaresController::class)->group(function () {
         Route::get('/rrhh/personal/familiares', 'index')->name('personal.familiares');
@@ -144,6 +145,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/ubigeo/provinciacarga', 'provinciaImportExcel')->name('carga.provincia');
         Route::post('/administrador/sistemas/ubigeo/distritocarga', 'distritoImportExcel')->name('carga.distrito');
         Route::get('/servicios/ubigeo/departamento', 'listaDepartamentos');
+        Route::post('/servicios/ubigeo/seleccionar', 'seleccionarUbigeo');
         Route::get('/servicios/ubigeo/provincia/{departamento}', 'listaProvincias');
         Route::get('/servicios/ubigeo/distrito/{provincia}', 'listaDistritos');
     });

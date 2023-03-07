@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('unidades', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_unidad',20);
             $table->string('razon_social',500);
             $table->string('ruc',20);
             $table->string('nombre_comercial',200);

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('sedes', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_sede',20);
             $table->string('nombre_sede',500);
             $table->foreignId('estado_id')->references('id')->on('estados');
             $table->char('cod_departamento',10);
@@ -28,7 +27,7 @@ return new class extends Migration
             $table->string('correo',100);
             $table->string('celular',10);
             $table->string('centro_costo',100);
-            $table->foreignId('cod_unidad')->references('id')->on('unidades');
+            $table->foreignId('unidad_id')->references('id')->on('unidades');
             $table->timestamps();
         });
     }
