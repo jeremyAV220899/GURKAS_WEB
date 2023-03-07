@@ -95,7 +95,7 @@
                                         <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($unidades as $unidad)
-                                                <option value="{{ $unidad->cod_unidad}}">{{ $unidad->razon_social}}</option>
+                                                <option value="{{ $unidad->id}}">{{ $unidad->razon_social}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -173,7 +173,7 @@
                                         <td class="sorting_1">{{ $ids + 1 }}</td>
                                         <td>{{ $sede->cod_sede }}</td>
                                         <td>{{ $sede->nombre_sede }}</td>
-                                        <td></td>
+                                        <td>{{ $sede->cod_unidad}}</td>
                                         <td>{{ $sede->estado->nombre }}</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">

@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('correo',100);
             $table->string('celular',10);
             $table->string('centro_costo',100);
-            $table->string('cod_unidad',20);
+            $table->foreignId('cod_unidad')->references('id')->on('unidades');
             $table->timestamps();
         });
     }
