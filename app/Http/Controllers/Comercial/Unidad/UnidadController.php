@@ -77,8 +77,8 @@ class UnidadController extends Controller
         $unidad->celular=$request->celular;
         $unidad->correo=$request->correo;
         $unidad->centro_costo=$request->centro_costo;
-        $unidad->id_estado=$request->id_estado;
-        $unidad->id_empresa=$request->id_empresa;
+        $unidad->estado_id=$request->estado_id;
+        $unidad->empresa_id=$request->empresa_id;
         $unidad->longitud=$request->longitud;
         $unidad->latitud=$request->latitud;
         $unidad->fecha_activacion=$request->fecha_activacion;

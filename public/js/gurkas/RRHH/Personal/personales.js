@@ -31,7 +31,7 @@ $(document).ready(function(){
         $('#situaciones_id').val('');
         $('#grados_id').val('');
         $('#estado_id').val('');
-        $('#puesto_id').val('');
+        $('#puesto_id option:first').prop('selected',true);
         $('#empresa_id').val('');
         $('#contrato_id').val('');
         $('#fecha_inicio_contrato').val('');
@@ -74,6 +74,18 @@ $(document).ready(function(){
             Fn.distritos(codProvincia)
         }else{
             Fn.initdistritos(true);
+        }
+    });
+
+    $('#doc_ident').keyup(function(){
+        if($('#doc_ident').val().length == 8 && $('#puesto_id').val().length >= 1){
+            $('#cod_empleado').val('AC'+$('#doc_ident').val())
+        }
+    });
+
+    $('#puesto_id').change(function(){
+        if($('#puesto_id').val().length >= 1 && $('#doc_ident').val().length == 8){
+            $('#cod_empleado').val('AC'+$('#doc_ident').val())
         }
     });
 
