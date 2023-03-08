@@ -27,7 +27,6 @@ class UnidadController extends Controller
 
     public function store (Request $request){
         $unidad = new Unidad();
-        $unidad->cod_unidad=$request->cod_unidad;
         $unidad->razon_social=$request->razon_social;
         $unidad->ruc=$request->ruc;
         $unidad->nombre_comercial=$request->nombre_comercial;
@@ -63,7 +62,6 @@ class UnidadController extends Controller
 
     public function update ($id, Request $request){
         $unidad = Unidad::find($id);
-        $unidad->cod_unidad=$request->cod_unidad;
         $unidad->razon_social=$request->razon_social;
         $unidad->ruc=$request->ruc;
         $unidad->nombre_comercial=$request->nombre_comercial;
@@ -79,8 +77,8 @@ class UnidadController extends Controller
         $unidad->celular=$request->celular;
         $unidad->correo=$request->correo;
         $unidad->centro_costo=$request->centro_costo;
-        $unidad->id_estado=$request->id_estado;
-        $unidad->id_empresa=$request->id_empresa;
+        $unidad->estado_id=$request->estado_id;
+        $unidad->empresa_id=$request->empresa_id;
         $unidad->longitud=$request->longitud;
         $unidad->latitud=$request->latitud;
         $unidad->fecha_activacion=$request->fecha_activacion;

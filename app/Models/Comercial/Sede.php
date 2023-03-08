@@ -14,4 +14,8 @@ class Sede extends Model
         return $this->belongsTo(Estado::class);
     }
 
+    public function unidad(){
+        return $this->belongsTo(Unidad::class);
+    }
+
 }
