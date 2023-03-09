@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrar Sede</h5>
+                    <h5 class="modal-title titulo"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -194,67 +194,6 @@
 @endsection
 
 @section('script')
-    <script src="/js/script.js"></script>
-    <script type="text/javascript">
-        $('.btnCrearSede').click(function() {
-            let val_url = '/comercial/sedes/guardar';
-            $('.titulo').html('Registrar Sede');
-            $('.btnRegistrar').html('Registrar');
-            $('#nombre_sede').val('');
-            $('#estado_id option:first').prop('selected',true);
-            $('#departamento option:first').prop('selected',true);
-            $('#provincia option:first').prop('selected',true);
-            $('#distrito option:first').prop('selected',true);
-            $('#direccion').val('');
-            $('#fecha_activacion').val('');
-            $('#fecha_baja').val('');       
-            $('#longitud').val('');
-            $('#latitud').val('');
-            $('#contacto').val('');
-            $('#correo').val('');
-            $('#celular').val('');
-            $('#centro_costo').val('');
-            $('#unidad_id option:first').prop('selected',true);
-            $('#formulario').attr('action', val_url);
-            $('#registrar').modal('show');
-        })
-
-        $('#tablaSede').on('click', '.btnEditar', function() {
-            let val_id = $(this).data('id');
-            let val_url = '/comercial/sedes/editar/' + val_id;
-            $.get(val_url, function(res) {
-                $('.titulo').html('Editar Sede');
-                $('.btnRegistrar').html('Editar');
-                $('#nombre_sede').val(res.sede.nombre_sede);
-                $('#estado_id').val(res.sede.estado_id);
-                $('#departamento').val(res.sede.cod_departamento);
-                $('#provincia').val(res.sede.cod_provincia);
-                $('#distrito').val(res.sede.cod_distrito);
-                $('#direccion').val(res.sede.direccion);
-                $('#fecha_activacion').val(res.sede.fecha_activacion);
-                $('#fecha_baja').val(res.sede.fecha_baja);
-                $('#longitud').val(res.sede.longitud);
-                $('#latitud').val(res.sede.latitud);
-                $('#contacto').val(res.sede.contacto);
-                $('#correo').val(res.sede.celular);
-                $('#celular').val(res.sede.correo);
-                $('#centro_costo').val(res.sede.centro_costo);
-                $('#unidad_id').val(res.sede.unidad_id);
-                $('#formulario').attr('action', '/comercial/sedes/actualizar/' + val_id);
-                $('#registrar').modal('show');
-            });
-        });
-
-        $('#tablaSede').on('click', '.btnBorrar', function(){
-            let id = $(this).data('id');
-            let url = '/comercial/sedes/borrar/'+id;
-            $.get(url,function(res){
-                if(res =='ok'){
-                    location.reload();
-                }else{
-                    toastr.warning('La Unidad esta siendo usado en un registro','Error',{"progressBar": true});
-                }
-            });
-        })
-    </script>
+    <script src="/js/core/function.js"></script>
+    <script src="/js/gurkas/comercial/sede.js"></script>
 @endsection

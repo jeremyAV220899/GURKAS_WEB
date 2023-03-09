@@ -14,7 +14,8 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos Personales</h6>
                                 <hr />
-                                <form id="formulario" class="row g-3" method="POST"  action="{{ route('personal.store') }}" enctype="multipart/form-data">
+                                <form id="formulario" class="row g-3" method="POST" action="{{ route('personal.store') }}"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-6">
                                         <label class="form-label">Código Empleado</label>
@@ -414,8 +415,5 @@
 @section('script')
     <script src="/js/core/function.js"></script>
     <script src="/js/gurkas/RRHH/Personal/personales.js"></script>
-    <script type="text/javascript">
-              
-    </script>
+    <script type="text/javascript"></script>
 @endsection
-

@@ -220,8 +220,5 @@
 @section('script')
     <script src="/js/core/function.js"></script>
     <script src="/js/gurkas/comercial/unidad.js"></script>
-    <script type="text/javascript">
-    
-    </script>
 @endsection
 
