@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="formFile" class="form-label">Foto</label>
-                                        <input class="form-control" id="foto" name="foto" type="file"
+                                        <input class="form-control" id="imagen" name="imagen" type="file"
                                             id="formFile">
                                     </div>
                                     <div class="col-6">
@@ -111,19 +111,19 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento"
+                                        <select class="form-select" id="departamento" name="departamento"
                                             aria-label="Default select example">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -191,7 +191,7 @@
                                             aria-label="Default select example">
                                             <option value="" selected="">--- Seleccionar ---</option>
                                             @foreach ($puestos as $puesto)
-                                                <option value="{{ $puesto->id }}">{{ $puesto->descripcionPuesto }}
+                                                <option value="{{ $puesto->codigo }}">{{ $puesto->descripcionPuesto }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -364,13 +364,13 @@
                                             style="width: 30.094px;">Foto</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 190.094px;">Nombres</th>
+                                            style="width: 190.094px;">Nombres y Apellidos</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
-                                            style="width: 112.406px;">Apellido Paterno</th>
+                                            style="width: 112.406px;">Estado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Age: activate to sort column ascending"
-                                            style="width: 49.8594px;">Apellido Materno</th>
+                                            style="width: 49.8594px;">Nacionalidad</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 84.0781px;">Acciones</th>
@@ -379,11 +379,11 @@
                                 <tbody>
                                     @foreach ($personales as $ids => $personal)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1"></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="sorting_1">{{ $personal->cod_empleado }}</td>
+                                            <td><img src="{{ Storage::url($personal->imagen)}}" alt="" class="product-img-2"></td>
+                                            <td>{{ $personal->nombre_completo }}</td>
+                                            <td>{{ $personal->estado->nombre }}</td>
+                                            <td>{{ $personal->nacionalidad->nombre }}</td>
                                             <td>
                                                 <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                     <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"

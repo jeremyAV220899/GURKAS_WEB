@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('apellido_paterno', 50);
             $table->string('apellido_materno', 50);
             $table->string('nombre_completo', 50)->nullable();
-            $table->string('foto')->nullable();
+            $table->string('imagen', 60)->nullable();
             $table->char('edad_empleado',4)->nullable();
             $table->date('fecha_nacimiento');
             $table->foreignId('genero_id')->references('id')->on('generos');
@@ -27,9 +27,9 @@ return new class extends Migration
             $table->foreignId('brevete_id')->references('id')->on('brevetes');
             $table->string('num_brevete',15);
             $table->foreignId('nacionalidad_id')->references('id')->on('nacionalidades');
-            $table->foreignId('departamento_id')->references('id')->on('departamentos');
-            $table->foreignId('provincias_id')->references('id')->on('provincias');
-            $table->foreignId('distritos_id')->references('id')->on('distritos');
+            $table->char('cod_departamento',10);
+            $table->char('cod_provincia',10);
+            $table->char('cod_distrito',10);
             $table->string('direccion_personal',200)->nullable();
             $table->string('telefono',12)->nullable();
             $table->string('celular',12)->nullable();

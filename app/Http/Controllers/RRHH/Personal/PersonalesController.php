@@ -50,12 +50,16 @@ class PersonalesController extends Controller
 
     public function store(Request $request){
         $personal = new Personal();
-        //$unidad->razon_social=$request->razon_social; codigo
+        $personal->cod_empleado=$request->cod_empleado;
         $personal->nombre_empleado=$request->nombre_empleado;
         $personal->apellido_paterno=$request->apellido_paterno;
         $personal->apellido_materno=$request->apellido_materno;
-        $personal->apellido_materno=$request->apellido_materno;
+        $personal->nombre_completo=$request->nombre_empleado . ' ' . $request->apellido_paterno . ' ' . $request->apellido_materno;
+        if (isset($request->imagen)) {
+            $personal->imagen=$request->file('imagen')->store('public/img');
+        }
         //$personal->apellido_materno=$request->apellido_materno; foto
+        //$personal->apellido_materno=$request->apellido_materno; EDAD $var1 . $var2;
         $personal->fecha_nacimiento=$request->fecha_nacimiento;
         $personal->genero_id=$request->genero_id;
         $personal->documento_id=$request->documento_id;
@@ -66,7 +70,9 @@ class PersonalesController extends Controller
         $personal->brevete_id=$request->brevete_id;
         $personal->num_brevete=$request->num_brevete;
         $personal->nacionalidad_id=$request->nacionalidad_id;
-        //departamento - provincia - distrito
+        $personal->cod_departamento=$request->departamento;
+        $personal->cod_provincia=$request->provincia;
+        $personal->cod_distrito=$request->distrito;
         $personal->direccion_personal=$request->direccion_personal;
         $personal->telefono=$request->telefono;
         $personal->celular=$request->celular;
