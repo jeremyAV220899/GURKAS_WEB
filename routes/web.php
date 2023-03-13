@@ -109,6 +109,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/comercial/unidad', 'index')->name('comercial.unidad');
         Route::post('/comercial/unidades/guardar', 'store')->name('unidad.store');
         Route::get('/comercial/unidades/editar/{id}', 'edit');
+        Route::get('/comercial/unidades/ver/{id}', 'ver');
         Route::post('/comercial/unidades/actualizar/{id}', 'update');
         Route::get('/comercial/unidades/borrar/{id}', 'delete');
     });

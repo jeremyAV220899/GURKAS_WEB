@@ -60,6 +60,13 @@ class UnidadController extends Controller
         return Response::json($datos);
     }
 
+    public function ver($id){
+        $unidad = Unidad::find($id);
+        $datos = [
+            'unidad' => $unidad,
+        ];
+        return Response::json($datos);
+    }
     public function update ($id, Request $request){
         $unidad = Unidad::find($id);
         $unidad->razon_social=$request->razon_social;

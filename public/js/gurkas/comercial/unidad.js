@@ -65,6 +65,36 @@ $(document).ready(function(){
         });
     });
 
+    $('#tablaUnidad').on('click', '.btnVer', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/comercial/unidades/ver/' + val_id;
+            
+        $.get(val_url, function(res) {
+            console.log(res);
+            $('#ruc_ver').val(res.unidad.ruc);
+            $('#razon_social_ver').val(res.unidad.razon_social);
+            $('#nombre_comercial_ver').val(res.unidad.nombre_comercial);
+            Fn.seleccionarUbigeo(res.unidad.cod_distrito,'departamento_ver','provincia_ver','distrito_ver');
+            $('#direccion_ver').val(res.unidad.direccion);
+            $('#empresa_id_ver').val(res.unidad.empresa_id);
+            $('#estado_id_ver').val(res.unidad.estado_id);
+            $('#fecha_activacion_ver').val(res.unidad.fecha_activacion);
+            $('#fecha_baja_ver').val(res.unidad.fecha_baja);
+
+            $('#latitud_ver').val(res.unidad.latitud);
+            $('#longitud_ver').val(res.unidad.longitud);
+            $('#represetante_legal_ver').val(res.unidad.represetante_legal);
+            $('#doct_ident_repre_leg_ver').val(res.unidad.doct_ident_repre_leg);
+            $('#cargo_repre_leg_ver').val(res.unidad.cargo_repre_leg);
+            $('#contacto_ver').val(res.unidad.contacto);
+            $('#telefono_ver').val(res.unidad.telefono);
+            $('#celular_ver').val(res.unidad.celular);
+            $('#correo_ver').val(res.unidad.correo);
+            $('#centro_costo_ver').val(res.unidad.centro_costo);
+            $('#visualizar').modal('show');
+        });
+    });
+
     $('#tablaUnidad').on('click', '.btnBorrar', function(){
         let id = $(this).data('id');
         let url = '/comercial/unidades/borrar/'+id;
