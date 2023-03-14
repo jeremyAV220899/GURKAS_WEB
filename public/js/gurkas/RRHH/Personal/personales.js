@@ -79,13 +79,43 @@ $(document).ready(function(){
 
     $('#doc_ident').keyup(function(){
         if($('#doc_ident').val().length == 8 && $('#puesto_id').val().length >= 1){
-            $('#cod_empleado').val($('#puesto_id').val()+$('#doc_ident').val())
+            $('#cod_empleado').val($('#puesto_id').find(':selected').data('cod')+$('#doc_ident').val())
         }
     });
 
     $('#puesto_id').change(function(){
         if($('#puesto_id').val().length >= 1 && $('#doc_ident').val().length == 8){
-            $('#cod_empleado').val($('#puesto_id').val()+$('#doc_ident').val())
+            $('#cod_empleado').val($('#puesto_id').find(':selected').data('cod')+$('#doc_ident').val())
         }
     });
+
+    $('#registrarModal').click(function(){
+        $('#sede_id option:first').prop('selected',true);
+        $('#sede_id').prop('disabled', true);
+    });
+
+    $('#unidad_id').change(function(){
+        let id = $(this).val();
+        let url = `/api/servicios/rrhh/getSedes/${id}`;
+        $('#sede_id').html('').append($('<option/>', {
+            value: '',
+            text: '----- Seleccionar -----'
+        }));
+        if(id == ''){
+            $('#sede_id option:first').prop('selected',true);
+            $('#sede_id').prop('disabled', true);
+        }else{
+            $.get(url, function(response){
+                console.log(response);
+                $.each(response, function(index,value){
+                    $('#sede_id').append($('<option/>', {
+                        value: value.id,
+                        text: value.nombre_sede
+                    }));
+                });
+                $('#sede_id').prop('disabled', false);
+            });
+        }
+        
+    })
 });

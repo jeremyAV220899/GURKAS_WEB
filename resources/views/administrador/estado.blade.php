@@ -18,8 +18,7 @@
                                     @csrf
                                     <div class="col-12">
                                         <label class="form-label">Descripción</label>
-                                        <input type="text" id="nombre" name="nombre" class="form-control"
-                                            required>
+                                        <input type="text" id="nombre" name="nombre" class="form-control" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -61,49 +60,38 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table id="tablaEstado" class="table table-striped table-bordered dataTable" role="grid"
-                                aria-describedby="example2_info">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Name: activate to sort column descending" style="width: 50.641px;">
-                                            ID</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 50.094px;">Estado</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Salary: activate to sort column ascending"
-                                            style="width: 50.0781px;">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($estados as $ids => $estado)
-                                        <tr role="row" class="odd">
-                                            <td class="sorting_1">{{ $ids + 1 }}</td>
-                                            <td>{{ $estado->nombre }}</td>
-                                            <td>
-                                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $estado->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
-                                                        <i class="bi bi-pencil-fill">
-                                                        </i>
-                                                    </button>
-                                                    <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $estado->id }}">
-                                                        <i class="bi bi-trash-fill">
-                                                        </i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <table id="example2" class="table table-striped table-bordered tablaEstado">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($estados as $ids => $estado)
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">{{ $ids + 1 }}</td>
+                                <td>{{ $estado->nombre }}</td>
+                                <td>
+                                    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                        <button class="btn text-warning btnEditar" type="button"
+                                            data-id="{{ $estado->id }}" data-bs-toggle="modal"
+                                            data-bs-target="#registrar">
+                                            <i class="bi bi-pencil-fill">
+                                            </i>
+                                        </button>
+                                        <button class="btn text-danger btnBorrar" title="Eliminar" type="button"
+                                            data-id="{{ $estado->id }}">
+                                            <i class="bi bi-trash-fill">
+                                            </i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -119,7 +107,7 @@
             $('#registrar').modal('show');
         })
 
-        $('#tablaEstado').on('click', '.btnEditar', function() {
+        $('.tablaEstado').on('click', '.btnEditar', function() {
             let val_id = $(this).data('id');
             let val_url = '/administrador/sistemas/estados/editar/' + val_id;
             $.get(val_url, function(res) {
@@ -131,15 +119,17 @@
             });
         });
 
-        $('#tablaEstado').on('click', '.btnBorrar', function(){
+        $('.tablaEstado').on('click', '.btnBorrar', function() {
             let id = $(this).data('id');
-            let url = '/administrador/sistemas/estados/borrar/'+id;
-            $.get(url,function(res){
-              if(res =='ok'){
-                location.reload();
-              }else{
-                toastr.warning('El Estado esta siendo usado en un registro','Error',{"progressBar": true});
-              }
+            let url = '/administrador/sistemas/estados/borrar/' + id;
+            $.get(url, function(res) {
+                if (res == 'ok') {
+                    location.reload();
+                } else {
+                    toastr.warning('El Estado esta siendo usado en un registro', 'Error', {
+                        "progressBar": true
+                    });
+                }
             });
         })
     </script>

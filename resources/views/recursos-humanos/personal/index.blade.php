@@ -191,7 +191,7 @@
                                             aria-label="Default select example">
                                             <option value="" selected="">--- Seleccionar ---</option>
                                             @foreach ($puestos as $puesto)
-                                                <option value="{{ $puesto->codigo }}">{{ $puesto->descripcionPuesto }}
+                                                <option value="{{ $puesto->id }}" data-cod="{{ $puesto->codigo }}">{{ $puesto->descripcionPuesto }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -230,7 +230,7 @@
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" id="unidad_id" name="unidad_id"
                                             aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
                                             @foreach ($unidades as $unidad)
                                                 <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
                                             @endforeach
@@ -238,19 +238,16 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Sede</label>
-                                        <select class="form-select" id="sede_id" name="sede_id"
+                                        <select class="form-select" id="sede_id" name="sede_id" 
                                             aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            @foreach ($sedes as $sede)
-                                                <option value="{{ $sede->id }}">{{ $sede->nombre_sede }}</option>
-                                            @endforeach
+                                            <option value="" selected>--- Seleccionar ---</option>                                            
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Turno</label>
                                         <select class="form-select" id="turno_id" name="turno_id"
                                             aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option selected>--- Seleccionar ---</option>
                                             @foreach ($turnos as $turno)
                                                 <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
                                             @endforeach
@@ -337,7 +334,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearPersonal" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary btnCrearPersonal" id="registrarModal" data-bs-toggle="modal"
                     data-bs-target="#registrar">Registrar Nuevo</button>
             </div>
         </div>

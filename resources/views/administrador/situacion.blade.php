@@ -14,7 +14,8 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos De la Situación</h6>
                                 <hr />
-                                <form id="formulario" class="row g-3" method="POST" action="{{ route('situacion.store') }}">
+                                <form id="formulario" class="row g-3" method="POST"
+                                    action="{{ route('situacion.store') }}">
                                     @csrf
                                     <div class="col-12">
                                         <label class="form-label">Descripción</label>
@@ -61,49 +62,38 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table id="tablaSituaciones" class="table table-striped table-bordered dataTable" role="grid"
-                                aria-describedby="example2_info">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-sort="ascending"
-                                            aria-label="Name: activate to sort column descending" style="width: 50.641px;">
-                                            ID</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 50.094px;">Hora</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                            colspan="1" aria-label="Salary: activate to sort column ascending"
-                                            style="width: 50.0781px;">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($situaciones as $ids => $situacion)
-                                        <tr role="row" class="odd">
-                                            <td class="sorting_1">{{ $ids + 1 }}</td>
-                                            <td>{{ $situacion->descripcion }}</td>
-                                            <td>
-                                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                    <button class="btn text-warning btnEditar" type="button" data-id="{{ $situacion->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
-                                                        <i class="bi bi-pencil-fill">
-                                                        </i>
-                                                    </button>
-                                                    <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $situacion->id }}">
-                                                        <i class="bi bi-trash-fill">
-                                                        </i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <table id="example2" class="table table-striped table-bordered tablaSituaciones">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Situación Sentimental</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($situaciones as $ids => $situacion)
+                            <tr role="row" class="odd">
+                                <td class="sorting_1">{{ $ids + 1 }}</td>
+                                <td>{{ $situacion->descripcion }}</td>
+                                <td>
+                                    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                        <button class="btn text-warning btnEditar" type="button"
+                                            data-id="{{ $situacion->id }}" data-bs-toggle="modal"
+                                            data-bs-target="#registrar">
+                                            <i class="bi bi-pencil-fill">
+                                            </i>
+                                        </button>
+                                        <button class="btn text-danger btnBorrar" title="Eliminar" type="button"
+                                            data-id="{{ $situacion->id }}">
+                                            <i class="bi bi-trash-fill">
+                                            </i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -119,7 +109,7 @@
             $('#registrar').modal('show');
         })
 
-        $('#tablaSituaciones').on('click', '.btnEditar', function() {
+        $('.tablaSituaciones').on('click', '.btnEditar', function() {
             let val_id = $(this).data('id');
             let val_url = '/administrador/sistemas/situaciones/editar/' + val_id;
             $.get(val_url, function(res) {
@@ -131,15 +121,17 @@
             });
         });
 
-        $('#tablaSituaciones').on('click', '.btnBorrar', function(){
+        $('.tablaSituaciones').on('click', '.btnBorrar', function() {
             let id = $(this).data('id');
-            let url = '/administrador/sistemas/situaciones/borrar/'+id;
-            $.get(url,function(res){
-              if(res =='ok'){
-                location.reload();
-              }else{
-                toastr.warning('La Situacion esta siendo usado en un registro','Error',{"progressBar": true});
-              }
+            let url = '/administrador/sistemas/situaciones/borrar/' + id;
+            $.get(url, function(res) {
+                if (res == 'ok') {
+                    location.reload();
+                } else {
+                    toastr.warning('La Situacion esta siendo usado en un registro', 'Error', {
+                        "progressBar": true
+                    });
+                }
             });
         })
     </script>
