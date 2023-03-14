@@ -131,6 +131,137 @@
     </div>
     <!-- END modal -->
 
+    <!-- modal 2 -->
+    <div class="modal fade" id="visualizar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Imformacion de la Unidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="border p-3 rounded">
+                                <h6 class="mb-0 text-uppercase">Datos De la Unidad</h6>
+                                <hr />
+                                <form role="form" class="row g-3" >
+                                    @csrf
+                                    <div class="col-4">
+                                        <label class="form-label">RUC</label>
+                                        <input id="ruc_ver" name="ruc_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Razón Social</label>
+                                        <input id="razon_social_ver" name="razon_social_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Nombre Comercial</label>
+                                        <input id="nombre_comercial_ver" name="nombre_comercial_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Departamento</label>
+                                        <select class="form-select" id="departamento_ver" name="departamento_ver" aria-label="Default select example" disabled="true">
+                                            <option selected="">--- Seleccionar ---</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Provincia</label>
+                                        <select class="form-select" id="provincia_ver" name="provincia_ver" aria-label="Default select example" disabled="true">
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Distrito</label>
+                                        <select class="form-select" id="distrito_ver" name="distrito_ver" aria-label="Default select example" disabled="true">
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Dirección</label>
+                                        <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Empresa</label>
+                                        <select id="empresa_id_ver" name="empresa_id_ver" class="form-select" aria-label="Default select example" disabled="true">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            @foreach ($empresas as $empresa)
+                                                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Estado</label>
+                                        <select id="estado_id_ver" name="estado_id_ver"  class="form-select" aria-label="Default select example" disabled="true">
+                                            <option selected="">--- Seleccionar ---</option>
+                                            @foreach ($estados as $estado)
+                                            <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Fech. Activación UND</label>
+                                        <input id="fecha_activacion_ver" name="fecha_activacion_ver" type="date" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Fech. Baja UND</label>
+                                        <input id="fecha_baja_ver" name="fecha_baja_ver" type="date" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Latitud</label>
+                                        <input id="latitud_ver" name="latitud_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Longitud</label>
+                                        <input id="longitud_ver" name="longitud_ver" type="text" class="form-control" readonly >
+                                    </div>
+                                    <h6 class="mb-0 text-uppercase">Representante</h6>
+                                    <hr />
+                                    <div class="col-4">
+                                        <label class="form-label">Representante Legal</label>
+                                        <input id="represetante_legal_ver" name="represetante_legal_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">DNI</label>
+                                        <input id="doct_ident_repre_leg_ver" name="doct_ident_repre_leg_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Cargo</label>
+                                        <input id="cargo_repre_leg_ver" name="cargo_repre_leg_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Contacto</label>
+                                        <input id="contacto_ver" name="contacto_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Telefono</label>
+                                        <input id="telefono_ver" name="telefono_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Celular</label>
+                                        <input id="celular_ver" name="celular_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Correo</label>
+                                        <input id="correo_ver" name="correo_ver" type="email" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Centro de Costo</label>
+                                        <input id="centro_costo_ver" name="centro_costo_ver" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- END modal -->
+
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Comercial</div>
         <div class="ps-3">
