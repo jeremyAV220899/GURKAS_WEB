@@ -152,34 +152,6 @@
                                         <input id="ruc_ver" name="ruc_ver" type="text" class="form-control" readonly>
                                     </div>
                                     <div class="col-4">
-                                        <label class="form-label">Razón Social</label>
-                                        <input id="razon_social_ver" name="razon_social_ver" type="text" class="form-control" readonly>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Nombre Comercial</label>
-                                        <input id="nombre_comercial_ver" name="nombre_comercial_ver" type="text" class="form-control" readonly>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento_ver" name="departamento_ver" aria-label="Default select example" disabled="true">
-                                            <option selected="">--- Seleccionar ---</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia_ver" name="provincia_ver" aria-label="Default select example" disabled="true">
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito_ver" name="distrito_ver" aria-label="Default select example" disabled="true">
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Dirección</label>
-                                        <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
-                                    </div>
-                                    <div class="col-4">
                                         <label class="form-label">Empresa</label>
                                         <select id="empresa_id_ver" name="empresa_id_ver" class="form-select" aria-label="Default select example" disabled="true">
                                             <option selected="">--- Seleccionar ---</option>
@@ -197,21 +169,68 @@
                                         @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Fech. Activación UND</label>
-                                        <input id="fecha_activacion_ver" name="fecha_activacion_ver" type="date" class="form-control" readonly>
+                                    <div class="col-6">
+                                        <label class="form-label">Razón Social</label>
+                                        <input id="razon_social_ver" name="razon_social_ver" type="text" class="form-control" readonly>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Fech. Baja UND</label>
-                                        <input id="fecha_baja_ver" name="fecha_baja_ver" type="date" class="form-control" readonly>
+                                    <div class="col-6">
+                                        <label class="form-label">Nombre Comercial</label>
+                                        <input id="nombre_comercial_ver" name="nombre_comercial_ver" type="text" class="form-control" readonly>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Latitud</label>
-                                        <input id="latitud_ver" name="latitud_ver" type="text" class="form-control" readonly>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Longitud</label>
-                                        <input id="longitud_ver" name="longitud_ver" type="text" class="form-control" readonly >
+                                  
+                                    
+                                   
+                                    <h6 class="text-uppercase" >Ubicacion de la Unidad </h6>
+                                    <hr />
+                                    <div class="col-12 row g-2">
+                                        <div class="col-8 row g-2">
+                                            <div class="col-6">
+                                                <label class="form-label">Fech. Activación</label>
+                                                <input id="fecha_activacion_ver" name="fecha_activacion_ver" type="date" class="form-control" readonly>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Fech. Baja UND</label>
+                                                <input id="fecha_baja_ver" name="fecha_baja_ver" type="date" class="form-control" readonly>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Departamento</label>
+                                                <select class="form-select" id="departamento_ver" name="departamento_ver" aria-label="Default select example" disabled="true">
+                                                    <option selected="">--- Seleccionar ---</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Provincia</label>
+                                                <select class="form-select" id="provincia_ver" name="provincia_ver" aria-label="Default select example" disabled="true">
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Distrito</label>
+                                                <select class="form-select" id="distrito_ver" name="distrito_ver" aria-label="Default select example" disabled="true">
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Dirección</label>
+                                                <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Latitud</label>
+                                                <input id="latitud_ver" name="latitud_ver" type="text" class="form-control" readonly>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label">Longitud</label>
+                                                <input id="longitud_ver" name="longitud_ver" type="text" class="form-control" readonly >
+                                            </div>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="gmaps">
+                                                            <iframe class="gmaps"src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3900.3161754898183!2d"+"$unidades->longitud" +"!3d"+"$unidades->latitud"+"!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1678814042299!5m2!1ses-419!2spe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
@@ -246,7 +265,9 @@
                                     <div class="col-4">
                                         <label class="form-label">Centro de Costo</label>
                                         <input id="centro_costo_ver" name="centro_costo_ver" type="text" class="form-control" readonly>
-                                    </div>
+                                    </div>    
+                                    <hr/>
+                                    
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
                                         <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>

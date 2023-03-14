@@ -846,7 +846,8 @@ a {
 }
 
 .gmaps, .gmaps-panaroma {
-    height: 400px;
+	width: 100%;
+    height: 100%;
     background: #eee;
     border-radius: 3px;
 }

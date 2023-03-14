@@ -1136,8 +1136,14 @@
     <script src="/assets/plugins/select2/js/select2.min.js"></script>
     <script src="/assets/js/form-select2.js"></script>
 
+    <!-- google maps api -->
+    <script src="/assets/plugins/gmaps/map-custom-script.js"></script>
+    
+    
     <!--app-->
     <script src="/assets/js/app.js"></script>
+
+
     @yield('script')
 </body>
 
