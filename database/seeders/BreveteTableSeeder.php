@@ -12,6 +12,9 @@ class BreveteTableSeeder extends Seeder
     {
         $brevetes = [
             [
+                'nombre' => 'No tiene',
+            ],
+            [
                 'nombre' => 'A-I',
             ],
             [

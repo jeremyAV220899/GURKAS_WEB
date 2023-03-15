@@ -13,6 +13,7 @@ $(document).ready(function(){
         $('#fecha_baja').val('');       
         $('#longitud').val('');
         $('#latitud').val('');
+        $('#ubicacion').val('');
         $('#contacto').val('');
         $('#correo').val('');
         $('#celular').val('');
@@ -25,7 +26,7 @@ $(document).ready(function(){
         $('#registrar').modal('show');
     })
 
-    $('#tablaSede').on('click', '.btnEditar', function() {
+    $('.tablaSede').on('click', '.btnEditar', function() {
         let val_id = $(this).data('id');
         let val_url = '/comercial/sedes/editar/' + val_id;
         $.get(val_url, function(res) {
@@ -34,11 +35,12 @@ $(document).ready(function(){
             $('#nombre_sede').val(res.sede.nombre_sede);
             $('#estado_id').val(res.sede.estado_id);
             $('#direccion').val(res.sede.direccion);
-            Fn.seleccionarUbigeo(res.unidad.cod_distrito,'departamento','provincia','distrito');
+            Fn.seleccionarUbigeo(res.sede.cod_distrito,'departamento','provincia','distrito');
             $('#fecha_activacion').val(res.sede.fecha_activacion);
             $('#fecha_baja').val(res.sede.fecha_baja);
             $('#longitud').val(res.sede.longitud);
             $('#latitud').val(res.sede.latitud);
+            $('#ubicacion').val(res.sede.ubicacion);
             $('#contacto').val(res.sede.contacto);
             $('#correo').val(res.sede.celular);
             $('#celular').val(res.sede.correo);
@@ -50,7 +52,30 @@ $(document).ready(function(){
         });
     });
 
-    $('#tablaSede').on('click', '.btnBorrar', function(){
+    $('.tablaSede').on('click', '.btnVer', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/comercial/sedes/ver/' + val_id;
+            
+        $.get(val_url, function(res) {
+            $('#nombre_sede_ver').val(res.sede.nombre_sede);
+            $('#estado_id_ver').val(res.sede.estado_id);
+            Fn.seleccionarUbigeo(res.sede.cod_distrito,'departamento_ver','provincia_ver','distrito_ver');
+            $('#direccion_ver').val(res.sede.direccion);
+            $('#fecha_activacion_ver').val(res.sede.fecha_activacion);
+            $('#fecha_baja_ver').val(res.sede.fecha_baja);
+            $('#latitud_ver').val(res.sede.latitud);
+            $('#longitud_ver').val(res.sede.longitud);
+            $('#unidad_id_ver').val(res.sede.unidad_id);//FALTA
+            $('#contacto_ver').val(res.sede.contacto);
+            $('#correo_ver').val(res.sede.correo);
+            $('#celular_ver').val(res.sede.celular);
+            $('#centro_costo_ver').val(res.sede.centro_costo);
+            $('#ubicacion_ver').attr('src',res.sede.ubicacion);
+            $('#visualizar').modal('show');
+        });
+    });
+
+    $('.tablaSede').on('click', '.btnBorrar', function(){
         let id = $(this).data('id');
         let url = '/comercial/sedes/borrar/'+id;
         $.get(url,function(res){

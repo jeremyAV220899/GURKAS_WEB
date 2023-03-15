@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('celular',10);
             $table->string('centro_costo',100);
             $table->foreignId('unidad_id')->references('id')->on('unidades');
+            $table->string('ubicacion', 500)->nullable();
             $table->timestamps();
         });
     }

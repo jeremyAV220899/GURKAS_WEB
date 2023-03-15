@@ -24,16 +24,14 @@ return new class extends Migration
             $table->string('doct_ident_repre_leg',20);
             $table->string('cargo_repre_leg',100);
             $table->string('contacto',150);
-            $table->string('telefono',10);
+            $table->string('telefono',10)->nullable();
             $table->string('celular',10);
             $table->string('correo',100);
             $table->string('centro_costo',100);
             $table->foreignId('estado_id')->references('id')->on('estados');
             $table->foreignId('empresa_id')->references('id')->on('empresas');
-            $table->string('longitud',100);
-            $table->string('latitud',100);
             $table->date('fecha_activacion');
-            $table->date('fecha_baja');
+            $table->date('fecha_baja')->nullable();
             $table->timestamps();
         });
     }
