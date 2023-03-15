@@ -86,32 +86,41 @@
             <hr />
             <div class="col-6">
                 <label class="form-label">Unidad</label>
-                <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
-                    <option selected="">--- Seleccionar ---</option>
-
-                </select>
+                <select class="form-select" id="unidad_id" name="unidad_id"
+                aria-label="Default select example">
+                <option value="" selected>--- Seleccionar ---</option>
+                @foreach ($unidades as $unidad)
+                    <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
+                @endforeach
+            </select>
             </div>
             <div class="col-6">
                 <label class="form-label">Sede</label>
-                <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
-                    <option selected="">--- Seleccionar ---</option>
-
+                <select class="form-select" id="sede_id" name="sede_id" 
+                    aria-label="Default select example">
+                    <option value="" selected>--- Seleccionar ---</option>                                            
                 </select>
             </div>
 
             <div class="col-6">
                 <label class="form-label">Turno</label>
-                <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
-                    <option selected="">--- Seleccionar ---</option>
-
-                </select>
+                <select class="form-select" id="turno_id" name="turno_id"
+                aria-label="Default select example">
+                <option selected>--- Seleccionar ---</option>
+                @foreach ($turnos as $turno)
+                    <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
+                @endforeach
+            </select>
             </div>
             <div class="col-6">
                 <label class="form-label">Empresa</label>
-                <select  id="cod_unidad" name="cod_unidad" class="form-select" aria-label="Default select example">
-                    <option selected="">--- Seleccionar ---</option>
-
-                </select>
+                <select class="form-select" id="empresa_id" name="empresa_id"
+                aria-label="Default select example">
+                <option selected="">--- Seleccionar ---</option>
+                @foreach ($empresas as $empresa)
+                    <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                @endforeach
+            </select>
             </div>
             <div class="btn-group col-2"> 
                 <button type="button" class="btn btn-primary btnCrearSede" data-bs-toggle="modal"
@@ -169,29 +178,8 @@
       </div>
 @endsection
 @section('script')
-    <script src="/js/script.js"></script>
-    <script type="text/javascript">
-        $('.btnCrearUnidad').click(function() {
-            let val_url = '/comercial/unidades/guardar';
-            $('.titulo').html('Registrar Unidad');
-            $('.btnRegistrar').html('Registrar');
-            $('#cod_unidad').val('');
-            $('#formulario').attr('action', val_url);
-            $('#registrar').modal('show');
-        })
-
-        window.onload = function(){
-            var fecha = new Date(); //Fecha actual
-            var mes = fecha.getMonth()+1; //obteniendo mes
-            var dia = fecha.getDate(); //obteniendo dia
-            var ano = fecha.getFullYear(); //obteniendo año
-            if(dia<10)
-              dia='0'+dia; //agrega cero si el menor de 10
-            if(mes<10)
-              mes='0'+mes //agrega cero si el menor de 10
-            document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
-          }
-    </script>
-   
+<script src="/js/core/function.js"></script>
+<script src="/js/gurkas/centrocontrol/tareo.js"></script>
+<script type="text/javascript"></script>
 @endsection
 

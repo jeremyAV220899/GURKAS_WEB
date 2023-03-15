@@ -10,5 +10,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ServiciosController::class)->group(function () {
     Route::get('/servicios/rrhh/getSedes/{id}', 'getSedesByUnidad');
-
+    Route::get('/servicios/centrocontrol/getSedes/{id}', 'getSedesByUnidad');
 });
