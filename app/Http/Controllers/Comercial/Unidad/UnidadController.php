@@ -44,8 +44,6 @@ class UnidadController extends Controller
         $unidad->centro_costo=$request->centro_costo;
         $unidad->estado_id=$request->estado_id;
         $unidad->empresa_id=$request->empresa_id;
-        $unidad->longitud=$request->longitud;
-        $unidad->latitud=$request->latitud;
         $unidad->fecha_activacion=$request->fecha_activacion;
         $unidad->fecha_baja=$request->fecha_baja;
         $unidad->save();
@@ -86,8 +84,6 @@ class UnidadController extends Controller
         $unidad->centro_costo=$request->centro_costo;
         $unidad->estado_id=$request->estado_id;
         $unidad->empresa_id=$request->empresa_id;
-        $unidad->longitud=$request->longitud;
-        $unidad->latitud=$request->latitud;
         $unidad->fecha_activacion=$request->fecha_activacion;
         $unidad->fecha_baja=$request->fecha_baja;
         $unidad->save();

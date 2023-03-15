@@ -26,22 +26,26 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Nombre Comercial</label>
-                                        <input id="nombre_comercial" name="nombre_comercial" type="text" class="form-control">
+                                        <input id="nombre_comercial" name="nombre_comercial" type="text"
+                                            class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Departamento</label>
-                                        <select class="form-select" id="departamento" name="departamento" aria-label="Default select example">
+                                        <select class="form-select" id="departamento" name="departamento"
+                                            aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" name="provincia"
+                                            aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" name="distrito"
+                                            aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -50,7 +54,8 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Empresa</label>
-                                        <select id="empresa_id" name="empresa_id" class="form-select" aria-label="Default select example">
+                                        <select id="empresa_id" name="empresa_id" class="form-select"
+                                            aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($empresas as $empresa)
                                                 <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
@@ -59,42 +64,39 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Estado</label>
-                                        <select id="estado_id" name="estado_id"  class="form-select" aria-label="Default select example">
+                                        <select id="estado_id" name="estado_id" class="form-select"
+                                            aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($estados as $estado)
-                                            <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
-                                        @endforeach
+                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Fech. Activación UND</label>
-                                        <input id="fecha_activacion" name="fecha_activacion" type="date" class="form-control">
+                                        <input id="fecha_activacion" name="fecha_activacion" type="date"
+                                            class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Fech. Baja UND</label>
                                         <input id="fecha_baja" name="fecha_baja" type="date" class="form-control">
                                     </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Latitud</label>
-                                        <input id="latitud" name="latitud" type="text" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Longitud</label>
-                                        <input id="longitud" name="longitud" type="text" class="form-control">
-                                    </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
                                     <div class="col-6">
                                         <label class="form-label">Representante Legal</label>
-                                        <input id="represetante_legal" name="represetante_legal" type="text" class="form-control">
+                                        <input id="represetante_legal" name="represetante_legal" type="text"
+                                            class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI</label>
-                                        <input id="doct_ident_repre_leg" name="doct_ident_repre_leg" type="text" class="form-control">
+                                        <input id="doct_ident_repre_leg" name="doct_ident_repre_leg" type="text"
+                                            class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Cargo</label>
-                                        <input id="cargo_repre_leg" name="cargo_repre_leg" type="text" class="form-control">
+                                        <input id="cargo_repre_leg" name="cargo_repre_leg" type="text"
+                                            class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Contacto</label>
@@ -114,10 +116,12 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Centro de Costo</label>
-                                        <input id="centro_costo" name="centro_costo" type="text" class="form-control">
+                                        <input id="centro_costo" name="centro_costo" type="text"
+                                            class="form-control">
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerra</button>
                                         <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
                                     </div>
                                 </form>
@@ -125,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -145,15 +149,17 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos De la Unidad</h6>
                                 <hr />
-                                <form role="form" class="row g-3" >
+                                <form role="form" class="row g-3">
                                     @csrf
                                     <div class="col-4">
                                         <label class="form-label">RUC</label>
-                                        <input id="ruc_ver" name="ruc_ver" type="text" class="form-control" readonly>
+                                        <input id="ruc_ver" name="ruc_ver" type="text" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Empresa</label>
-                                        <select id="empresa_id_ver" name="empresa_id_ver" class="form-select" aria-label="Default select example" disabled="true">
+                                        <select id="empresa_id_ver" name="empresa_id_ver" class="form-select"
+                                            aria-label="Default select example" disabled="true">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($empresas as $empresa)
                                                 <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
@@ -162,122 +168,110 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Estado</label>
-                                        <select id="estado_id_ver" name="estado_id_ver"  class="form-select" aria-label="Default select example" disabled="true">
+                                        <select id="estado_id_ver" name="estado_id_ver" class="form-select"
+                                            aria-label="Default select example" disabled="true">
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($estados as $estado)
-                                            <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
-                                        @endforeach
+                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Razón Social</label>
-                                        <input id="razon_social_ver" name="razon_social_ver" type="text" class="form-control" readonly>
+                                        <input id="razon_social_ver" name="razon_social_ver" type="text"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Nombre Comercial</label>
-                                        <input id="nombre_comercial_ver" name="nombre_comercial_ver" type="text" class="form-control" readonly>
+                                        <input id="nombre_comercial_ver" name="nombre_comercial_ver" type="text"
+                                            class="form-control" readonly>
                                     </div>
-                                  
-                                    
-                                   
-                                    <h6 class="text-uppercase" >Ubicacion de la Unidad </h6>
+                                    <h6 class="text-uppercase">Ubicacion de la Unidad </h6>
                                     <hr />
                                     <div class="col-12 row g-2">
-                                        <div class="col-8 row g-2">
-                                            <div class="col-6">
-                                                <label class="form-label">Fech. Activación</label>
-                                                <input id="fecha_activacion_ver" name="fecha_activacion_ver" type="date" class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Fech. Baja UND</label>
-                                                <input id="fecha_baja_ver" name="fecha_baja_ver" type="date" class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Departamento</label>
-                                                <select class="form-select" id="departamento_ver" name="departamento_ver" aria-label="Default select example" disabled="true">
-                                                    <option selected="">--- Seleccionar ---</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Provincia</label>
-                                                <select class="form-select" id="provincia_ver" name="provincia_ver" aria-label="Default select example" disabled="true">
-                                                </select>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Distrito</label>
-                                                <select class="form-select" id="distrito_ver" name="distrito_ver" aria-label="Default select example" disabled="true">
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Dirección</label>
-                                                <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Latitud</label>
-                                                <input id="latitud_ver" name="latitud_ver" type="text" class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Longitud</label>
-                                                <input id="longitud_ver" name="longitud_ver" type="text" class="form-control" readonly >
-                                            </div>
-
+                                        <div class="col-6">
+                                            <label class="form-label">Fech. Activación</label>
+                                            <input id="fecha_activacion_ver" name="fecha_activacion_ver" type="date"
+                                                class="form-control" readonly>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">Fech. Baja UND</label>
+                                            <input id="fecha_baja_ver" name="fecha_baja_ver" type="date"
+                                                class="form-control" readonly>
                                         </div>
                                         <div class="col-4">
-                                            <div class="card">
-                                                    <div class="card-body">
-                                                        <div class="gmaps">
-                                                            <iframe class="gmaps"src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3900.3161754898183!2d"+"$unidades->longitud" +"!3d"+"$unidades->latitud"+"!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1678814042299!5m2!1ses-419!2spe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                                        </div>
-                                                    </div>
-                                            </div>
+                                            <label class="form-label">Departamento</label>
+                                            <select class="form-select" id="departamento_ver" name="departamento_ver"
+                                                aria-label="Default select example" disabled="true">
+                                                <option selected="">--- Seleccionar ---</option>
+                                            </select>
                                         </div>
+                                        <div class="col-4">
+                                            <label class="form-label">Provincia</label>
+                                            <select class="form-select" id="provincia_ver" name="provincia_ver"
+                                                aria-label="Default select example" disabled="true">
+                                            </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label">Distrito</label>
+                                            <select class="form-select" id="distrito_ver" name="distrito_ver"
+                                                aria-label="Default select example" disabled="true">
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Dirección</label>
+                                            <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
+                                        </div>                                        
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
                                     <div class="col-4">
                                         <label class="form-label">Representante Legal</label>
-                                        <input id="represetante_legal_ver" name="represetante_legal_ver" type="text" class="form-control" readonly>
+                                        <input id="represetante_legal_ver" name="represetante_legal_ver" type="text"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">DNI</label>
-                                        <input id="doct_ident_repre_leg_ver" name="doct_ident_repre_leg_ver" type="text" class="form-control" readonly>
+                                        <input id="doct_ident_repre_leg_ver" name="doct_ident_repre_leg_ver"
+                                            type="text" class="form-control" readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Cargo</label>
-                                        <input id="cargo_repre_leg_ver" name="cargo_repre_leg_ver" type="text" class="form-control" readonly>
+                                        <input id="cargo_repre_leg_ver" name="cargo_repre_leg_ver" type="text"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Contacto</label>
-                                        <input id="contacto_ver" name="contacto_ver" type="text" class="form-control" readonly>
+                                        <input id="contacto_ver" name="contacto_ver" type="text" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Telefono</label>
-                                        <input id="telefono_ver" name="telefono_ver" type="text" class="form-control" readonly>
+                                        <input id="telefono_ver" name="telefono_ver" type="text" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Celular</label>
-                                        <input id="celular_ver" name="celular_ver" type="text" class="form-control" readonly>
+                                        <input id="celular_ver" name="celular_ver" type="text" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Correo</label>
-                                        <input id="correo_ver" name="correo_ver" type="email" class="form-control" readonly>
+                                        <input id="correo_ver" name="correo_ver" type="email" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Centro de Costo</label>
-                                        <input id="centro_costo_ver" name="centro_costo_ver" type="text" class="form-control" readonly>
-                                    </div>    
-                                    <hr/>
-                                    
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
-                                        <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
+                                        <input id="centro_costo_ver" name="centro_costo_ver" type="text"
+                                            class="form-control" readonly>
                                     </div>
+                                    <hr />
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -309,13 +303,13 @@
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
                     <div class="row">
                         <div class="col-sm-12">
-                            <table id="tablaUnidad" class="table table-striped table-bordered dataTable" role="grid"
-                                aria-describedby="example2_info">
+                            <table id="example2" class="table table-striped table-bordered dataTable tablaUnidad"
+                                role="grid" aria-describedby="example2_info">
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 260.094px;">Cód. Unidad</th>
+                                            style="width: 100.094px;">Cód. Unidad</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
                                             style="width: 260.094px;">Razón Social</th>
@@ -334,31 +328,40 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($unidades as $ids => $unidad)
-                                    <tr role="row" class="odd">
-                                        <td>{{ Util::codigoUnidad($unidad->id) }}</td>
-                                        <td>{{ $unidad->razon_social }}</td>
-                                        <td>{{ $unidad->ruc }}</td>
-                                        <td>{{ $unidad->estado->nombre }}</td>
-                                        <td>{{ $unidad->empresa->nombre }}</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <button class="btn text-primary btnVer" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#visualizar">
-                                                    <i class="bi bi-eye-fill">
-                                                    </i>
-                                                </button>
-                                                <button class="btn text-warning btnEditar" type="button" data-id="{{ $unidad->id }}" data-bs-toggle="modal" data-bs-target="#registrar">
-                                                    <i class="bi bi-pencil-fill">
-                                                    </i>
-                                                </button>
-                                                <button class="btn text-danger btnBorrar" title="Eliminar" type="button" data-id="{{ $unidad->id }}">
-                                                    <i class="bi bi-trash-fill">
-                                                    </i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($unidades as $ids => $unidad)
+                                        <tr role="row" class="odd">
+                                            <td>{{ Util::codigoUnidad($unidad->id) }}</td>
+                                            <td>{{ $unidad->razon_social }}</td>
+                                            <td>{{ $unidad->ruc }}</td>
+                                            <td>{{ $unidad->estado->nombre }}</td>
+                                            <td>{{ $unidad->empresa->nombre }}</td>
+                                            <td>
+                                                <div class="table-actions d-flex align-items-center fs-6">
+                                                    <button class="btn text-success " type="button" title="exportar">
+                                                        <i class="bi bi-file-earmark-pdf">
+                                                        </i>
+                                                    </button>
+                                                    <button class="btn text-primary btnVer" type="button"
+                                                        data-id="{{ $unidad->id }}" data-bs-toggle="modal"
+                                                        data-bs-target="#visualizar">
+                                                        <i class="bi bi-eye-fill">
+                                                        </i>
+                                                    </button>
+                                                    <button class="btn text-warning btnEditar" type="button"
+                                                        data-id="{{ $unidad->id }}" data-bs-toggle="modal"
+                                                        data-bs-target="#registrar">
+                                                        <i class="bi bi-pencil-fill">
+                                                        </i>
+                                                    </button>
+                                                    <button class="btn text-danger btnBorrar" title="Eliminar"
+                                                        type="button" data-id="{{ $unidad->id }}">
+                                                        <i class="bi bi-trash-fill">
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -373,4 +376,3 @@
     <script src="/js/core/function.js"></script>
     <script src="/js/gurkas/comercial/unidad.js"></script>
 @endsection
-

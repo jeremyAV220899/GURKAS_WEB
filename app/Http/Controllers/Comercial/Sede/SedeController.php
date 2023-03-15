@@ -40,6 +40,7 @@ class SedeController extends Controller
         $sede->fecha_baja=$request->fecha_baja;
         $sede->longitud=$request->longitud;
         $sede->latitud=$request->latitud;
+        $sede->ubicacion=$request->ubicacion;
         $sede->contacto=$request->contacto;
         $sede->correo=$request->correo;
         $sede->celular=$request->celular;
@@ -50,6 +51,14 @@ class SedeController extends Controller
     }
 
     public function edit($id){
+        $sede = Sede::find($id);
+        $datos = [
+            'sede' => $sede,
+        ];
+        return Response::json($datos);
+    }
+
+    public function ver($id){
         $sede = Sede::find($id);
         $datos = [
             'sede' => $sede,
@@ -69,6 +78,7 @@ class SedeController extends Controller
         $sede->fecha_baja=$request->fecha_baja;
         $sede->longitud=$request->longitud;
         $sede->latitud=$request->latitud;
+        $sede->ubicacion=$request->ubicacion;
         $sede->contacto=$request->contacto;
         $sede->correo=$request->correo;
         $sede->celular=$request->celular;

@@ -118,6 +118,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/comercial/sede', 'index')->name('comercial.sede');
         Route::post('/comercial/sedes/guardar', 'store')->name('sede.store');
         Route::get('/comercial/sedes/editar/{id}', 'edit');
+        Route::get('/comercial/sedes/ver/{id}', 'ver');
         Route::post('/comercial/sedes/actualizar/{id}', 'update');
         Route::get('/comercial/sedes/borrar/{id}', 'delete');
     });

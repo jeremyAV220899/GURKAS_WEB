@@ -21,8 +21,6 @@ $(document).ready(function(){
         $('#centro_costo').val('');
         $('#estado_id option:first').prop('selected',true);
         $('#empresa_id option:first').prop('selected',true);
-        $('#longitud').val('');
-        $('#latitud').val('');
         $('#fecha_activacion').val('');
         $('#fecha_baja').val('');
         $('#formulario').attr('action', val_url);
@@ -32,7 +30,7 @@ $(document).ready(function(){
         $('#registrar').modal('show');
     })
 
-    $('#tablaUnidad').on('click', '.btnEditar', function() {
+    $('.tablaUnidad').on('click', '.btnEditar', function() {
         let val_id = $(this).data('id');
         let val_url = '/comercial/unidades/editar/' + val_id;
 
@@ -55,8 +53,6 @@ $(document).ready(function(){
             $('#centro_costo').val(res.unidad.centro_costo);
             $('#estado_id').val(res.unidad.estado_id);
             $('#empresa_id').val(res.unidad.empresa_id);
-            $('#longitud').val(res.unidad.longitud);
-            $('#latitud').val(res.unidad.latitud);
             $('#fecha_activacion').val(res.unidad.fecha_activacion);
             $('#fecha_baja').val(res.unidad.fecha_baja);
             $('#departamento').val(res.unidad.cod_departamento);
@@ -65,12 +61,11 @@ $(document).ready(function(){
         });
     });
 
-    $('#tablaUnidad').on('click', '.btnVer', function() {
+    $('.tablaUnidad').on('click', '.btnVer', function() {
         let val_id = $(this).data('id');
         let val_url = '/comercial/unidades/ver/' + val_id;
             
         $.get(val_url, function(res) {
-            console.log(res);
             $('#ruc_ver').val(res.unidad.ruc);
             $('#razon_social_ver').val(res.unidad.razon_social);
             $('#nombre_comercial_ver').val(res.unidad.nombre_comercial);
@@ -80,9 +75,6 @@ $(document).ready(function(){
             $('#estado_id_ver').val(res.unidad.estado_id);
             $('#fecha_activacion_ver').val(res.unidad.fecha_activacion);
             $('#fecha_baja_ver').val(res.unidad.fecha_baja);
-
-            $('#latitud_ver').val(res.unidad.latitud);
-            $('#longitud_ver').val(res.unidad.longitud);
             $('#represetante_legal_ver').val(res.unidad.represetante_legal);
             $('#doct_ident_repre_leg_ver').val(res.unidad.doct_ident_repre_leg);
             $('#cargo_repre_leg_ver').val(res.unidad.cargo_repre_leg);
@@ -95,7 +87,7 @@ $(document).ready(function(){
         });
     });
 
-    $('#tablaUnidad').on('click', '.btnBorrar', function(){
+    $('.tablaUnidad').on('click', '.btnBorrar', function(){
         let id = $(this).data('id');
         let url = '/comercial/unidades/borrar/'+id;
         $.get(url,function(res){

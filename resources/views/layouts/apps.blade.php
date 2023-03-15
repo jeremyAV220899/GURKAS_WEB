@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <!-- loader-->
     <link href="/assets/css/pace.min.css" rel="stylesheet" />
     <!--Theme Styles-->
@@ -1135,6 +1136,7 @@
     <script src="/assets/js/pace.min.js"></script>
     <script src="/assets/plugins/select2/js/select2.min.js"></script>
     <script src="/assets/js/form-select2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- google maps api -->
     <script src="/assets/plugins/gmaps/map-custom-script.js"></script>

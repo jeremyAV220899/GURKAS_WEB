@@ -21,11 +21,11 @@ return new class extends Migration
             $table->foreignId('genero_id')->references('id')->on('generos');
             $table->foreignId('documento_id')->references('id')->on('documentos');
             $table->string('doc_ident',15);
-            $table->date('fecha_emision');
-            $table->date('fecha_caducidad');
+            $table->date('fecha_emision')->nullable();
+            $table->date('fecha_caducidad')->nullable();
             $table->string('cod_ubigeo')->nullable();
             $table->foreignId('brevete_id')->references('id')->on('brevetes');
-            $table->string('num_brevete',15);
+            $table->string('num_brevete',15)->nullable();
             $table->foreignId('nacionalidad_id')->references('id')->on('nacionalidades');
             $table->char('cod_departamento',10);
             $table->char('cod_provincia',10);
