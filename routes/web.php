@@ -251,7 +251,10 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::controller(AdminUsuarioController::class)->group(function () {
         Route::get('/administrador/sistemas/usuario', 'index')->name('administrador.sistemas.usuario');
-    
+        Route::post('/administrador/sistemas/usuario/guardar', 'store')->name('usuario.store');
+        Route::get('/administrador/sistemas/usuario/editar/{id}', 'edit');
+        Route::post('/administrador/sistemas/usuario/actualizar/{id}', 'update');
+        Route::get('/administrador/sistemas/usuario/borrar/{id}', 'delete');
     });
 });
 
