@@ -13,6 +13,7 @@
     <link href="/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
 	<link href="/assets/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+    <!--link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /-->
     <!-- Bootstrap CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/css/bootstrap-extended.css" rel="stylesheet" />
@@ -1137,6 +1138,7 @@
     <script src="/assets/plugins/select2/js/select2.min.js"></script>
     <script src="/assets/js/form-select2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script-->
 
     <!-- google maps api -->
     <script src="/assets/plugins/gmaps/map-custom-script.js"></script>
