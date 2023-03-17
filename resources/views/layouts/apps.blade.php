@@ -1022,6 +1022,8 @@
                                 <li> <a href="{{ route('administrador.sistemas.estado') }}"><i class="bi bi-circle"></i>ESTADO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.grado') }}"><i class="bi bi-circle"></i>GRADO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.armado') }}"><i class="bi bi-circle"></i>ARMADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.asistencia') }}"><i class="bi bi-circle"></i>TIPO DE ASISTENCIA</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.banco') }}"><i class="bi bi-circle"></i>BANCO</a></li>
                             </ul>
                         </li>
                     </ul>
