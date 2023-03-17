@@ -16,18 +16,21 @@
                                 <hr />
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="col-6">
-                                        <label class="form-label">Código Empleado</label>
-                                        <input type="text" class="form-control">
+                                    <div class="mb-3 select2-sm col-12">
+                                        <label class="form-label">Select2 Small Text Control</label>
+                                        <select class="single-select">
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                        </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">N° Hijos</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                            <option value="1">1 Hijo</option>
+                                            <option value="2">2 Hijo</option>
+                                            <option value="3">3 Hijo</option>
+                                            <option value="4">4 Hijo</option>
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Familiares</h6>
