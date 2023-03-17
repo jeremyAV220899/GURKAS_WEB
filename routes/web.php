@@ -35,7 +35,6 @@ use App\Http\Controllers\Administrador\ContratoController as AdminContratoContro
 use App\Http\Controllers\Administrador\EstadoController as AdminEstadoController;
 use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
 use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
-use App\Http\Controllers\Administrador\UsuarioController as AdminUsuarioController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 
 use App\Http\Controllers\UsuarioController;
@@ -139,6 +138,12 @@ Route::middleware(['auth'])->group(function () {
     
     Route::controller(UsuarioController::class)->group(function () {
         Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
+        Route::get('/usuario', 'index')->name('usuario.index');
+        Route::post('/usuario/guardar', 'store')->name('usuario.store');
+        Route::get('/usuario/editar/{id}', 'edit');
+        Route::post('/usuario/actualizar/{id}', 'update');
+        Route::get('/usuario/borrar/{id}', 'delete');
+        
     });
 
     Route::controller(AdminSistemaController::class)->group(function () {
@@ -249,13 +254,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/armados/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/armados/borrar/{id}', 'delete');
     });
-    Route::controller(AdminUsuarioController::class)->group(function () {
-        Route::get('/administrador/sistemas/usuario', 'index')->name('administrador.sistemas.usuario');
-        Route::post('/administrador/sistemas/usuario/guardar', 'store')->name('usuario.store');
-        Route::get('/administrador/sistemas/usuario/editar/{id}', 'edit');
-        Route::post('/administrador/sistemas/usuario/actualizar/{id}', 'update');
-        Route::get('/administrador/sistemas/usuario/borrar/{id}', 'delete');
-    });
+    
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

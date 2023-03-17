@@ -17,28 +17,25 @@
                                 <form id="formulario" class="row g-3" method="POST" action="{{ route('usuario.store') }}">
                                     @csrf
                                     <div class="col-12">
-                                        <label class="form-label">Estado del Usuario</label>
-                                        <select id="dni" name="dni" class="form-select"
-                                            aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            @foreach ($empleados as $empleado)
-                                                <option value="{{ $empleado->doc_ident }}">{{ $empleado->nombre_completo }}</option>
+                                        <label class="form-label">Buscar Personal</label>
+                                        <select class="single-select select2" id="personal_id" name="personal_id">                   
+                                            <option value="" selected>----Seleccionar----</option>
+                                            @foreach ($empleados as $empleado )
+                                                <option value="{{ $empleado->id }}">{{ $empleado->nombre_completo }}</option>
                                             @endforeach
+                                            
                                         </select>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Estado del Usuario</label>
-                                        <select id="estadoid" name="estadoid" class="form-select"
+                                        <select id="estado_id" name="estado_id" class="form-select"
                                             aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            @foreach ($estados as $estado)
-                                                <option value="{{ $estado->id }}">{{ $estado->nombre }}</option>
-                                            @endforeach
+                                            <option value="" selected>--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Correo</label>
-                                        <input type="text" id="email" name="email" class="form-control" required>
+                                        <input type="text" id="email" name="email" class="form-control">
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Contraseña</label>
@@ -73,13 +70,13 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearEmpresa" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary btnCrearEmpresa" id="registrarModal" data-bs-toggle="modal"
                     data-bs-target="#registrar">Registrar
                     Nuevo</button>
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Empresas</h6>
+    <h6 class="mb-0 text-uppercase">Lita de Usuarios</h6>
     <hr>
     <div class="card">
         <div class="card-body">
@@ -99,10 +96,10 @@
                             <tr role="row" class="odd">
                                 <td>{{ $usuario->id}}</td>
                                 <td>{{ $usuario->name}}</td>
-                                <td>{{ $usuario->idestado}}</td>
+                                <td>{{ $usuario->estado->nombre}}</td>
                                 <td>{{ $usuario->email}}</td>
                                 <td>
-                                    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                    <div class="table-actions d-flex align-items-center fs-6">
                                         <button class="btn text-warning btnEditar" type="button"
                                             data-id="{{ $usuario->id }}" data-bs-toggle="modal"
                                             data-bs-target="#registrar">
@@ -125,7 +122,21 @@
     </div>
 @endsection
 @section('script')
+    <script src="/js/administrador/usuario.js"></script>
     <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('.select2').select2({
+                dropdownParent: $('#registrar')
+            });
+        });
+
+        $('#personal_id').change(function(){
+            if($('#personal_id').val().length >= 1){
+                $('#email').val($('#personal_id').find(':selected').data('nombre_completo'))
+            }
+        });
+
         $('.btnCrearEmpresa').click(function() {
             let val_url = '/administrador/sistemas/usuario/guardar';
             $('.titulo').html('Registrar Usuario');

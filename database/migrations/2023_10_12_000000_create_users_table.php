@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('dni');
             $table->string('name');
-            $table->integer('idestado');
+            $table->foreignId('estado_id')->references('id')->on('estados');
+            $table->foreignId('personal_id')->references('id')->on('personales');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

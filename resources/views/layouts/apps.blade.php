@@ -993,7 +993,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Usuario</a>
                             <ul>
-                                <li> <a href="{{ route('administrador.sistemas.usuario') }}"><i class="bi bi-circle"></i>Crear Usuario</a></li>
+                                <li> <a href="{{ route('usuario.index') }}"><i class="bi bi-circle"></i>Crear Usuario</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Editar Usuario</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Cambiar Contraseña</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Asignar Unidad</a></li>
