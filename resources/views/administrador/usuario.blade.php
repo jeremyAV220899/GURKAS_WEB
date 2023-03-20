@@ -17,6 +17,7 @@
                                 <form id="formulario" class="row g-3" method="POST" action="{{ route('usuario.store') }}">
                                     @csrf
                                     <div class="col-12">
+                                        <input type="hidden" value="" id="hiddenUsuario">
                                         <label class="form-label">Buscar Personal</label>
                                         <select class="single-select select2" id="personal_id" name="personal_id">                   
                                             <option value="" selected>----Seleccionar----</option>
@@ -123,60 +124,4 @@
 @endsection
 @section('script')
     <script src="/js/administrador/usuario.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $('.select2').select2({
-                dropdownParent: $('#registrar')
-            });
-        });
-
-        $('#personal_id').change(function(){
-            if($('#personal_id').val().length >= 1){
-                $('#email').val($('#personal_id').find(':selected').data('nombre_completo'))
-            }
-        });
-
-        $('.btnCrearEmpresa').click(function() {
-            let val_url = '/administrador/sistemas/usuario/guardar';
-            $('.titulo').html('Registrar Usuario');
-            $('.btnRegistrar').html('Registrar');
-            $('#dni option:first').prop('selected', true);
-            $('#ruc').val('');
-            $('#estadoid option:first').prop('selected', true);
-            $('#email').val('');
-            $('#clave').val('');
-            $('#formulario').attr('action', val_url);
-            $('#registrar').modal('show');
-        })
-
-        $('.tablaSituaciones').on('click', '.btnEditar', function() {
-            let val_id = $(this).data('id');
-            let val_url = '/administrador/sistemas/usuario/editar/' + val_id;
-            $.get(val_url, function(res) {
-                $('.titulo').html('Editar Usuario');
-                $('.btnRegistrar').html('Editar');
-                $('#dni').val(res.usuario.dni);
-                $('#estadoid').val(res.usuario.idestado);
-                $('#email').val(res.usuario.email);
-                $('#clave').val(" ");
-                $('#formulario').attr('action', '/administrador/sistemas/usuario/actualizar/' + val_id);
-                $('#registrar').modal('show');
-            });
-        });
-
-        $('.tablaSituaciones').on('click', '.btnBorrar', function() {
-            let id = $(this).data('id');
-            let url = '/administrador/sistemas/usuario/borrar/' + id;
-            $.get(url, function(res) {
-                if (res == 'ok') {
-                    location.reload();
-                } else {
-                    toastr.warning('El Usuario esta siendo usado en un registro', 'Error', {
-                        "progressBar": true
-                    });
-                }
-            });
-        })
-    </script>
 @endsection

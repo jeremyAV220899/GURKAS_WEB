@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    $(document).ready(function() {
+        $('.select2').select2({
+            dropdownParent: $('#registrar')
+        });
+    });
+    
     $('#registrarModal').click(function(){
         $('#estado_id option:first').prop('selected',true);
         $('#estado_id').prop('disabled', true);
@@ -19,13 +25,16 @@ $(document).ready(function(){
         }else{
             $.get(url, function(response){
                 console.log(response)
-                $.each(response, function(index,value){
+                $.each(response.estados, function(index,value){
+                    console.log(value)
                     $('#estado_id').append($('<option/>', {
                         value: value.id,
                         text: value.nombre
                     }));
                 });
-                $('#estado_id').prop('disabled', false);
+                $('#hiddenUsuario').val(response.idPersonal)
+                $('#email').val(response.email);
+                $('#estado_id').val(response.idEstado).prop('disabled', false);
                 $('#email').prop('disabled', false);
             });
         }

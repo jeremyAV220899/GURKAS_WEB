@@ -17,7 +17,15 @@ class ServiciosController extends Controller
     }
 
     public function getEstadosByPersonal($id){
-        $estados = Estado::where('estado_id', $id)->get();
-        return Response::json($estados);
+        $personal = Personal::find($id);
+        $estados = Estado::all();
+        $response = [
+            'email' => $personal->correo,
+            'idEstado' => $personal->estado_id,
+            'estados' => $estados,
+            'idPersonal' => $personal->id
+        ];
+
+        return Response::json($response);
     }
 }

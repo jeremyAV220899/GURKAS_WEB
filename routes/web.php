@@ -35,12 +35,9 @@ use App\Http\Controllers\Administrador\ContratoController as AdminContratoContro
 use App\Http\Controllers\Administrador\EstadoController as AdminEstadoController;
 use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
 use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\Administrador\UsuarioController as AdminUsuarioController;
 use App\Http\Controllers\Administrador\AsistenciaController as AdminAsistenciaController;
 use App\Http\Controllers\Administrador\BancoController as AdminBancoController;
->>>>>>> 4104e14f4a030f8cc055bb9242973fea3d85db8d
+
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 
 use App\Http\Controllers\UsuarioController;
@@ -52,6 +49,20 @@ Route::get('/', [WebController::class, 'index']);
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
+    /* ------------------ ADMINISTRADOR ------------------ */
+    /* ----- USUARIOS ----- */
+    Route::controller(UsuarioController::class)->group(function () {
+        Route::get('/usuario', 'index')->name('usuario.index');
+        Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
+        Route::post('/usuario/guardar', 'store')->name('usuario.store');
+        Route::get('/usuario/editar/{id}', 'edit');
+        Route::post('/usuario/actualizar/{id}', 'update');
+        Route::get('/usuario/borrar/{id}', 'delete');
+        
+    });
+
+
+
     /* ------------------ RECURSOS HUMANOS ------------------ */
     /* ----- PERSONAL ----- */
     Route::controller(DatosPersonalesController::class)->group(function () {
@@ -140,16 +151,6 @@ Route::middleware(['auth'])->group(function () {
     /* ----- AFP ----- */
     Route::controller(AfpComisionController::class)->group(function () {
         Route::get('/planilla/afp/comision', 'index')->name('planillas.comision');
-    });
-    
-    Route::controller(UsuarioController::class)->group(function () {
-        Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
-        Route::get('/usuario', 'index')->name('usuario.index');
-        Route::post('/usuario/guardar', 'store')->name('usuario.store');
-        Route::get('/usuario/editar/{id}', 'edit');
-        Route::post('/usuario/actualizar/{id}', 'update');
-        Route::get('/usuario/borrar/{id}', 'delete');
-        
     });
 
     Route::controller(AdminSistemaController::class)->group(function () {
@@ -267,9 +268,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/armados/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/armados/borrar/{id}', 'delete');
     });
-<<<<<<< HEAD
-    
-=======
+
     Route::controller(AdminBancoController::class)->group(function () {
         Route::get('/administrador/sistemas/bancos', 'index')->name('administrador.sistemas.banco');
         Route::post('/administrador/sistemas/bancos/guardar', 'store')->name('banco.store');
@@ -277,14 +276,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/bancos/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/bancos/borrar/{id}', 'delete');
     });
-    Route::controller(AdminUsuarioController::class)->group(function () {
-        Route::get('/administrador/sistemas/usuario', 'index')->name('administrador.sistemas.usuario');
-        Route::post('/administrador/sistemas/usuario/guardar', 'store')->name('usuario.store');
-        Route::get('/administrador/sistemas/usuario/editar/{id}', 'edit');
-        Route::post('/administrador/sistemas/usuario/actualizar/{id}', 'update');
-        Route::get('/administrador/sistemas/usuario/borrar/{id}', 'delete');
-    });
->>>>>>> 4104e14f4a030f8cc055bb9242973fea3d85db8d
+    
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
