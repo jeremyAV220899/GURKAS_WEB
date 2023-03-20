@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title titulo">Registrar Usuario</h5>
+                    <h5 class="modal-title titulo"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -19,28 +19,31 @@
                                     <div class="col-12">
                                         <input type="hidden" value="" id="hiddenUsuario">
                                         <label class="form-label">Buscar Personal</label>
-                                        <select class="single-select select2" id="personal_id" name="personal_id">                   
+                                        <select class="single-select select2" id="name" name="name">                   
                                             <option value="" selected>----Seleccionar----</option>
                                             @foreach ($empleados as $empleado )
                                                 <option value="{{ $empleado->id }}">{{ $empleado->nombre_completo }}</option>
-                                            @endforeach
-                                            
+                                            @endforeach   
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Estado del Usuario</label>
                                         <select id="estado_id" name="estado_id" class="form-select"
                                             aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
+                                        <label class="form-label">DNI</label>
+                                        <input type="text" id="dni" name="dni" class="form-control">
+                                    </div>
+                                    <div class="col-6">
                                         <label class="form-label">Correo</label>
                                         <input type="text" id="email" name="email" class="form-control">
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Contraseña</label>
-                                        <input type="text" id="clave" name="clave" class="form-control" required>
+                                        <input type="text" id="password" name="password" class="form-control" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -71,9 +74,8 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearEmpresa" id="registrarModal" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Registrar
-                    Nuevo</button>
+                <button type="button" class="btn btn-primary btnCrearUsuario" id="registrarModal" data-bs-toggle="modal"
+                    data-bs-target="#registrar">Registrar Nuevo</button>
             </div>
         </div>
     </div>

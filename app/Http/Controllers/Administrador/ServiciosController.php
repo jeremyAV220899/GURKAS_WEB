@@ -21,6 +21,7 @@ class ServiciosController extends Controller
         $estados = Estado::all();
         $response = [
             'email' => $personal->correo,
+            'doc_ident' => $personal->doc_ident,
             'idEstado' => $personal->estado_id,
             'estados' => $estados,
             'idPersonal' => $personal->id

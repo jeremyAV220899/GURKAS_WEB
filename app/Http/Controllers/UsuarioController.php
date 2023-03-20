@@ -26,10 +26,10 @@ class UsuarioController extends Controller
     }
     public function store (Request $request){
         $usuario = new User();
-        $usuario->dni=$request->dni;
         $usuario->name=$request->name;
-        $usuario->idestado=$request->idestado;
+        $usuario->estado_id=$request->estado_id;
         $usuario->email=$request->email;
+        $usuario->dni=$request->dni;
         $usuario->password=Hash::make($request->password);
         $usuario->save();
         return redirect()->route('administrador.sistemas.usuario');

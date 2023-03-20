@@ -21,6 +21,7 @@ use App\Models\Comercial\Sede;
 use App\Models\Comercial\Unidad;
 use App\Models\RRHH\Personal;
 use Illuminate\Http\Request;
+use Response;
 
 
 class PersonalesController extends Controller
@@ -58,7 +59,6 @@ class PersonalesController extends Controller
         if (isset($request->imagen)) {
             $personal->imagen=$request->file('imagen')->store('public/img');
         }
-        //$personal->apellido_materno=$request->apellido_materno; foto
         //$personal->apellido_materno=$request->apellido_materno; EDAD $var1 . $var2;
         $personal->fecha_nacimiento=$request->fecha_nacimiento;
         $personal->genero_id=$request->genero_id;
@@ -100,5 +100,32 @@ class PersonalesController extends Controller
         $personal->fecha_activacion_laboral=$request->fecha_activacion_laboral;
         $personal->save();
         return redirect()->route('personal.index');
+    }
+
+    public function edit($id){
+        $personal = Personal::find($id);
+        $genero = $personal->genero->nombre;
+        $documento = $personal->documento->nombre;
+        $brevete = $personal->brevete->nombre;
+        $nacionalidad = $personal->nacionalidad->nombre;
+        $horas = $personal->horas->nombre;
+        $situaciones = $personal->situaciones->descripcion;
+        $grados = $personal->grados->descripcion;
+        $estados = $personal->estados->nombre;
+        $puesto = $personal->puesto->descripcionPuesto;
+        $datos = [
+            'personal' => $personal,
+            'genero' => $genero,
+            'documento' => $documento,
+            'brevete' => $brevete,
+            'nacionalidad' => $nacionalidad,
+            'horas' => $horas,
+            'situaciones' => $situaciones,
+            'grados' => $grados,
+            'estados' => $estados,
+            'puesto' => $puesto,
+
+        ];
+        return Response::json($datos);
     }
 }

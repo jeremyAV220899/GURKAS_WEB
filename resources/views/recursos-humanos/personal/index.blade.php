@@ -118,12 +118,14 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Provincia</label>
-                                        <select class="form-select" id="provincia" name="provincia" aria-label="Default select example">
+                                        <select class="form-select" id="provincia" name="provincia"
+                                            aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Distrito</label>
-                                        <select class="form-select" id="distrito" name="distrito" aria-label="Default select example">
+                                        <select class="form-select" id="distrito" name="distrito"
+                                            aria-label="Default select example">
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -191,7 +193,8 @@
                                             aria-label="Default select example">
                                             <option value="" selected="">--- Seleccionar ---</option>
                                             @foreach ($puestos as $puesto)
-                                                <option value="{{ $puesto->id }}" data-cod="{{ $puesto->codigo }}">{{ $puesto->descripcionPuesto }}
+                                                <option value="{{ $puesto->id }}" data-cod="{{ $puesto->codigo }}">
+                                                    {{ $puesto->descripcionPuesto }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -238,9 +241,9 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Sede</label>
-                                        <select class="form-select" id="sede_id" name="sede_id" 
+                                        <select class="form-select" id="sede_id" name="sede_id"
                                             aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>                                            
+                                            <option value="" selected>--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -334,8 +337,8 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearPersonal" id="registrarModal" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Registrar Nuevo</button>
+                <button type="button" class="btn btn-primary btnCrearPersonal" id="registrarModal"
+                    data-bs-toggle="modal" data-bs-target="#registrar">Registrar Nuevo</button>
             </div>
         </div>
     </div>
@@ -347,7 +350,7 @@
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap5">
                     <div class="row">
                         <div class="col-sm-12">
-                            <table id="tablaPersonal" class="table table-striped table-bordered dataTable" role="grid"
+                            <table id="example2" class="table table-striped table-bordered dataTable tablaPersonal" role="grid"
                                 aria-describedby="example2_info">
                                 <thead>
                                     <tr role="row">
@@ -377,7 +380,8 @@
                                     @foreach ($personales as $ids => $personal)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{ $personal->cod_empleado }}</td>
-                                            <td><img src="{{ Storage::url($personal->imagen)}}" alt="" class="product-img-2"></td>
+                                            <td><img src="{{ Storage::url($personal->imagen) }}" alt=""
+                                                    class="product-img-2"></td>
                                             <td>{{ $personal->nombre_completo }}</td>
                                             <td>{{ $personal->estado->nombre }}</td>
                                             <td>{{ $personal->nacionalidad->nombre }}</td>
@@ -387,10 +391,12 @@
                                                         data-bs-placement="bottom" title=""
                                                         data-bs-original-title="Views" aria-label="Views"><i
                                                             class="bi bi-eye-fill"></i></a>
-                                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="bottom" title=""
-                                                        data-bs-original-title="Edit" aria-label="Edit"><i
-                                                            class="bi bi-pencil-fill"></i></a>
+                                                    <button class="btn text-warning btnEditar" type="button"
+                                                        data-id="{{ $personal->id }}" data-bs-toggle="modal"
+                                                        data-bs-target="#registrar">
+                                                        <i class="bi bi-pencil-fill">
+                                                        </i>
+                                                    </button>
                                                     <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
                                                         data-bs-placement="bottom" title=""
                                                         data-bs-original-title="Delete" aria-label="Delete"><i

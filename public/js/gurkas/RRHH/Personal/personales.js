@@ -54,6 +54,21 @@ $(document).ready(function(){
         Fn.initdistritos(true);
         $('#registrar').modal('show');
     });
+
+    $('.tablaPersonal').on('click', '.btnEditar', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/rrhh/personales/index/editar/' + val_id;
+        console.log(val_url)
+
+        $.get(val_url, function(res) {
+            console.log(res)
+            $('.titulo').html('Editar Datos Personales');
+            $('.btnRegistrar').html('Editar');
+            
+            $('#registrar').modal('show');
+        });
+    });
+
     
     $('#departamento').on('change', function(){
         let codDepartamento = $(this).val();
@@ -116,6 +131,5 @@ $(document).ready(function(){
                 $('#sede_id').prop('disabled', false);
             });
         }
-        
     })
 });

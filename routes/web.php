@@ -53,21 +53,20 @@ Route::middleware(['auth'])->group(function () {
     /* ----- USUARIOS ----- */
     Route::controller(UsuarioController::class)->group(function () {
         Route::get('/usuario', 'index')->name('usuario.index');
-        Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
         Route::post('/usuario/guardar', 'store')->name('usuario.store');
         Route::get('/usuario/editar/{id}', 'edit');
         Route::post('/usuario/actualizar/{id}', 'update');
         Route::get('/usuario/borrar/{id}', 'delete');
+        Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
         
     });
-
-
 
     /* ------------------ RECURSOS HUMANOS ------------------ */
     /* ----- PERSONAL ----- */
     Route::controller(DatosPersonalesController::class)->group(function () {
         Route::get('/rrhh/personal/index', 'index')->name('personal.index');
         Route::post('/rrhh/personales/index/guardar', 'store')->name('personal.store');
+        Route::get('/rrhh/personales/index/editar/{id}', 'edit');
     });
     Route::controller(DatosFamiliaresController::class)->group(function () {
         Route::get('/rrhh/personal/familiares', 'index')->name('personal.familiares');
