@@ -12,12 +12,12 @@ class UnidadTableSeeder extends Seeder
     {
         $unidades = [
             [
-                'razon_social' => 'PETRO PERU',
-                'ruc' => '258547412585',
-                'nombre_comercial' => 'PETRO PERU',
+                'razon_social' => 'GRUPO GURKAS SAC',
+                'ruc' => '20546468101',
+                'nombre_comercial' => 'GRUPO GURKAS SAC',
                 'cod_departamento' => 15,
                 'cod_provincia' => 1501,
-                'cod_distrito' => 150143,
+                'cod_distrito' => 150133,
                 'estado_id' => 1,
                 'empresa_id' => 1,
                 'fecha_activacion' => '2023/03/17 00:00:00'
