@@ -17,7 +17,7 @@
                                 <form id="formulario" class="row g-3" method="POST" action="{{ route('usuario.store') }}">
                                     @csrf
                                     <div class="col-12">
-                                        <input type="hidden" value="" id="hiddenUsuario">
+                                        <input type="hidden" value="" id="hiddenUsuario" name="hiddenUsuario">
                                         <label class="form-label">Buscar Personal</label>
                                         <select class="single-select select2" id="name" name="name">                   
                                             <option value="" selected>----Seleccionar----</option>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerra</button>
+                                            data-bs-dismiss="modal">Cerrar</button>
                                         <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
                                     </div>
                                 </form>

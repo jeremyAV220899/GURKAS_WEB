@@ -14,6 +14,7 @@ $(document).ready(function(){
 
     $('#name').change(function(){
         let id = $(this).val();
+        $('#hiddenUsuario').val(id);
         let url = `/api/servicios/administrador/getAdministradorEstado/${id}`;
         $('#estado_id').html('').append($('<option/>', {
             value: '',
@@ -54,6 +55,15 @@ $(document).ready(function(){
         $('#formulario').attr('action', val_url);
         $('#registrar').modal('show');
     });
+
+    $('#registrar').on('hidden.bs.modal', function () {
+        $('.select2').val($('#name option:first').val());
+        $('.select2').select2({
+            dropdownParent: $('#registrar')
+        });
+    });
+
+    
 
 });
 

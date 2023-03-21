@@ -25,13 +25,18 @@ class UsuarioController extends Controller
         return view('administrador.usuario',$datos);
     }
     public function store (Request $request){
-        $usuario = new User();
-        $usuario->name=$request->name;
-        $usuario->estado_id=$request->estado_id;
-        $usuario->email=$request->email;
-        $usuario->dni=$request->dni;
-        $usuario->password=Hash::make($request->password);
-        $usuario->save();
+        $personal = Personal::find($request->hiddenUsuario);
+        if(!empty($personal)){
+            $usuario = new User();
+            $usuario->name=$personal->nombre_completo;
+            $usuario->email=$personal->correo;
+            $usuario->email=$request->email;
+            $usuario->dni=$request->dni;
+            $usuario->password=Hash::make($request->password);
+            $usuario->save();
+        }
+        
+       
         return redirect()->route('administrador.sistemas.usuario');
     }
 
