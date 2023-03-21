@@ -30,14 +30,13 @@ class UsuarioController extends Controller
             $usuario = new User();
             $usuario->name=$personal->nombre_completo;
             $usuario->email=$personal->correo;
-            $usuario->email=$request->email;
-            $usuario->dni=$request->dni;
+            $usuario->estado_id=$personal->estado_id;
+            $usuario->dni=$personal->doc_ident;
+            $usuario->personal_id=$personal->id;
             $usuario->password=Hash::make($request->password);
             $usuario->save();
         }
-        
-       
-        return redirect()->route('administrador.sistemas.usuario');
+        return redirect()->route('administrador.usuario');
     }
 
     public function edit($id){
@@ -52,11 +51,13 @@ class UsuarioController extends Controller
         $usuario = User::find($id);
         $usuario->dni=$request->dni;
         $usuario->name=$request->name;
-        $usuario->idestado=$request->idestado;
+        $usuario->estado_id=$request->estado_id;
         $usuario->email=$request->email;
-        $usuario->password=Hash::make($request->password);
+        if($request->password != null){
+            $usuario->password=Hash::make($request->password);
+        }
         $usuario->save();
-        return redirect()->route('administrador.sistemas.usuario');
+        return redirect()->route('administrador.usuario');
     }
 
     public function delete($id){

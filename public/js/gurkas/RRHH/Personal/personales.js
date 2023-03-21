@@ -69,7 +69,6 @@ $(document).ready(function(){
         });
     });
 
-    
     $('#departamento').on('change', function(){
         let codDepartamento = $(this).val();
         if(codDepartamento.length == 2) {
