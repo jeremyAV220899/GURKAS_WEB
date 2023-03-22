@@ -84,7 +84,6 @@ class PersonalesController extends Controller
         $personal->estado_id=$request->estado_id;
         $personal->puesto_id=$request->puesto_id;
         $personal->empresa_id=$request->empresa_id;
-        $personal->empresa_id=$request->empresa_id;
         $personal->contrato_id=$request->contrato_id;
         $personal->fecha_inicio_contrato=$request->fecha_inicio_contrato;
         $personal->fecha_fin_contrato=$request->fecha_fin_contrato;
@@ -103,6 +102,14 @@ class PersonalesController extends Controller
         return redirect()->route('personal.index');
     }
 
+    public function ver($id){
+        $personal = Personal::find($id);
+        $datos = [
+            'personal' => $personal,
+        ];
+        return Response::json($datos);
+    }
+
     public function edit($id){
         $personal = Personal::find($id);
         $datos = [
@@ -113,8 +120,6 @@ class PersonalesController extends Controller
 
     public function update($id,Request $request){
         $personal = Personal::find($id);
-        $unidad = Unidad::where('razon_social', $request->unidad_id)
-        ->where('sede_id', $request->sede_id)->first();
         $personal->cod_empleado=$request->cod_empleado;
         $personal->nombre_empleado=$request->nombre_empleado;
         $personal->apellido_paterno=$request->apellido_paterno;
@@ -151,7 +156,6 @@ class PersonalesController extends Controller
         $personal->grados_id=$request->grados_id;
         $personal->estado_id=$request->estado_id;
         $personal->puesto_id=$request->puesto_id;
-        $personal->empresa_id=$request->empresa_id;
         $personal->empresa_id=$request->empresa_id;
         $personal->contrato_id=$request->contrato_id;
         $personal->fecha_inicio_contrato=$request->fecha_inicio_contrato;

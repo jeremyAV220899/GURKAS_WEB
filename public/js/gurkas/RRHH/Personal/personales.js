@@ -60,6 +60,7 @@ $(document).ready(function(){
         let val_url = '/rrhh/personales/index/editar/' + val_id;
       
         $.get(val_url, function(res) {
+            console.log(res)
             $('.titulo').html('Editar Datos Personales');
             $('.btnRegistrar').html('Editar');
             $('#cod_empleado').val(res.personal.cod_empleado);
@@ -159,7 +160,6 @@ $(document).ready(function(){
             $('#sede_id').prop('disabled', true);
         }else{
             $.get(url, function(response){
-                console.log(response);
                 $.each(response, function(index,value){
                     $('#sede_id').append($('<option/>', {
                         value: value.id,
@@ -170,4 +170,41 @@ $(document).ready(function(){
             });
         }
     })
+
+    $('.tablaPersonal').on('click', '.btnVer', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/rrhh/personales/index/ver/' + val_id;
+            
+        $.get(val_url, function(res) {
+            $('#cod_empleado_ver').val(res.personal.cod_empleado);
+            $('#nombre_empleado_ver').val(res.personal.nombre_empleado);
+            $('#apellido_paterno_ver').val(res.personal.apellido_paterno);
+            $('#apellido_materno_ver').val(res.personal.apellido_materno);
+            //$('#apellido_materno_ver').val(res.personal.apellido_materno); IMAGEN
+            $('#fecha_nacimiento_ver').val(res.personal.fecha_nacimiento);
+            $('#genero_id_ver').val(res.personal.genero_id);
+            $('#documento_id_ver').val(res.personal.documento_id);
+            $('#doc_ident_ver').val(res.personal.doc_ident);
+            $('#fecha_emision_ver').val(res.personal.fecha_emision);
+            $('#fecha_caducidad_ver').val(res.personal.fecha_caducidad);
+            $('#cod_ubigeo_ver').val(res.personal.cod_ubigeo);
+            $('#brevete_id_ver').val(res.personal.brevete_id);
+            $('#num_brevete_ver').val(res.personal.num_brevete);
+            $('#nacionalidad_id_ver').val(res.personal.nacionalidad_id);
+            Fn.seleccionarUbigeo(res.personal.cod_distrito,'departamento_ver','provincia_ver','distrito_ver');
+            $('#direccion_personal_ver').val(res.personal.direccion_personal);
+            $('#telefono_ver').val(res.personal.telefono);
+            $('#celular_ver').val(res.personal.celular);
+            $('#correo_ver').val(res.personal.correo);
+            $('#horas_id_ver').val(res.personal.horas_id);
+            $('#situaciones_id_ver').val(res.personal.situaciones_id);
+            $('#grados_id_ver').val(res.personal.grados_id);
+            $('#estado_id_ver').val(res.personal.estado_id);
+            $('#puesto_id_ver').val(res.personal.puesto_id);
+            $('#empresa_id_ver').val(res.personal.empresa_id);
+            $('#fecha_activacion_ver').val(res.unidad.fecha_activacion);
+            $('#fecha_baja_ver').val(res.unidad.fecha_baja);
+            $('#visualizar').modal('show');
+        });
+    });
 });

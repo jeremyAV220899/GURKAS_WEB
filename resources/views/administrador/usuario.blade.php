@@ -89,8 +89,9 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Estado</th>
+                            <th>DNI</th>
                             <th>Correo</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -99,8 +100,9 @@
                             <tr role="row" class="odd">
                                 <td>{{ $usuario->id}}</td>
                                 <td>{{ $usuario->name}}</td>
-                                <td>{{ $usuario->estado->nombre}}</td>
+                                <td>{{ $usuario->dni}}</td>
                                 <td>{{ $usuario->email}}</td>
+                                <td><span class="badge bg-light-{{ Util::estadoUsuariolColor($usuario->estado->id) }} text-{{ Util::estadoUsuariolColor($usuario->estado->id) }} w-100">{{ $usuario->estado->nombre }}</span></td>
                                 <td>
                                     <div class="table-actions d-flex align-items-center fs-6">
                                         <button class="btn text-warning btnEditar" type="button"

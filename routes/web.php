@@ -66,6 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(DatosPersonalesController::class)->group(function () {
         Route::get('/rrhh/personales/index', 'index')->name('personal.index');
         Route::post('/rrhh/personales/index/guardar', 'store')->name('personal.store');
+        Route::get('/rrhh/personales/index/ver/{id}', 'ver');
         Route::get('/rrhh/personales/index/editar/{id}', 'edit');
         Route::post('/rrhh/personales/index/actualizar/{id}', 'update');
     });

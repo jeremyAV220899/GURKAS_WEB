@@ -36,7 +36,7 @@ class UsuarioController extends Controller
             $usuario->password=Hash::make($request->password);
             $usuario->save();
         }
-        return redirect()->route('administrador.usuario');
+        return redirect()->route('usuario.index');
     }
 
     public function edit($id){
