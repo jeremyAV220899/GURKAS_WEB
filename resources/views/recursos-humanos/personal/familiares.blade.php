@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrar Datos Familiares</h5>
+                    <h5 class="modal-title titulo">Registrar Datos Familiares</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -17,10 +17,13 @@
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3 select2-sm col-12">
-                                        <label class="form-label">Select2 Small Text Control</label>
-                                        <select class="single-select">
-                                            <option value="United States">United States</option>
-                                            <option value="United Kingdom">United Kingdom</option>
+                                        <label class="form-label">Buscar Personal</label>
+                                        <select class="single-select select2" id="name" name="name">
+                                            <option value="" selected>----Seleccionar----</option>
+                                            @foreach ($empleados as $empleado)
+                                                <option value="{{ $empleado->id }}">{{ $empleado->nombre_completo }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -37,45 +40,44 @@
                                     <hr />
                                     <div class="col-6">
                                         <label class="form-label">Esposa(o)/Concubina(o)</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="pareja" name="pareja">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="dniPareja" name="dniPareja">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Hijo(a) 1</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="hijo1" name="hijo1">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI 1</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="dni1" name="dni1">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Hijo(a) 2</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="hijo2" name="hijo2">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI 2</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="dni2" name="dni2">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Hijo(a) 3</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="hijo3" name="hijo3">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI 3</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="dni3" name="dni3">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Hijo(a) 4</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="hijo4" name="hijo4">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">DNI 4</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="dni4" name="dni4">
                                     </div>
-                                
                                 </form>
                             </div>
                         </div>
@@ -83,7 +85,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
+                    <button type="button" class="btn btn-primary btnRegistrar">Registrar</button>
                 </div>
             </div>
         </div>
@@ -208,4 +210,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script src="/js/gurkas/RRHH/Personal/familiares.js"></script>
 @endsection

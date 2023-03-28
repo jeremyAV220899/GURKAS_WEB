@@ -27,7 +27,6 @@ $(document).ready(function(){
             $('#dni').prop('disabled', true);
         }else{
             $.get(url, function(response){
-                console.log(response)
                 $.each(response.estados, function(index,value){
                     $('#estado_id').append($('<option/>', {
                         value: value.id,
@@ -49,6 +48,7 @@ $(document).ready(function(){
         $('.btnRegistrar').html('Registrar');
         $('#name option:first').prop('selected', true);
         $('#email').val(''); 
+        $('#name').prop('disabled', false);
         $('#password').val(''); 
         $('#dni').val(''); 
         $('#estado_id option:first').prop('selected', true);       
@@ -63,6 +63,26 @@ $(document).ready(function(){
         });
     });
 
+    $('.tablaUsuarios').on('click', '.btnEditar', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/usuario/editar/' + val_id;
+
+        $.get(val_url, function(res) {
+            console.log(res)
+            $('.titulo').html('Editar Usuario');
+            $('.btnRegistrar').html('Editar');
+            $('#name').html(res.usuario.name);
+            $('#name').prop('disabled', true);
+            $('#estado_id').val(res.usuario.estado_id);
+            $('#estado_id').prop('disabled', false);
+            $('#dni').val(res.usuario.dni);
+            $('#dni').prop('disabled', true);
+            $('#email').val(res.usuario.email);   
+            $('#email').prop('disabled', false);         
+            $('#formulario').attr('action', '/usuario/actualizar/' + val_id);
+            $('#registrar').modal('show');
+        });
+    });
     
 
 });

@@ -31,6 +31,8 @@
                                         <select id="estado_id" name="estado_id" class="form-select"
                                             aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
+                                            <option value="1">ACTIVO</option>
+                                            <option value="2">BAJA</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
@@ -84,7 +86,7 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example2" class="table table-striped table-bordered tablaSituaciones">
+                <table id="example2" class="table table-striped table-bordered tablaUsuarios">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -108,8 +110,7 @@
                                         <button class="btn text-warning btnEditar" type="button"
                                             data-id="{{ $usuario->id }}" data-bs-toggle="modal"
                                             data-bs-target="#registrar">
-                                            <i class="bi bi-pencil-fill">
-                                            </i>
+                                            <i class="bi bi-pencil-fill"></i>
                                         </button>
                                         <button class="btn text-danger btnBorrar" title="Eliminar" type="button"
                                             data-id="{{ $usuario->id }}">

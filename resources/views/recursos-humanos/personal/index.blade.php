@@ -229,7 +229,7 @@
                                         <input type="date" id="fecha_fin_contrato" name="fecha_fin_contrato"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" id="unidad_id" name="unidad_id"
                                             aria-label="Default select example">
@@ -239,7 +239,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Sede</label>
                                         <select class="form-select" id="sede_id" name="sede_id"
                                             aria-label="Default select example">
@@ -535,8 +535,8 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Tipo Contrato</label>
-                                        <select class="form-select" id="contrato_id" name="contrato_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="contrato_id_ver" name="contrato_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($contratos as $contrato)
                                                 <option value="{{ $contrato->id }}">{{ $contrato->descripcion }}</option>
@@ -545,35 +545,35 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha de Inicio</label>
-                                        <input type="date" id="fecha_inicio_contrato" name="fecha_inicio_contrato"
+                                        <input type="date" id="fecha_inicio_contrato_ver" name="fecha_inicio_contrato_ver"
                                             class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha Fin</label>
-                                        <input type="date" id="fecha_fin_contrato" name="fecha_fin_contrato"
+                                        <input type="date" id="fecha_fin_contrato_ver" name="fecha_fin_contrato_ver"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Unidad</label>
-                                        <select class="form-select" id="unidad_id" name="unidad_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="unidad_id_ver" name="unidad_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option value="" selected>--- Seleccionar ---</option>
                                             @foreach ($unidades as $unidad)
                                                 <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Sede</label>
-                                        <select class="form-select" id="sede_id" name="sede_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="sede_id_ver" name="sede_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option value="" selected>--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Turno</label>
-                                        <select class="form-select" id="turno_id" name="turno_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="turno_id_ver" name="turno_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option selected>--- Seleccionar ---</option>
                                             @foreach ($turnos as $turno)
                                                 <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
@@ -582,8 +582,8 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Armado</label>
-                                        <select class="form-select" id="armado_id" name="armado_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="armado_id_ver" name="armado_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($armados as $armado)
                                                 <option value="{{ $armado->id }}">{{ $armado->descripcion }}</option>
@@ -594,8 +594,8 @@
                                     <hr />
                                     <div class="col-3">
                                         <label class="form-label">Talla Camisa</label>
-                                        <select class="form-select" id="talla_id" name="talla_id"
-                                            aria-label="Default select example">
+                                        <select class="form-select" id="talla_id_ver" name="talla_id_ver"
+                                            aria-label="Default select example" disabled>
                                             <option selected="">--- Seleccionar ---</option>
                                             @foreach ($tallas as $talla)
                                                 <option value="{{ $talla->id }}">{{ $talla->descripcion }}</option>
@@ -604,34 +604,34 @@
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Estatura</label>
-                                        <input type="text" id="estatura" name="estatura" class="form-control" readonly>
+                                        <input type="text" id="estatura_ver" name="estatura_ver" class="form-control" readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Talla Pantalon</label>
-                                        <input type="text" id="talla_pantalon" name="talla_pantalon"
+                                        <input type="text" id="talla_pantalon_ver" name="talla_pantalon_ver"
                                             class="form-control" readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Talla Calzado</label>
-                                        <input type="text" id="talla_calzado" name="talla_calzado"
+                                        <input type="text" id="talla_calzado_ver" name="talla_calzado_ver"
                                             class="form-control" readonly>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Fechas Registros</h6>
                                     <hr />
                                     <div class="col-4">
                                         <label class="form-label">Fecha Inicio Laboral</label>
-                                        <input type="date" id="fecha_inicio_laboral" name="fecha_inicio_laboral"
+                                        <input type="date" id="fecha_inicio_laboral_ver" name="fecha_inicio_laboral_ver"
                                             class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha Fin Laboral</label>
-                                        <input type="date" id="fecha_fin_laboral" name="fecha_fin_laboral"
+                                        <input type="date" id="fecha_fin_laboral_ver" name="fecha_fin_laboral_ver"
                                             class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha de Activación</label>
-                                        <input type="date" id="fecha_activacion_laboral"
-                                            name="fecha_activacion_laboral" class="form-control">
+                                        <input type="date" id="fecha_activacion_laboral_ver"
+                                            name="fecha_activacion_laboral_ver" class="form-control">
                                     </div>
                                 </form>
                             </div>
