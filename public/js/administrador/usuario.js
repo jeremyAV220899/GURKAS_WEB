@@ -47,10 +47,10 @@ $(document).ready(function(){
         $('.titulo').html('Registrar Usuario');
         $('.btnRegistrar').html('Registrar');
         $('#name option:first').prop('selected', true);
-        $('#email').val(''); 
+        $('#email').val('');    
         $('#name').prop('disabled', false);
-        $('#password').val(''); 
-        $('#dni').val(''); 
+        $('#password').val('');
+        $('#dni').val('');
         $('#estado_id option:first').prop('selected', true);       
         $('#formulario').attr('action', val_url);
         $('#registrar').modal('show');
@@ -66,18 +66,16 @@ $(document).ready(function(){
     $('.tablaUsuarios').on('click', '.btnEditar', function() {
         let val_id = $(this).data('id');
         let val_url = '/usuario/editar/' + val_id;
-
         $.get(val_url, function(res) {
-            console.log(res)
             $('.titulo').html('Editar Usuario');
             $('.btnRegistrar').html('Editar');
-            $('#name').html(res.usuario.name);
-            $('#name').prop('disabled', true);
+            $('#name').next().first().find('#select2-name-container').html(res.usuario.name);
             $('#estado_id').val(res.usuario.estado_id);
-            $('#estado_id').prop('disabled', false);
             $('#dni').val(res.usuario.dni);
-            $('#dni').prop('disabled', true);
             $('#email').val(res.usuario.email);   
+            $('#name').prop('disabled', true);
+            $('#estado_id').prop('disabled', false);
+            $('#dni').prop('disabled', true);
             $('#email').prop('disabled', false);         
             $('#formulario').attr('action', '/usuario/actualizar/' + val_id);
             $('#registrar').modal('show');

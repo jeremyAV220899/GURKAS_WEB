@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Contraseña</label>
-                                        <input type="text" id="password" name="password" class="form-control" required>
+                                        <input type="text" id="password" name="password" class="form-control">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
