@@ -15,14 +15,24 @@ class UsuarioController extends Controller
         return view('usuario.perfil');
     }
 
-    public function index()
+    public function indexBaja()
     {
         $datos = [
-            'usuarios' => User::all(),
+            'usuarios' => User::where('estado_id','!=','1')->get(),
             'estados' => Estado::all(),
             'empleados' => Personal::all(),
         ];
-        return view('administrador.usuario',$datos);
+        return view('usuario.usuario-baja',$datos);
+    }
+
+    public function index()
+    {
+        $datos = [
+            'usuarios' => User::where('estado_id','!=','2')->get(),
+            'estados' => Estado::all(),
+            'empleados' => Personal::all(),
+        ];
+        return view('usuario.usuario',$datos);
     }
     public function store (Request $request){
         $personal = Personal::find($request->hiddenUsuario);
@@ -59,15 +69,27 @@ class UsuarioController extends Controller
         return redirect()->route('usuario.index');
     }
 
-    public function delete($id){
-        try {
-            $usuario = User::find($id);
-            $usuario->delete();
-            $response = 'ok';
-            return Response::json($response);
-        } catch (\Throwable $th) {
-            $response = 'error';
-            return Response::json($response);
+    public function baja($id){
+        $usuario = User::find($id);
+        
+        if($usuario->estado_id=='1'){
+            $usuario->estado_id='2';
+        }else{
+            $usuario->estado_id='1';
         }
+        $usuario->save();
+        return redirect()->route('usuario.index');
+    }
+
+    public function recuperar($id){
+        $usuario = User::find($id);
+        
+        if($usuario->estado_id=='2'){
+            $usuario->estado_id='1';
+        }else{
+            $usuario->estado_id='2';
+        }
+        $usuario->save();
+        return redirect()->route('usuario.indexBaja');
     }
 }

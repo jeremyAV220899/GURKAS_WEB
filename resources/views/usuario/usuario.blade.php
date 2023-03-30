@@ -109,14 +109,14 @@
                                     <div class="table-actions d-flex align-items-center fs-6">
                                         <button class="btn text-warning btnEditar" type="button"
                                             data-id="{{ $usuario->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#registrar">
+                                            data-bs-target="#registrar" title="Editar">
                                             <i class="bi bi-pencil-fill"></i>
                                         </button>
-                                        <button class="btn text-danger btnBorrar" title="Eliminar" type="button"
-                                            data-id="{{ $usuario->id }}">
+                                        <a class="btn text-danger btnBorrar" title="Baja" type="button"
+                                            href="{{ route('usuario.baja',$usuario->id) }}">
                                             <i class="bi bi-trash-fill">
                                             </i>
-                                        </button>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>

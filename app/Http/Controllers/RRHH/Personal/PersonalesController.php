@@ -29,7 +29,7 @@ class PersonalesController extends Controller
 {
     public function index(){
         $datos = [
-            'personales' => Personal::all(),
+            'personales' => Personal::where('estado_id','!=','2')->get(),
             'generos' => Genero::all(),
             'nacionalidades' => Nacionalidad::all(),
             'documentos' => Documento::all(),

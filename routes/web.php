@@ -53,10 +53,12 @@ Route::middleware(['auth'])->group(function () {
     /* ----- USUARIOS ----- */
     Route::controller(UsuarioController::class)->group(function () {
         Route::get('/usuario', 'index')->name('usuario.index');
+        Route::get('/usuario/baja', 'indexBaja')->name('usuario.indexBaja');
         Route::post('/usuario/guardar', 'store')->name('usuario.store');
         Route::get('/usuario/editar/{id}', 'edit');
         Route::post('/usuario/actualizar/{id}', 'update');
-        Route::get('/usuario/borrar/{id}', 'delete');
+        Route::get('/usuario/baja/{id}', 'baja')->name('usuario.baja');
+        Route::get('/usuario/recuperar/{id}', 'recuperar')->name('usuario.recuperar');
         Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
         
     });
