@@ -63,8 +63,6 @@ var Fn = {
             type: 'post',
             dataType : 'json',
             success: function (response){
-                console.log(200)
-                console.log(response)
                 $('#'+response.dep).html(response.htmlDep);
                 $('#'+response.prov).html(response.htmlProv);
                 $('#'+response.dist).html(response.htmlDist);

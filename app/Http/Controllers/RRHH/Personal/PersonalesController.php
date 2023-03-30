@@ -104,16 +104,20 @@ class PersonalesController extends Controller
 
     public function ver($id){
         $personal = Personal::find($id);
+        $html = $this->getSedesByUnidad($id);
         $datos = [
             'personal' => $personal,
+            'html' => $html,
         ];
         return Response::json($datos);
     }
 
     public function edit($id){
         $personal = Personal::find($id);
+        $html = $this->getSedesByUnidad($id);
         $datos = [
             'personal' => $personal,
+            'html' => $html,
         ];
         return Response::json($datos);
     }
@@ -173,5 +177,20 @@ class PersonalesController extends Controller
         $personal->fecha_activacion_laboral=$request->fecha_activacion_laboral;
         $personal->save();
         return redirect()->route('personal.index');
+    }
+
+    public function getSedesByUnidad($id){
+        $personal = Personal::find($id);
+        $sedes = Sede::where('unidad_id', $personal->unidad_id)->get();
+        $html='<option value="">----- Seleccionar -----</option>';
+        foreach ($sedes as $sede) {
+            if($sede->id == $personal->sede_id){
+                $cadena = '<option value="'.$sede->id.'" selected>'.$sede->nombre_sede.'</option>';
+            }else{
+                $cadena = '<option value="'.$sede->id.'">'.$sede->nombre_sede.'</option>';
+            }
+            $html .= $cadena;
+        }
+        return $html;
     }
 }

@@ -60,7 +60,6 @@ $(document).ready(function(){
         let val_url = '/rrhh/personales/index/editar/' + val_id;
       
         $.get(val_url, function(res) {
-            console.log(res)
             $('.titulo').html('Editar Datos Personales');
             $('.btnRegistrar').html('Editar');
             $('#cod_empleado').val(res.personal.cod_empleado);
@@ -94,7 +93,7 @@ $(document).ready(function(){
             $('#fecha_inicio_contrato').val(res.personal.fecha_inicio_contrato);
             $('#fecha_fin_contrato').val(res.personal.fecha_fin_contrato);
             $('#unidad_id').val(res.personal.unidad_id);
-            $('#sede_id').val(res.sede_id);//revisar
+            $('#sede_id').html(res.html);
             $('#turno_id').val(res.personal.turno_id);
             $('#armado_id').val(res.personal.armado_id);
             $('#talla_id').val(res.personal.talla_id);
@@ -176,6 +175,7 @@ $(document).ready(function(){
         let val_url = '/rrhh/personales/index/ver/' + val_id;
             
         $.get(val_url, function(res) {
+            console.log(res);
             $('#cod_empleado_ver').val(res.personal.cod_empleado);
             $('#nombre_empleado_ver').val(res.personal.nombre_empleado);
             $('#apellido_paterno_ver').val(res.personal.apellido_paterno);
@@ -206,7 +206,7 @@ $(document).ready(function(){
             $('#fecha_inicio_contrato_ver').val(res.personal.fecha_inicio_contrato);
             $('#fecha_fin_contrato_ver').val(res.personal.fecha_fin_contrato);
             $('#unidad_id_ver').val(res.personal.unidad_id);
-            $('#sede_id_ver').val(res.personal.sede_id);
+            $('#sede_id_ver').html(res.html);
             $('#turno_id_ver').val(res.personal.turno_id);
             $('#armado_id_ver').val(res.personal.armado_id);
             $('#talla_id_ver').val(res.personal.talla_id);
