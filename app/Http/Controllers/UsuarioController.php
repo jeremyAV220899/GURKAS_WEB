@@ -11,10 +11,12 @@ use Response;
 
 class UsuarioController extends Controller
 {
+    /* VISTA EDITAR PERFIL */
     public function perfil(){
         return view('usuario.perfil');
     }
 
+    /* MOSTRAR USUARIOS REGISTRADOS CON EL ESTADO "BAJA" */
     public function indexBaja()
     {
         $datos = [
@@ -25,8 +27,8 @@ class UsuarioController extends Controller
         return view('usuario.usuario-baja',$datos);
     }
 
-    public function index()
-    {
+    /* MOSTRAR USUARIOS REGISTRADOS CON EL ESTADO "ACTIVO" */
+    public function index(){
         $datos = [
             'usuarios' => User::where('estado_id','!=','2')->get(),
             'estados' => Estado::all(),
@@ -34,6 +36,8 @@ class UsuarioController extends Controller
         ];
         return view('usuario.usuario',$datos);
     }
+
+    /* GUARDAR USUARIO */
     public function store (Request $request){
         $personal = Personal::find($request->hiddenUsuario);
         if(!empty($personal)){
@@ -42,6 +46,7 @@ class UsuarioController extends Controller
             $usuario->email=$personal->correo;
             $usuario->estado_id=$personal->estado_id;
             $usuario->dni=$personal->doc_ident;
+            $usuario->imagen=$personal->imagen;
             $usuario->personal_id=$personal->id;
             $usuario->password=Hash::make($request->password);
             $usuario->save();
@@ -49,6 +54,7 @@ class UsuarioController extends Controller
         return redirect()->route('usuario.index');
     }
 
+    /* TRAER DATOS DE USUARIO */
     public function edit($id){
         $usuario = User::find($id);
         $datos = [
@@ -57,6 +63,7 @@ class UsuarioController extends Controller
         return Response::json($datos);
     }
 
+    /* ACTUALIZAR DATOS DE USUARIO */
     public function update ($id, Request $request){
 
         $usuario = User::find($id);
@@ -69,6 +76,7 @@ class UsuarioController extends Controller
         return redirect()->route('usuario.index');
     }
 
+    /* MANDAR USUARIOS A BAJA */
     public function baja($id){
         $usuario = User::find($id);
         
@@ -81,6 +89,7 @@ class UsuarioController extends Controller
         return redirect()->route('usuario.index');
     }
 
+    /* RECUPERAR USUARIOS DE BAJA */
     public function recuperar($id){
         $usuario = User::find($id);
         

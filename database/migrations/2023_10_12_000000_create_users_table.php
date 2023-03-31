@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('personal_id')->references('id')->on('personales');
             $table->string('password');
             $table->string('dni');
+            $table->string('imagen')->nullable();
             $table->string('name');
             $table->foreignId('estado_id')->references('id')->on('estados');
             $table->string('email')->unique();

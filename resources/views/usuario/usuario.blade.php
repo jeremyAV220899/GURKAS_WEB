@@ -89,19 +89,19 @@
                 <table id="example2" class="table table-striped table-bordered tablaUsuarios">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
+                            <th>Foto</th>
                             <th>DNI</th>
                             <th>Correo</th>
-                            <th>Estado</th>
+                            <th>Correo</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($usuarios as $ids => $usuario)
                             <tr role="row" class="odd">
-                                <td>{{ $usuario->id}}</td>
                                 <td>{{ $usuario->name}}</td>
+                                <td><img src="{{ Storage::url($usuario->imagen) }}" alt="" class="product-img-2"></td>
                                 <td>{{ $usuario->dni}}</td>
                                 <td>{{ $usuario->email}}</td>
                                 <td><span class="badge bg-light-{{ Util::estadoUsuariolColor($usuario->estado->id) }} text-{{ Util::estadoUsuariolColor($usuario->estado->id) }} w-100">{{ $usuario->estado->nombre }}</span></td>

@@ -58,14 +58,14 @@
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
                                 data-bs-toggle="dropdown">
                                 <div class="user-setting d-flex align-items-center">
-                                    <img src="/assets/images/users/a5.jpg" class="user-img" alt="">
+                                    <img src="{{ Storage::url(Auth::user()->imagen)}}" class="user-img" alt="">
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" href="#">
                                         <div class="d-flex align-items-center">
-                                            <img src="https://via.placeholder.com/110X110" alt=""
+                                            <img src="{{ Storage::url(Auth::user()->imagen)}}" alt=""
                                                 class="rounded-circle" width="54" height="54">
                                             <div class="ms-3">
                                                 <h6 class="mb-0 dropdown-user-name">{{ Auth::user()->name }}</h6>
