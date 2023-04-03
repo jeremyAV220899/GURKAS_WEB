@@ -45,7 +45,7 @@
                                         </select>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <button type="submit" class="btn btn-primary btnRegistrar">Buscar Personal</button>
                                     </div>
                                 </form>
@@ -106,7 +106,7 @@
                 <label class="form-label">Turno</label>
                 <select class="form-select" id="turno_id" name="turno_id"
                 aria-label="Default select example">
-                <option selected>--- Seleccionar ---</option>
+                <option value="" selected>--- Seleccionar ---</option>
                 @foreach ($turnos as $turno)
                     <option value="{{ $turno->id }}">{{ $turno->nombre }}</option>
                 @endforeach
@@ -116,7 +116,7 @@
                 <label class="form-label">Empresa</label>
                 <select class="form-select" id="empresa_id" name="empresa_id"
                 aria-label="Default select example">
-                <option selected="">--- Seleccionar ---</option>
+                <option value="" selected>--- Seleccionar ---</option>
                 @foreach ($empresas as $empresa)
                     <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
                 @endforeach

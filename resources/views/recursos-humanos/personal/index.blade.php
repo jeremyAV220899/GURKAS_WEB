@@ -311,7 +311,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerra</button>
+                                            data-bs-dismiss="modal">Cerrar</button>
                                         <button type="submit" class="btn btn-primary btnRegistrar"></button>
                                     </div>
                                 </form>

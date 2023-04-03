@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $('#sede_id').prop('disabled', true);
+    $('#empresa_id').prop('disabled', true);
     $('#unidad_id').change(function(){
         let id = $(this).val();
         let url = `/api/servicios/centrocontrol/getSedes/${id}`;
@@ -9,16 +11,22 @@ $(document).ready(function(){
         if(id == ''){
             $('#sede_id option:first').prop('selected',true);
             $('#sede_id').prop('disabled', true);
+            $('#empresa_id option:first').prop('selected',true);
+            $('#empresa_id').prop('disabled', true);
         }else{
             $.get(url, function(response){
-                console.log(response);
                 $.each(response, function(index,value){
                     $('#sede_id').append($('<option/>', {
                         value: value.id,
                         text: value.nombre_sede
                     }));
+                    $('#empresa_id').append($('<option/>', {
+                        value: value.id,
+                        text: value.nombre
+                    }));
                 });
                 $('#sede_id').prop('disabled', false);
+                $('#empresa_id').prop('disabled', false);
             });
         }
         

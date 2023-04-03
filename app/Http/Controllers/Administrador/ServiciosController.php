@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administrador;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administrador\Sistema\Empresa;
 use App\Models\Administrador\Sistema\Estado;
 use App\Models\Comercial\Sede;
 use App\Models\RRHH\Personal;
