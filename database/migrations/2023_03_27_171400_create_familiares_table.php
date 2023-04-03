@@ -11,17 +11,17 @@ return new class extends Migration
         Schema::create('familiares', function (Blueprint $table) {
             $table->id();
             $table->foreignId('personal_id')->references('id')->on('personales');
-            $table->char('num_hijos, 1')->nullable();
-            $table->string('pareja, 75')->nullable();
-            $table->string('dniPareja, 12')->nullable();
-            $table->string('hijo1, 75')->nullable();
-            $table->string('dnihijo1, 12')->nullable();
-            $table->string('hijo2, 75')->nullable();
-            $table->string('dnihijo2, 12')->nullable();
-            $table->string('hijo3, 75')->nullable();
-            $table->string('dnihijo3, 12')->nullable();
-            $table->string('hijo4, 75')->nullable();
-            $table->string('dnihijo4, 12')->nullable();
+            $table->char('num_hijos',1)->nullable();
+            $table->string('pareja', 75)->nullable();
+            $table->string('dniPareja',12)->nullable();
+            $table->string('hijo1', 75)->nullable();
+            $table->string('dnihijo1',12)->nullable();
+            $table->string('hijo2', 75)->nullable();
+            $table->string('dnihijo2', 12)->nullable();
+            $table->string('hijo3', 75)->nullable();
+            $table->string('dnihijo3', 12)->nullable();
+            $table->string('hijo4', 12)->nullable();
+            $table->string('dnihijo4', 12)->nullable();
             $table->timestamps();
         });
     }

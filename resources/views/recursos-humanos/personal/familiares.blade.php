@@ -28,12 +28,12 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">N° Hijos</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select" id="CantHijos" name="CantHijos" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             <option value="1">1 Hijo</option>
-                                            <option value="2">2 Hijo</option>
-                                            <option value="3">3 Hijo</option>
-                                            <option value="4">4 Hijo</option>
+                                            <option value="2">2 Hijos</option>
+                                            <option value="3">3 Hijos</option>
+                                            <option value="4">4 Hijos</option>
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Familiares</h6>
@@ -46,37 +46,8 @@
                                         <label class="form-label">DNI</label>
                                         <input type="text" class="form-control" id="dniPareja" name="dniPareja">
                                     </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Hijo(a) 1</label>
-                                        <input type="text" class="form-control" id="hijo1" name="hijo1">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">DNI 1</label>
-                                        <input type="text" class="form-control" id="dni1" name="dni1">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Hijo(a) 2</label>
-                                        <input type="text" class="form-control" id="hijo2" name="hijo2">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">DNI 2</label>
-                                        <input type="text" class="form-control" id="dni2" name="dni2">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Hijo(a) 3</label>
-                                        <input type="text" class="form-control" id="hijo3" name="hijo3">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">DNI 3</label>
-                                        <input type="text" class="form-control" id="dni3" name="dni3">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Hijo(a) 4</label>
-                                        <input type="text" class="form-control" id="hijo4" name="hijo4">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">DNI 4</label>
-                                        <input type="text" class="form-control" id="dni4" name="dni4">
+                                    <div id="hijos">
+
                                     </div>
                                 </form>
                             </div>
