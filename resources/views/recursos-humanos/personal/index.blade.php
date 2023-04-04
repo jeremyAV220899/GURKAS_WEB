@@ -342,8 +342,8 @@
                                     @csrf
                                     <div class="col-3">
                                         <label class="form-label">Código Empleado</label>
-                                        <input type="text" id="cod_empleado_ver" name="cod_empleado_ver" class="form-control"
-                                            readonly>
+                                        <input type="text" id="cod_empleado_ver" name="cod_empleado_ver"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Nombres</label>
@@ -392,7 +392,8 @@
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Núm. Documento</label>
-                                        <input type="text" id="doc_ident_ver" name="doc_ident_ver" class="form-control" readonly>
+                                        <input type="text" id="doc_ident_ver" name="doc_ident_ver"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-2">
                                         <label class="form-label">Fech. Emisión</label>
@@ -406,7 +407,8 @@
                                     </div>
                                     <div class="col-2">
                                         <label class="form-label">Código Ubigeo</label>
-                                        <input type="text" id="cod_ubigeo_ver" name="cod_ubigeo_ver" class="form-control" readonly>
+                                        <input type="text" id="cod_ubigeo_ver" name="cod_ubigeo_ver"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Categoría Brevete</label>
@@ -420,7 +422,8 @@
                                     </div>
                                     <div class="col-2">
                                         <label class="form-label">Núm. Brevete</label>
-                                        <input type="text" id="num_brevete_ver" name="num_brevete_ver" class="form-control" readonly>
+                                        <input type="text" id="num_brevete_ver" name="num_brevete_ver"
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Nacionalidad</label>
@@ -454,19 +457,23 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Dirección</label>
-                                        <textarea class="form-control" id="direccion_personal_ver" name="direccion_personal_ver" rows="2" cols="4" readonly></textarea>
+                                        <textarea class="form-control" id="direccion_personal_ver" name="direccion_personal_ver" rows="2"
+                                            cols="4" readonly></textarea>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Telefono</label>
-                                        <input type="text" id="telefono_ver" name="telefono_ver" class="form-control" readonly>
+                                        <input type="text" id="telefono_ver" name="telefono_ver" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Celular</label>
-                                        <input type="text" id="celular_ver" name="celular_ver" class="form-control" readonly>
+                                        <input type="text" id="celular_ver" name="celular_ver" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Correo</label>
-                                        <input type="email" id="correo_ver" name="correo_ver" class="form-control" readonly>
+                                        <input type="email" id="correo_ver" name="correo_ver" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Horas Laborales</label>
@@ -545,8 +552,8 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha de Inicio</label>
-                                        <input type="date" id="fecha_inicio_contrato_ver" name="fecha_inicio_contrato_ver"
-                                            class="form-control">
+                                        <input type="date" id="fecha_inicio_contrato_ver"
+                                            name="fecha_inicio_contrato_ver" class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha Fin</label>
@@ -604,7 +611,8 @@
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Estatura</label>
-                                        <input type="text" id="estatura_ver" name="estatura_ver" class="form-control" readonly>
+                                        <input type="text" id="estatura_ver" name="estatura_ver" class="form-control"
+                                            readonly>
                                     </div>
                                     <div class="col-3">
                                         <label class="form-label">Talla Pantalon</label>
@@ -620,8 +628,8 @@
                                     <hr />
                                     <div class="col-4">
                                         <label class="form-label">Fecha Inicio Laboral</label>
-                                        <input type="date" id="fecha_inicio_laboral_ver" name="fecha_inicio_laboral_ver"
-                                            class="form-control">
+                                        <input type="date" id="fecha_inicio_laboral_ver"
+                                            name="fecha_inicio_laboral_ver" class="form-control">
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Fecha Fin Laboral</label>
@@ -722,10 +730,11 @@
                                                         <i class="bi bi-pencil-fill">
                                                         </i>
                                                     </button>
-                                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="bottom" title=""
-                                                        data-bs-original-title="Delete" aria-label="Delete"><i
-                                                            class="bi bi-trash-fill"></i></a>
+                                                    <a class="btn text-danger btnBorrar" title="Baja" type="button"
+                                                        href="{{ route('personal.baja', $personal->id) }}">
+                                                        <i class="bi bi-trash-fill">
+                                                        </i>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>

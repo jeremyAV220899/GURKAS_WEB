@@ -67,10 +67,13 @@ Route::middleware(['auth'])->group(function () {
     /* ----- PERSONAL ----- */
     Route::controller(DatosPersonalesController::class)->group(function () {
         Route::get('/rrhh/personales/index', 'index')->name('personal.index');
+        Route::get('/rrhh/personales/baja', 'indexBaja')->name('personal.indexBaja');
         Route::post('/rrhh/personales/index/guardar', 'store')->name('personal.store');
         Route::get('/rrhh/personales/index/ver/{id}', 'ver');
         Route::get('/rrhh/personales/index/editar/{id}', 'edit');
         Route::post('/rrhh/personales/index/actualizar/{id}', 'update');
+        Route::get('/rrhh/personales/index/baja/{id}', 'baja')->name('personal.baja');
+        Route::get('/rrhh/personales/index/recuperar/{id}', 'recuperar')->name('personal.recuperar');
     });
     Route::controller(DatosFamiliaresController::class)->group(function () {
         Route::get('/rrhh/personal/familiares', 'index')->name('personal.familiares');

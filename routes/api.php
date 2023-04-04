@@ -12,4 +12,5 @@ Route::controller(ServiciosController::class)->group(function () {
     Route::get('/servicios/rrhh/getSedes/{id}', 'getSedesByUnidad');
     Route::get('/servicios/centrocontrol/getSedes/{id}', 'getSedesByUnidad');
     Route::get('/servicios/administrador/getAdministradorEstado/{id}', 'getEstadosByPersonal');
+    Route::get('/servicios/administrador/getAdministradorEmpresa/{id}', 'getEmpresasByUnidad');
 });

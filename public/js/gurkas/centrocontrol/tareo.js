@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#sede_id').prop('disabled', true);
     $('#empresa_id').prop('disabled', true);
+
     $('#unidad_id').change(function(){
         let id = $(this).val();
         let url = `/api/servicios/centrocontrol/getSedes/${id}`;
@@ -11,7 +12,6 @@ $(document).ready(function(){
         if(id == ''){
             $('#sede_id option:first').prop('selected',true);
             $('#sede_id').prop('disabled', true);
-            $('#empresa_id option:first').prop('selected',true);
             $('#empresa_id').prop('disabled', true);
         }else{
             $.get(url, function(response){
@@ -20,16 +20,32 @@ $(document).ready(function(){
                         value: value.id,
                         text: value.nombre_sede
                     }));
+                });
+                $('#sede_id').prop('disabled', false);
+            });
+        }
+    })
+
+    $('#unidad_id').change(function(){
+        let id = $(this).val();
+        //$('#hiddenUsuario').val(id);
+        let url = `/api/servicios/administrador/getAdministradorEmpresa/${id}`;
+        if(id == ''){
+            $('#empresa_id option:first').prop('selected',true);
+            $('#empresa_id').prop('disabled', true);
+        }else{
+            $.get(url, function(response){
+                $.each(response.empresas, function(index,value){
                     $('#empresa_id').append($('<option/>', {
                         value: value.id,
                         text: value.nombre
                     }));
                 });
-                $('#sede_id').prop('disabled', false);
-                $('#empresa_id').prop('disabled', false);
+                //$('#hiddenUsuario').val(response.idPersonal)
+                $('#empresa_id').val(response.idEmpresa).prop('disabled', true);
+                //$('#email').prop('disabled', false);
             });
-        }
-        
+        }  
     })
 
     window.onload = function(){

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Administrador\Sistema\Empresa;
 use App\Models\Administrador\Sistema\Estado;
 use App\Models\Comercial\Sede;
+use App\Models\Comercial\Unidad;
 use App\Models\RRHH\Personal;
 use Illuminate\Http\Request;
 use Response;
@@ -27,7 +28,16 @@ class ServiciosController extends Controller
             'estados' => $estados,
             'idPersonal' => $personal->id
         ];
+        return Response::json($response);
+    }
 
+    public function getEmpresasByUnidad($id){
+        $unidades = Unidad::find($id);
+        $empresas = Empresa::all();
+        $response = [
+            'idEmpresa' => $unidades->empresa_id,
+            'empresas' => $empresas,
+        ];
         return Response::json($response);
     }
 }

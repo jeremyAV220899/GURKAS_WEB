@@ -27,6 +27,30 @@ use Response;
 
 class PersonalesController extends Controller
 {
+
+    public function indexBaja(){
+        $datos = [
+            'personales' => Personal::where('estado_id','!=','1')->get(),
+            'generos' => Genero::all(),
+            'nacionalidades' => Nacionalidad::all(),
+            'documentos' => Documento::all(),
+            'brevetes' => Brevete::all(),
+            'horas' => Hora::all(),
+            'tallas' => Talla::all(),
+            'turnos' => Turno::all(),
+            'empresas' => Empresa::all(),
+            'puestos' => Puesto::all(),
+            'estados' => Estado::all(),
+            'grados' => Grado::all(),
+            'situaciones' => Situacion::all(),
+            'contratos' => Contrato::all(),
+            'armados' => Armado::all(),
+            'unidades' => Unidad::all(),
+            'sedes' => Sede::all(),
+        ];
+        return view('recursos-humanos.personal.personal-baja',$datos);
+    }
+
     public function index(){
         $datos = [
             'personales' => Personal::where('estado_id','!=','2')->get(),
@@ -192,5 +216,29 @@ class PersonalesController extends Controller
             $html .= $cadena;
         }
         return $html;
+    }
+
+    public function baja($id){
+        $personal = Personal::find($id);
+        
+        if($personal->estado_id=='1'){
+            $personal->estado_id='2';
+        }else{
+            $personal->estado_id='1';
+        }
+        $personal->save();
+        return redirect()->route('personal.index');
+    }
+
+    public function recuperar($id){
+        $personal = Personal::find($id);
+        
+        if($personal->estado_id=='2'){
+            $personal->estado_id='1';
+        }else{
+            $personal->estado_id='2';
+        }
+        $personal->save();
+        return redirect()->route('personal.indexBaja');
     }
 }
