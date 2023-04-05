@@ -157,11 +157,12 @@
                             <td>Thomas Hardy</td>
                             <td>12364578</td>
                             <td>
-                                <select class="mi-select">
-                                    <option value="1">ASISTENCIA</option>
-                                    <option value="2">FALTA</option>
-                                    <option value="3">DESCANSO</option>
-                                </select>
+                                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+									<option value="" selected>--- SELECCIONAR ---</option>
+									<option value="1">Asistio</option>
+									<option value="2">Falto</option>
+									<option value="3">Tardanza</option>
+								</select>
                             </td>
 
                         </tr>

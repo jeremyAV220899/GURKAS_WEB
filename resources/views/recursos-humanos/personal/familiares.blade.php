@@ -14,11 +14,13 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos Del Empleado</h6>
                                 <hr />
-                                <form class="row g-3" method="POST" enctype="multipart/form-data">
+                                <form id="formulario" class="row g-3" method="POST" enctype="multipart/form-data"
+                                    action="{{ route('familiar.store') }}">
                                     @csrf
                                     <div class="mb-3 select2-sm col-12">
+                                        <input type="hidden" value="" id="hiddenFamiliar" name="hiddenFamiliar">
                                         <label class="form-label">Buscar Personal</label>
-                                        <select class="single-select select2" id="name" name="name">
+                                        <select class="single-select select2" id="nombPersonal" name="nombPersonal">
                                             <option value="" selected>----Seleccionar----</option>
                                             @foreach ($empleados as $empleado)
                                                 <option value="{{ $empleado->id }}">{{ $empleado->nombre_completo }}
@@ -26,9 +28,26 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="CheckPareja">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                Esposa(o)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="CheckHijos">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                Hijo
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <label class="form-label">N° Hijos</label>
-                                        <select class="form-select" id="CantHijos" name="CantHijos" aria-label="Default select example">
+                                        <select class="form-select" id="num_hijos" name="num_hijos"
+                                            aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
                                             <option value="1">1 Hijo</option>
                                             <option value="2">2 Hijos</option>
@@ -39,7 +58,7 @@
                                     <h6 class="mb-0 text-uppercase">Datos Familiares</h6>
                                     <hr />
                                     <div class="col-6">
-                                        <label class="form-label">Esposa(o)/Concubina(o)</label>
+                                        <label class="form-label">Esposa(o)</label>
                                         <input type="text" class="form-control" id="pareja" name="pareja">
                                     </div>
                                     <div class="col-6">
@@ -47,16 +66,16 @@
                                         <input type="text" class="form-control" id="dniPareja" name="dniPareja">
                                     </div>
                                     <div id="hijos">
-
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Registrar</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary btnRegistrar">Registrar</button>
                 </div>
             </div>
         </div>
@@ -76,8 +95,9 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Registrar Nuevo</button>
+                <button type="button" class="btn btn-primary btnCrearFamiliar" data-bs-toggle="modal"
+                    data-bs-target="#registrar">Registrar
+                    Nuevo</button>
             </div>
         </div>
     </div>
@@ -96,83 +116,44 @@
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
-                                            style="width: 100.641px;">
+                                            style="width: 50.641px;">
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
-                                            style="width: 260.094px;">Esposa(o) / Concubina(a)</th>
+                                            style="width: 100.094px;">Esposa(o) / Concubina(a)</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
-                                            style="width: 112.406px;">DNI Esposa</th>
+                                            style="width: 50.406px;">DNI Esposa</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Salary: activate to sort column ascending"
                                             style="width: 84.0781px;">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>5854745</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>5854745</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>5854745</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach ($familiares as $familiar)
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">AVP71269685</td>
+                                            <td>{{ $familiar->pareja }}</td>
+                                            <td>{{ $familiar->dniPareja }}</td>
+                                            <td>
+                                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Views" aria-label="Views"><i
+                                                            class="bi bi-eye-fill"></i></a>
+                                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Edit" aria-label="Edit"><i
+                                                            class="bi bi-pencil-fill"></i></a>
+                                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Delete" aria-label="Delete"><i
+                                                            class="bi bi-trash-fill"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>

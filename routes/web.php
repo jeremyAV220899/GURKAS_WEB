@@ -77,6 +77,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::controller(DatosFamiliaresController::class)->group(function () {
         Route::get('/rrhh/personal/familiares', 'index')->name('personal.familiares');
+        Route::post('/rrhh/personal/familiares/guardar', 'store')->name('familiar.store');
     });
     Route::controller(DatosLaboralesController::class)->group(function () {
         Route::get('/rrhh/personal/laborales', 'index')->name('personal.laborales');
