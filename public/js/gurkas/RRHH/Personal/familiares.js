@@ -15,7 +15,7 @@ $(document).ready(function(){
         $('#registrar').modal('show');
     });
 
-    $('#CantHijos').change(function(){
+    $('#num_hijos').change(function(){
         let cantidad = $(this).val();
         let html = '';
         for (let index = 0; index < cantidad; index++) {
