@@ -75,7 +75,7 @@
             </nav>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Personal</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Personal</h6>
     <hr>
     <div class="card">
         <div class="card-body row g-3">

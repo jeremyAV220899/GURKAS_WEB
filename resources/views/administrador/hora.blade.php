@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Horas Laborales</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Horas Laborales</h6>
     <hr>
     <div class="card">
         <div class="card-body">

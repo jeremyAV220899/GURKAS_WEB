@@ -12,7 +12,7 @@
             </nav>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Usuarios de Baja</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Usuarios de Baja</h6>
     <hr>
     <div class="card">
         <div class="card-body">

@@ -1007,23 +1007,23 @@
                         </li>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Sistemas</a>
                             <ul>
-                                <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.talla') }}"><i class="bi bi-circle"></i>TALLAS</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.puesto') }}"><i class="bi bi-circle"></i>PUESTO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.genero') }}"><i class="bi bi-circle"></i>GENERO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.documento') }}"><i class="bi bi-circle"></i>DOCUMENTO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.brevete') }}"><i class="bi bi-circle"></i>BREVETE</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.nacionalidad') }}"><i class="bi bi-circle"></i>NACIONALIDAD</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.hora') }}"><i class="bi bi-circle"></i>HORAS LABORALES</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.situacion') }}"><i class="bi bi-circle"></i>SITUACION</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.empresa') }}"><i class="bi bi-circle"></i>EMPRESA</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.turno') }}"><i class="bi bi-circle"></i>TURNO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.contrato') }}"><i class="bi bi-circle"></i>CONTRATO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.estado') }}"><i class="bi bi-circle"></i>ESTADO</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.grado') }}"><i class="bi bi-circle"></i>GRADO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.armado') }}"><i class="bi bi-circle"></i>ARMADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.banco') }}"><i class="bi bi-circle"></i>BANCOS</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.brevete') }}"><i class="bi bi-circle"></i>BREVETE</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.contrato') }}"><i class="bi bi-circle"></i>CONTRATO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.documento') }}"><i class="bi bi-circle"></i>DOCUMENTO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.empresa') }}"><i class="bi bi-circle"></i>EMPRESA</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.estado') }}"><i class="bi bi-circle"></i>ESTADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.genero') }}"><i class="bi bi-circle"></i>GENERO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.grado') }}"><i class="bi bi-circle"></i>GRADO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.hora') }}"><i class="bi bi-circle"></i>HORAS LABORALES</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.nacionalidad') }}"><i class="bi bi-circle"></i>NACIONALIDAD</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.puesto') }}"><i class="bi bi-circle"></i>PUESTO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.situacion') }}"><i class="bi bi-circle"></i>SITUACION</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.talla') }}"><i class="bi bi-circle"></i>TALLAS</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.turno') }}"><i class="bi bi-circle"></i>TURNO</a></li>
                                 <li> <a href="{{ route('administrador.sistemas.asistencia') }}"><i class="bi bi-circle"></i>TIPO DE ASISTENCIA</a></li>
-                                <li> <a href="{{ route('administrador.sistemas.banco') }}"><i class="bi bi-circle"></i>BANCO</a></li>
+                                <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
                             </ul>
                         </li>
                     </ul>
