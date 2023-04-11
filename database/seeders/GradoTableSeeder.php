@@ -12,10 +12,28 @@ class GradoTableSeeder extends Seeder
     {
         $grados = [
             [
-                'descripcion' => 'UNIVERSITARIO',
+                'descripcion' => 'SECUNDARIA COMPLETA',
             ],
             [
-                'descripcion' => 'TÉCNICO',
+                'descripcion' => 'SUPERIOR COMPLETO(INSTITUTO SUPERIOR, ETC)',
+            ],
+            [
+                'descripcion' => 'UNIVERSITARIA COMPLETA',
+            ],
+            [
+                'descripcion' => 'PRIMARIA COMPLETA',
+            ],
+            [
+                'descripcion' => 'TÉCNICA COMPLETA',
+            ],
+            [
+                'descripcion' => 'SECUNDARIA INCOMPLETA',
+            ],
+            [
+                'descripcion' => 'SUPERIOR INCOMPLETO(INSTITUTO SUPERIOR, ETC)',
+            ],
+            [
+                'descripcion' => 'UNIVERSITARIA INCOMPLETA',
             ],
         ];
         Grado::insert($grados);

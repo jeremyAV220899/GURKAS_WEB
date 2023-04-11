@@ -17,6 +17,9 @@ class GeneroTableSeeder extends Seeder
             [
                 'nombre' => 'Femenino',
             ],
+            [
+                'nombre' => 'No especifico',
+            ],
         ];
         Genero::insert($generos);
     }
