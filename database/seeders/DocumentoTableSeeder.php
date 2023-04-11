@@ -15,7 +15,13 @@ class DocumentoTableSeeder extends Seeder
                 'nombre' => 'DNI',
             ],
             [
-                'nombre' => 'CARNET DE EXTRANJERIA',
+                'nombre' => 'RUC',
+            ],
+            [
+                'nombre' => 'Carnet de Extranjeria',
+            ],
+            [
+                'nombre' => 'Pasaporte',
             ],
         ];
         Documento::insert($documentos);
