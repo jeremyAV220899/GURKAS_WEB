@@ -219,4 +219,45 @@ $(document).ready(function(){
             $('#visualizar').modal('show');
         });
     });
+
+    $('#CheckHijos').change(function(){
+        if($(this).is(':checked')){
+            $('#hijoGeneral').show();
+        }else{
+            $('#hijoGeneral').hide();
+        }
+    })
+
+    $('#CheckPareja').change(function(){
+        if($(this).is(':checked')){
+            $('.parejaGeneral').show();
+        }else{
+            $('.parejaGeneral').hide();
+        }
+    })
+
+    $('#num_hijos').change(function(){
+        let cantidad = $(this).val();
+        $('.stiloHijo1 , .stiloHijo2 , .stiloHijo3 , .stiloHijo4').css('display', 'none');
+        let selector = '';
+        let html = '';
+        if(cantidad !=''){
+            for (let index = 0; index < cantidad; index++) {
+                selector = '.stiloHijo'+(index+1) 
+                $(selector).css('display', 'inline');               
+            }
+        }
+    })
+
+    $('.tablaPersonal').on('click', '.btnFamiliar', function() {
+        let val_id = $(this).data('id');
+        let val_url = '/rrhh/personal/familiares/agregar/' + val_id;     
+        $.get(val_url, function(res) {
+            $('#hiddenFamiliar').val(val_id);
+            $('#formulario').attr('action', '/rrhh/personal/familiares/guardar');
+            $('#registrarFamilia').modal('show');
+            
+        });
+    });
+
 });

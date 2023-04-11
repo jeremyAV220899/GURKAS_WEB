@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('familiares', function (Blueprint $table) {
             $table->id();
             $table->foreignId('personal_id')->references('id')->on('personales');
-            $table->string('nombPersonal', 75)->nullable();
             $table->char('num_hijos',1)->nullable();
             $table->string('pareja', 75)->nullable();
             $table->string('dniPareja',12)->nullable();

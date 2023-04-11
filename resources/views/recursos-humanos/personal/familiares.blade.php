@@ -1,133 +1,5 @@
 @extends('layouts.apps')
 @section('content')
-    <!-- modal -->
-    <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title titulo">Registrar Datos Familiares</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos Del Empleado</h6>
-                                <hr />
-                                <form id="formulario" class="row g-3" method="POST" enctype="multipart/form-data"
-                                    action="{{ route('familiar.store') }}">
-                                    @csrf
-                                    <div class="mb-3 select2-sm col-12">
-                                        <input type="hidden" value="" id="hiddenFamiliar" name="hiddenFamiliar">
-                                        <label class="form-label">Buscar Personal</label>
-                                        <select class="single-select select2" id="nombPersonal" name="nombPersonal">
-                                            <option value="" selected>----Seleccionar----</option>
-                                            @foreach ($empleados as $empleado)
-                                                <option value="{{ $empleado->id }}">{{ $empleado->nombre_completo }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="CheckPareja" disabled>
-                                            <label class="form-check-label" for="gridCheck1">
-                                                Esposa(o)
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="CheckHijos" disabled>
-                                            <label class="form-check-label" for="gridCheck1">
-                                                Hijo
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12" id="hijoGeneral" style="display: none">
-                                        <label class="form-label">N° Hijos</label>
-                                        <select class="form-select" id="num_hijos" name="num_hijos"
-                                            aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="1">1 Hijo</option>
-                                            <option value="2">2 Hijos</option>
-                                            <option value="3">3 Hijos</option>
-                                            <option value="4">4 Hijos</option>
-                                        </select>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos Familiares</h6>
-                                    <hr />
-                                    <div class="col-6 parejaGeneral" style="display: none">
-                                        <label class="form-label">Esposa(o)</label>
-                                        <input type="text" class="form-control" id="pareja" name="pareja">
-                                    </div>
-                                    <div class="col-6 parejaGeneral" style="display: none">
-                                        <label class="form-label">DNI</label>
-                                        <input type="text" class="form-control" id="dniPareja" name="dniPareja">
-                                    </div>
-                                    <div class="col-12 stiloHijo1" style="display: none">
-                                        <label for="formFile" class="form-label">Imagen DNI 1</label>
-                                        <input class="form-control" name="img1" type="file" id="formFile">
-                                    </div>
-                                    <div class="col-6 stiloHijo1" style="display: none">
-                                        <label class="form-label">Hijo(a) 1</label>
-                                        <input type="text" class="form-control" name="hijo1">
-                                    </div>
-                                    <div class="col-6 stiloHijo1" style="display: none">
-                                        <label class="form-label">DNI 1</label>
-                                        <input type="text" class="form-control" name="dni1">
-                                    </div>
-                                    <div class="col-12 stiloHijo2" style="display: none">
-                                        <label for="formFile" class="form-label">Imagen DNI 2</label>
-                                        <input class="form-control" name="img2" type="file" id="formFile">
-                                    </div>
-                                    <div class="col-6 stiloHijo2" style="display: none">
-                                        <label class="form-label">Hijo(a) 2</label>
-                                        <input type="text" class="form-control" name="hijo2">
-                                    </div>
-                                    <div class="col-6 stiloHijo2" style="display: none">
-                                        <label class="form-label">DNI 2</label>
-                                        <input type="text" class="form-control" name="dni2">
-                                    </div>
-                                    <div class="col-12 stiloHijo3" style="display: none">
-                                        <label for="formFile" class="form-label">Imagen DNI 3</label>
-                                        <input class="form-control" name="img3" type="file" id="formFile">
-                                    </div>
-                                    <div class="col-6 stiloHijo3" style="display: none">
-                                        <label class="form-label">Hijo(a) 3</label>
-                                        <input type="text" class="form-control" name="hijo3">
-                                    </div>
-                                    <div class="col-6 stiloHijo3" style="display: none">
-                                        <label class="form-label">DNI 3</label>
-                                        <input type="text" class="form-control" name="dni3">
-                                    </div>
-                                    <div class="col-12 stiloHijo4" style="display: none">
-                                        <label for="formFile" class="form-label">Imagen DNI 4</label>
-                                        <input class="form-control" name="img4" type="file" id="formFile">
-                                    </div>
-                                    <div class="col-6 stiloHijo4" style="display: none">
-                                        <label class="form-label">Hijo(a) 4</label>
-                                        <input type="text" class="form-control" name="hijo4">
-                                    </div>
-                                    <div class="col-6 stiloHijo4" style="display: none">
-                                        <label class="form-label">DNI 4</label>
-                                        <input type="text" class="form-control" name="dni4">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary btnRegistrar" style="display: none">Registrar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END modal -->
-
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Recursos Humanos</div>
         <div class="ps-3">
@@ -138,13 +10,6 @@
                     <li class="breadcrumb-item active" aria-current="page">Personal</li>
                 </ol>
             </nav>
-        </div>
-        <div class="ms-auto">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary btnCrearFamiliar" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Registrar
-                    Nuevo</button>
-            </div>
         </div>
     </div>
     <h6 class="mb-0 text-uppercase">Lista de Datos Familiares</h6>
@@ -166,6 +31,9 @@
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 100.094px;">Nombre Empleado</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
                                             style="width: 100.094px;">Esposa(o) / Concubina(a)</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending"
@@ -178,7 +46,8 @@
                                 <tbody>
                                     @foreach ($familiares as $familiar)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">AVP71269685</td>
+                                            <td class="sorting_1">{{ $familiar->personal->cod_empleado }}</td>
+                                            <td>{{ $familiar->personal->nombre_completo }}</td>
                                             <td>{{ $familiar->pareja }}</td>
                                             <td>{{ $familiar->dniPareja }}</td>
                                             <td>
@@ -199,7 +68,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </div>

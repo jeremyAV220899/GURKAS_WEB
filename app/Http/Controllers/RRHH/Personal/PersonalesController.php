@@ -19,6 +19,7 @@ use App\Models\Administrador\Sistema\Talla;
 use App\Models\Administrador\Sistema\Turno;
 use App\Models\Comercial\Sede;
 use App\Models\Comercial\Unidad;
+use App\Models\RRHH\Familiar;
 use App\Models\RRHH\Personal;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -76,6 +77,8 @@ class PersonalesController extends Controller
 
     public function store(Request $request){
         $personal = new Personal();
+        $imgDefaultF = 'public/img/mujer.jpg';
+        $imgDefaultM = 'public/img/hombre.jpg';
         $personal->cod_empleado=$request->cod_empleado;
         $personal->nombre_empleado=$request->nombre_empleado;
         $personal->apellido_paterno=$request->apellido_paterno;
@@ -83,6 +86,10 @@ class PersonalesController extends Controller
         $personal->nombre_completo=$request->nombre_empleado . ' ' . $request->apellido_paterno . ' ' . $request->apellido_materno;
         if (isset($request->imagen)) {
             $personal->imagen=$request->file('imagen')->store('public/img');
+        }else if (!isset($request->imagen) && $request->genero_id == '1'){
+            $personal->imagen = $imgDefaultM;
+        }else if (!isset($request->imagen) && $request->genero_id == '2'){
+            $personal->imagen = $imgDefaultF;
         }
         //$personal->apellido_materno=$request->apellido_materno; EDAD $var1 . $var2;
         $personal->fecha_nacimiento=$request->fecha_nacimiento;

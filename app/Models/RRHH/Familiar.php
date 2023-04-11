@@ -9,4 +9,8 @@ class Familiar extends Model
 {
     use HasFactory;
     protected $table = 'familiares';
+
+    public function personal() {
+        return $this->belongsTo(Personal::class);
+    }
 }

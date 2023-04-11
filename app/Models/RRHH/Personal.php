@@ -17,5 +17,8 @@ class Personal extends Model
     public function nacionalidad(){
         return $this->belongsTo(Nacionalidad::class);
     }
+    public function familiares(){
+        return $this->hasMany(Familiar::class);
+    }
     
 }
