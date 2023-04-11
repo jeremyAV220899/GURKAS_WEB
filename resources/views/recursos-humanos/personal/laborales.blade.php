@@ -44,8 +44,8 @@
                                         <label class="form-label">Tipo Moneda</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="1">Soles</option>
+                                            <option value="2">Dólares</option>
                                         </select>
                                     </div>
                                     <div class="col-6">

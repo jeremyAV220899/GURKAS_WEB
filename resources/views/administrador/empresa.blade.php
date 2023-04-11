@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Empresas</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Empresas</h6>
     <hr>
     <div class="card">
         <div class="card-body">

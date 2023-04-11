@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Lita de Tipo de Contrato</h6>
+    <h6 class="mb-0 text-uppercase">Lista de Tipo de Contrato</h6>
     <hr>
     <div class="card">
         <div class="card-body">
