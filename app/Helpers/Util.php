@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use DateTime;
+
 class Util{
 
     /*----- CODIGO UNIDAD -----*/
@@ -32,6 +34,14 @@ class Util{
             $color = 'danger';
         }
         return $color;
+    }
+
+    /*----- ACTUALIZAR AUTOMATICAMENTE LA EDAD POR AÑO -----*/
+    public static function calcular_edad($fecha_nacimiento){
+        $actual = new DateTime();
+        $cumpleanos = new DateTime($fecha_nacimiento);
+        $edad = $actual->diff($cumpleanos);
+        return $edad->y;
     }
 
 }
