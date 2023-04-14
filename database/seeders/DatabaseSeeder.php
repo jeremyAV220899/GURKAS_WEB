@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             SedeTableSeeder::class,
             PersonalTableSeeder::class,
             UserTableSeeder::class,
+            BancoTableSeeder::class,
         ]);
     }
 }

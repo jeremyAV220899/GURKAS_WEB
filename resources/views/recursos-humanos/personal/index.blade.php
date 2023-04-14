@@ -862,6 +862,12 @@
                                                         <i class="bi bi-person-plus">
                                                         </i>
                                                     </button>
+                                                    <button class="btn text-dark btnFamiliar" type="button"
+                                                        data-id="{{ $personal->id }}" data-bs-toggle="modal"
+                                                        data-bs-target="#registrarFamilia" title="Laborales">
+                                                        <i class="bi bi-card-checklist">
+                                                        </i>
+                                                    </button>
                                                     <a class="btn text-danger btnBorrar" title="Baja" type="button"
                                                         href="{{ route('personal.baja', $personal->id) }}">
                                                         <i class="bi bi-trash-fill">

@@ -25,7 +25,7 @@
                                     <div class="col-12">
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
                                             <option value="P">Peruana</option>
                                             <option value="E">Extranjera</option>
                                         </select>
@@ -33,7 +33,7 @@
                                     <div class="col-12">
                                         <label class="form-label">Sede</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
                                             <option value="P">Peruana</option>
                                             <option value="E">Extranjera</option>
                                         </select>
@@ -43,7 +43,7 @@
                                     <div class="col-6">
                                         <label class="form-label">Tipo Moneda</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
                                             <option value="1">Soles</option>
                                             <option value="2">Dólares</option>
                                         </select>
@@ -51,9 +51,10 @@
                                     <div class="col-6">
                                         <label class="form-label">Banco Sueldo</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                            @foreach ($bancos as $banco)
+                                                <option value="{{ $banco->id }}">{{ $banco->codigo }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -103,41 +104,42 @@
                                     <div class="col-6">
                                         <label class="form-label">Tipo Trabajador</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                            <option value="1">Ejecutivo</option>
+                                            <option value="2">Empleado</option>
+                                            <option value="3">Obrero</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Sueldo Básico</label>
-                                        <input type="date" class="form-control">
+                                        <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Sueldo Bruto</label>
-                                        <input type="date" class="form-control">
+                                        <input type="text" class="form-control">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Asignación Familiar</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                            <option value="1">No</option>
+                                            <option value="2">Si</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Tipo Pago</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="">--- Seleccionar ---</option>
+                                            <option value="1" selected>Depósito en Cuenta</option>
+                                            <option value="2">Efectivo</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Periodidad de la Remuneración</label>
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                            <option value="">--- Seleccionar ---</option>
+                                            <option value="1">Mensual</option>
+                                            <option value="2" selected>Quincenal</option>
                                         </select>
                                     </div>
                                 </form>
