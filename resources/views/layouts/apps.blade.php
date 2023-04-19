@@ -1026,6 +1026,15 @@
                                 <li> <a href="{{ route('administrador.sistemas.ubigeo') }}"><i class="bi bi-circle"></i>UBIGEO</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Regimen Pensionario</a>
+                            <ul>
+                                <li> <a href="{{ route('administrador.regimen.pensionarios') }}"><i class="bi bi-circle"></i>Regimen Pensionario</a></li>
+                                <li> <a href="#"><i class="bi bi-circle"></i>AFP / ONP</a></li>
+                                <li> <a href="#"><i class="bi bi-circle"></i>Tipo de Comisión</a></li>
+                                <li> <a href="#"><i class="bi bi-circle"></i>Movimiento AFP</a></li>
+                                <li> <a href="#"><i class="bi bi-circle"></i>Relaciones Regimen Pensionario</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <!-- END ADMINISTRADOR -->

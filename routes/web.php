@@ -37,7 +37,7 @@ use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
 use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
 use App\Http\Controllers\Administrador\AsistenciaController as AdminAsistenciaController;
 use App\Http\Controllers\Administrador\BancoController as AdminBancoController;
-
+use App\Http\Controllers\Administrador\Regimen\PensionarioController as AdminRegimenPensionarioController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 
 use App\Http\Controllers\UsuarioController;
@@ -284,6 +284,15 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/bancos/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/bancos/borrar/{id}', 'delete');
     });
+
+    Route::controller(AdminRegimenPensionarioController::class)->group(function () {
+        Route::get('/administrador/regimen/pensionarios', 'index')->name('administrador.regimen.pensionarios');
+        Route::post('/administrador/regimen/pensionarios/guardar', 'store')->name('pensionario.store');
+        Route::get('/administrador/regimen/pensionarios/editar/{id}', 'edit');
+        Route::post('/administrador/regimen/pensionarios/actualizar/{id}', 'update');
+        Route::get('/administrador/regimen/pensionarios/borrar/{id}', 'delete');
+    });
+
     
 });
 
