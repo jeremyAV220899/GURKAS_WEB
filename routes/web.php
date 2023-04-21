@@ -40,7 +40,7 @@ use App\Http\Controllers\Administrador\BancoController as AdminBancoController;
 use App\Http\Controllers\Administrador\Regimen\AfpController as AdminRegimenAfpController;
 use App\Http\Controllers\Administrador\Regimen\PensionarioController as AdminRegimenPensionarioController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
-
+use App\Http\Controllers\Logistica\ProductoController as LogisticaProductoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -285,6 +285,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/administrador/sistemas/bancos/actualizar/{id}', 'update');
         Route::get('/administrador/sistemas/bancos/borrar/{id}', 'delete');
     });
+
+   /* ------------------ LOGISTICA ------------------ */
+   Route::controller(LogisticaProductoController::class)->group(function () {
+    Route::get('/logistica/almacen/producto', 'index')->name('logistica.almacen.producto');
+});
 
     Route::controller(AdminRegimenPensionarioController::class)->group(function () {
         Route::get('/administrador/regimen/pensionarios', 'index')->name('administrador.regimen.pensionarios');

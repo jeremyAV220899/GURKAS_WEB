@@ -761,7 +761,7 @@
                             <ul>
                                 <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Producto</a>
                                     <ul>
-                                        <li> <a href="#"><i class="bi bi-circle"></i>Nuevo Producto</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto') }}"><i class="bi bi-circle"></i>Nuevo Producto</a></li>
                                         <li> <a href="#"><i class="bi bi-circle"></i>Listar Producto</a></li>
                                         <li> <a href="#"><i class="bi bi-circle"></i>Generar Código de Barra</a></li>
                                     </ul>
