@@ -1029,7 +1029,7 @@
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Regimen Pensionario</a>
                             <ul>
                                 <li> <a href="{{ route('administrador.regimen.pensionarios') }}"><i class="bi bi-circle"></i>Regimen Pensionario</a></li>
-                                <li> <a href="#"><i class="bi bi-circle"></i>AFP / ONP</a></li>
+                                <li> <a href="{{ route('administrador.regimen.afps') }}"><i class="bi bi-circle"></i>AFP / ONP</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Tipo de Comisión</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Movimiento AFP</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Relaciones Regimen Pensionario</a></li>
