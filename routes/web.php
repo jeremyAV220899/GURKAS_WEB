@@ -38,6 +38,8 @@ use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController
 use App\Http\Controllers\Administrador\AsistenciaController as AdminAsistenciaController;
 use App\Http\Controllers\Administrador\BancoController as AdminBancoController;
 use App\Http\Controllers\Administrador\Regimen\AfpController as AdminRegimenAfpController;
+use App\Http\Controllers\Administrador\Regimen\ComisionController as AdminComisionController;
+use App\Http\Controllers\Administrador\Regimen\MovimientoController as AdminMovimientoController;
 use App\Http\Controllers\Administrador\Regimen\PensionarioController as AdminRegimenPensionarioController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 use App\Http\Controllers\Logistica\ProductoController as LogisticaProductoController;
@@ -61,7 +63,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/usuario/baja/{id}', 'baja')->name('usuario.baja');
         Route::get('/usuario/recuperar/{id}', 'recuperar')->name('usuario.recuperar');
         Route::get('/usuario/perfil', 'perfil')->name('usuario.perfil');
-        
     });
 
     /* ------------------ RECURSOS HUMANOS ------------------ */
@@ -101,7 +102,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(ReporteAsistenciaSedeController::class)->group(function () {
         Route::get('/rrhh/reportes/asistencia/sede', 'index')->name('reportes.asistencia-sede');
     });
-    
+
     /* ----- BUSQUEDA PERSONAL ----- */
     Route::controller(BusquedaUnidadController::class)->group(function () {
         Route::get('/rrhh/busqueda/unidad', 'index')->name('busqueda.unidad');
@@ -286,10 +287,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/bancos/borrar/{id}', 'delete');
     });
 
-   /* ------------------ LOGISTICA ------------------ */
-   Route::controller(LogisticaProductoController::class)->group(function () {
-    Route::get('/logistica/almacen/producto', 'index')->name('logistica.almacen.producto');
-});
+    /* ------------------ LOGISTICA ------------------ */
+    Route::controller(LogisticaProductoController::class)->group(function () {
+        Route::get('/logistica/almacen/producto', 'index')->name('logistica.almacen.producto');
+    });
 
     Route::controller(AdminRegimenPensionarioController::class)->group(function () {
         Route::get('/administrador/regimen/pensionarios', 'index')->name('administrador.regimen.pensionarios');
@@ -307,7 +308,21 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/regimen/afp/borrar/{id}', 'delete');
     });
 
-    
+    Route::controller(AdminComisionController::class)->group(function () {
+        Route::get('/administrador/regimen/comision', 'index')->name('administrador.regimen.comisiones');
+        Route::post('/administrador/regimen/comision/guardar', 'store')->name('comision.store');
+        Route::get('/administrador/regimen/comision/editar/{id}', 'edit');
+        Route::post('/administrador/regimen/comision/actualizar/{id}', 'update');
+        Route::get('/administrador/regimen/comision/borrar/{id}', 'delete');
+    });
+
+    Route::controller(AdminMovimientoController::class)->group(function () {
+        Route::get('/administrador/regimen/movimiento', 'index')->name('administrador.regimen.movimientos');
+        Route::post('/administrador/regimen/movimiento/guardar', 'store')->name('movimiento.store');
+        Route::get('/administrador/regimen/movimiento/editar/{id}', 'edit');
+        Route::post('/administrador/regimen/movimiento/actualizar/{id}', 'update');
+        Route::get('/administrador/regimen/movimiento/borrar/{id}', 'delete');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

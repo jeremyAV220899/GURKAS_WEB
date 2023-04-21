@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
             BancoTableSeeder::class,
             PensionarioTableSeeder::class,
             AfpTableSeeder::class,
+            ComisionTableSeeder::class,
+            MovimientoTableSeeder::class,
         ]);
     }
 }
