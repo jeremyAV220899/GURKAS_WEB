@@ -37,7 +37,12 @@ use App\Http\Controllers\Administrador\GradoController as AdminGradoController;
 use App\Http\Controllers\Administrador\ArmadoController as AdminArmadoController;
 use App\Http\Controllers\Administrador\AsistenciaController as AdminAsistenciaController;
 use App\Http\Controllers\Administrador\BancoController as AdminBancoController;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\Administrador\Regimen\PensionarioController as AdminRegimenPensionarioController;
+use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
+>>>>>>> 689fc46473e1e443f5a59b2423b28e10572e7622
 
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 use App\Http\Controllers\Logistica\ProductoController as LogisticaProductoController;
@@ -286,10 +291,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/sistemas/bancos/borrar/{id}', 'delete');
     });
 
+<<<<<<< HEAD
    /* ------------------ LOGISTICA ------------------ */
    Route::controller(LogisticaProductoController::class)->group(function () {
     Route::get('/logistica/almacen/producto', 'index')->name('logistica.almacen.producto');
 });
+=======
+    Route::controller(AdminRegimenPensionarioController::class)->group(function () {
+        Route::get('/administrador/regimen/pensionarios', 'index')->name('administrador.regimen.pensionarios');
+        Route::post('/administrador/regimen/pensionarios/guardar', 'store')->name('pensionario.store');
+        Route::get('/administrador/regimen/pensionarios/editar/{id}', 'edit');
+        Route::post('/administrador/regimen/pensionarios/actualizar/{id}', 'update');
+        Route::get('/administrador/regimen/pensionarios/borrar/{id}', 'delete');
+    });
+>>>>>>> 689fc46473e1e443f5a59b2423b28e10572e7622
 
     
 });

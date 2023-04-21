@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             PersonalTableSeeder::class,
             UserTableSeeder::class,
             BancoTableSeeder::class,
+            PensionarioTableSeeder::class,
         ]);
     }
 }
