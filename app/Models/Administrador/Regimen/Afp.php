@@ -9,4 +9,7 @@ class Afp extends Model
 {
     use HasFactory;
     protected $table = 'afps';
+    public function relaciones(){
+        return $this->hasMany(Rpensionario::class);
+    }
 }

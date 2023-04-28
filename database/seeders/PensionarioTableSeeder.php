@@ -15,7 +15,7 @@ class PensionarioTableSeeder extends Seeder
                 'nombre' => 'SISTEMA NACIONAL DE PENSIONES - ONP',
             ],
             [
-                'nombre' => 'PENSIONARIO',
+                'nombre' => 'PENSIONISTA',
             ],
             [
                 'nombre' => 'SIN REGIMEN PENSIONARIO',

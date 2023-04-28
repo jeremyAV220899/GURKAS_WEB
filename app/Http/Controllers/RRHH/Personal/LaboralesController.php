@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\RRHH\Personal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administrador\Regimen\Pensionario;
 use App\Models\Administrador\Sistema\Banco;
 use App\Models\RRHH\Laboral;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ class LaboralesController extends Controller
         $datos = [
             'laborales' => Laboral::all(),
             'bancos' => Banco::all(),
+            'pensionarios' => Pensionario::all(),
         ];
         return view('recursos-humanos.personal.laborales',$datos);
     }

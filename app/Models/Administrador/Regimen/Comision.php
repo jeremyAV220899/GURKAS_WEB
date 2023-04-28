@@ -9,4 +9,7 @@ class Comision extends Model
 {
     use HasFactory;
     protected $table = 'comisiones';
+    public function relaciones(){
+        return $this->hasMany(Rpensionario::class);
+    }
 }

@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Datos Personales</h6>
-                                <hr/>
+                                <hr />
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-">
@@ -21,7 +21,7 @@
                                         <input type="text" class="form-control" readonly>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
-                                    <hr/>
+                                    <hr />
                                     <div class="col-12">
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" aria-label="Default select example">
@@ -39,7 +39,7 @@
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos de Banco</h6>
-                                    <hr/>
+                                    <hr />
                                     <div class="col-6">
                                         <label class="form-label">Tipo Moneda</label>
                                         <select class="form-select" aria-label="Default select example">
@@ -62,45 +62,40 @@
                                         <input type="text" class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Regimen Pensionario</h6>
-                                    <hr/>
-                                    <div class="col-6">
+                                    <hr />
+                                    <div class="col-12">
                                         <label class="form-label">Regimen Pensionario</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" aria-label="Default select example" name="pensionario" id="pensionario">
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                            @foreach ($pensionarios as $pensionario)
+                                                <option value="{{ $pensionario->id }}">{{ $pensionario->nombre }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">AFP / ONP</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" aria-label="Default select example" name="afp" id="afp">
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">AFP CUSPP</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="afpcuspp" name="afpcuspp" value="">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Tipo de Comisión</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" aria-label="Default select example" name="comision" id="comision">
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <label class="form-label">Movimiento AFP</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
+                                        <select class="form-select" aria-label="Default select example" name="movimiento" id="movimiento">
+                                            <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Laborales</h6>
-                                    <hr/>
+                                    <hr />
                                     <div class="col-6">
                                         <label class="form-label">Tipo Trabajador</label>
                                         <select class="form-select" aria-label="Default select example">
@@ -188,7 +183,8 @@
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-sort="ascending"
-                                            aria-label="Name: activate to sort column descending" style="width: 100.641px;">
+                                            aria-label="Name: activate to sort column descending"
+                                            style="width: 100.641px;">
                                             Cód. Empleado</th>
                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                             colspan="1" aria-label="Position: activate to sort column ascending"
@@ -323,4 +319,36 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+
+<script lenguaje="javascript">
+    $("#pensionario").on('change', function () {
+        $("#pensionario option:selected").each(function () {
+            let elegido=$(this).val();
+            $.get('/afps/'+elegido, function(data){
+                $("#afp").html(data);
+                $("#afpcuspp").val(data);
+            });
+        });
+    })
+
+    $("#pensionario").on('change', function () {
+        $("#pensionario option:selected").each(function () {
+            let elegido=$(this).val();
+            $.get('/comisiones/'+elegido, function(data){
+                $("#comision").html(data);
+            });
+        });
+    });
+
+    $("#pensionario").on('change', function () {
+        $("#pensionario option:selected").each(function () {
+            let elegido=$(this).val();
+            $.get('/movimientos/'+elegido, function(data){
+                $("#movimiento").html(data);
+            });
+        });
+    });
+</script>
 @endsection

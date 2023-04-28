@@ -41,6 +41,8 @@ use App\Http\Controllers\Administrador\Regimen\AfpController as AdminRegimenAfpC
 use App\Http\Controllers\Administrador\Regimen\ComisionController as AdminComisionController;
 use App\Http\Controllers\Administrador\Regimen\MovimientoController as AdminMovimientoController;
 use App\Http\Controllers\Administrador\Regimen\PensionarioController as AdminRegimenPensionarioController;
+use App\Http\Controllers\Administrador\Regimen\RpensionarioController as AdminRegimenRelacionesController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 use App\Http\Controllers\Logistica\ProductoController as LogisticaProductoController;
 use App\Http\Controllers\UsuarioController;
@@ -322,6 +324,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/administrador/regimen/movimiento/editar/{id}', 'edit');
         Route::post('/administrador/regimen/movimiento/actualizar/{id}', 'update');
         Route::get('/administrador/regimen/movimiento/borrar/{id}', 'delete');
+    });
+
+    Route::controller(AdminRegimenRelacionesController::class)->group(function () {
+        Route::get('/administrador/regimen/relacion', 'index')->name('administrador.regimen.relacion');
+        Route::post('/administrador/regimen/relacion/guardar', 'store')->name('relacion.store');
+        Route::get('/administrador/regimen/movimiento/editar/{id}', 'edit');
+        Route::post('/administrador/regimen/movimiento/actualizar/{id}', 'update');
+        Route::get('/administrador/regimen/movimiento/borrar/{id}', 'delete');
+    });
+
+    Route::controller(ApiController::class)->group(function (){
+        Route::get('/afps/{pensionari}', 'afp');
+        Route::get('/comisiones/{afp}', 'comision');
+        Route::get('/movimientos/{comision}', 'movimiento');
     });
 });
 
