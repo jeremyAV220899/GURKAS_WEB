@@ -70,8 +70,8 @@ class PersonalesController extends Controller
             'situaciones' => Situacion::all(),
             'contratos' => Contrato::all(),
             'armados' => Armado::all(),
-            'unidades' => Unidad::all(),
-            'sedes' => Sede::all(),
+            'unidades' => Unidad::where('estado_id', '!=', '2')->get(),
+            'sedes' => Sede::where('estado_id', '!=', '2')->get(),
         ];
         return view('recursos-humanos.personal.index',$datos);
     }
