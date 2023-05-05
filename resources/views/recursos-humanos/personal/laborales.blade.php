@@ -59,7 +59,8 @@
                                     <hr />
                                     <div class="col-4">
                                         <label class="form-label">Regimen Pensionario</label>
-                                        <select class="form-select" aria-label="Default select example" name="pensionario" id="pensionario">
+                                        <select class="form-select" aria-label="Default select example" name="pensionario"
+                                            id="pensionario">
                                             <option value="" selected>--- Seleccionar ---</option>
                                             @foreach ($pensionarios as $pensionario)
                                                 <option value="{{ $pensionario->id }}">{{ $pensionario->nombre }}</option>
@@ -68,23 +69,27 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">AFP / ONP</label>
-                                        <select class="form-select" aria-label="Default select example" name="afp" id="afp">
+                                        <select class="form-select" aria-label="Default select example" name="afp"
+                                            id="afp">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">AFP CUSPP</label>
-                                        <input type="text" class="form-control" id="afpcuspp" name="afpcuspp" value="">
+                                        <input type="text" class="form-control" id="afpcuspp" name="afpcuspp"
+                                            value="">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Tipo de Comisión</label>
-                                        <select class="form-select" aria-label="Default select example" name="comision" id="comision">
+                                        <select class="form-select" aria-label="Default select example" name="comision"
+                                            id="comision">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Movimiento AFP</label>
-                                        <select class="form-select" aria-label="Default select example" name="movimiento" id="movimiento">
+                                        <select class="form-select" aria-label="Default select example" name="movimiento"
+                                            id="movimiento">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
@@ -195,28 +200,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP71269685</td>
-                                        <td>Juan Manuel</td>
-                                        <td>Ubillus</td>
-                                        <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach ($laborales as $laboral)
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Views" aria-label="Views"><i
+                                                            class="bi bi-eye-fill"></i></a>
+                                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Edit" aria-label="Edit"><i
+                                                            class="bi bi-pencil-fill"></i></a>
+                                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title=""
+                                                        data-bs-original-title="Delete" aria-label="Delete"><i
+                                                            class="bi bi-trash-fill"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -227,34 +234,33 @@
     </div>
 @endsection
 @section('script')
+    <script lenguaje="javascript">
+        $("#pensionario").on('change', function() {
+            $("#pensionario option:selected").each(function() {
+                let elegido = $(this).val();
+                $.get('/afps/' + elegido, function(data) {
+                    $("#afp").html(data);
+                    $("#afpcuspp").val(data);
+                });
+            });
+        })
 
-<script lenguaje="javascript">
-    $("#pensionario").on('change', function () {
-        $("#pensionario option:selected").each(function () {
-            let elegido=$(this).val();
-            $.get('/afps/'+elegido, function(data){
-                $("#afp").html(data);
-                $("#afpcuspp").val(data);
+        $("#pensionario").on('change', function() {
+            $("#pensionario option:selected").each(function() {
+                let elegido = $(this).val();
+                $.get('/comisiones/' + elegido, function(data) {
+                    $("#comision").html(data);
+                });
             });
         });
-    })
 
-    $("#pensionario").on('change', function () {
-        $("#pensionario option:selected").each(function () {
-            let elegido=$(this).val();
-            $.get('/comisiones/'+elegido, function(data){
-                $("#comision").html(data);
+        $("#pensionario").on('change', function() {
+            $("#pensionario option:selected").each(function() {
+                let elegido = $(this).val();
+                $.get('/movimientos/' + elegido, function(data) {
+                    $("#movimiento").html(data);
+                });
             });
         });
-    });
-
-    $("#pensionario").on('change', function () {
-        $("#pensionario option:selected").each(function () {
-            let elegido=$(this).val();
-            $.get('/movimientos/'+elegido, function(data){
-                $("#movimiento").html(data);
-            });
-        });
-    });
-</script>
+    </script>
 @endsection
