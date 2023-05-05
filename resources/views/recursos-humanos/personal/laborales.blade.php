@@ -1,155 +1,5 @@
 @extends('layouts.apps')
 @section('content')
-    <!-- modal -->
-    <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Registrar Datos Laborales</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="border p-3 rounded">
-                                <form class="row g-3" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
-                                    <hr />
-                                    <div class="col-6">
-                                        <label class="form-label">Unidad</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Sede</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos de Banco</h6>
-                                    <hr />
-                                    <div class="col-4">
-                                        <label class="form-label">Tipo Moneda</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="1">Soles</option>
-                                            <option value="2">Dólares</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Banco Sueldo</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            @foreach ($bancos as $banco)
-                                                <option value="{{ $banco->id }}">{{ $banco->codigo }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Cta. Bancaria</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos Regimen Pensionario</h6>
-                                    <hr />
-                                    <div class="col-4">
-                                        <label class="form-label">Regimen Pensionario</label>
-                                        <select class="form-select" aria-label="Default select example" name="pensionario"
-                                            id="pensionario">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            @foreach ($pensionarios as $pensionario)
-                                                <option value="{{ $pensionario->id }}">{{ $pensionario->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">AFP / ONP</label>
-                                        <select class="form-select" aria-label="Default select example" name="afp"
-                                            id="afp">
-                                            <option value="">--- Seleccionar ---</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">AFP CUSPP</label>
-                                        <input type="text" class="form-control" id="afpcuspp" name="afpcuspp"
-                                            value="">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Tipo de Comisión</label>
-                                        <select class="form-select" aria-label="Default select example" name="comision"
-                                            id="comision">
-                                            <option value="">--- Seleccionar ---</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Movimiento AFP</label>
-                                        <select class="form-select" aria-label="Default select example" name="movimiento"
-                                            id="movimiento">
-                                            <option value="">--- Seleccionar ---</option>
-                                        </select>
-                                    </div>
-                                    <h6 class="mb-0 text-uppercase">Datos Laborales</h6>
-                                    <hr />
-                                    <div class="col-4">
-                                        <label class="form-label">Tipo Trabajador</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="1">Ejecutivo</option>
-                                            <option value="2">Empleado</option>
-                                            <option value="3">Obrero</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Sueldo Básico</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Sueldo Bruto</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Asignación Familiar</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            <option value="1">No</option>
-                                            <option value="2">Si</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Tipo Pago</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="">--- Seleccionar ---</option>
-                                            <option value="1" selected>Depósito en Cuenta</option>
-                                            <option value="2">Efectivo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Periodidad de la Remuneración</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="">--- Seleccionar ---</option>
-                                            <option value="1">Mensual</option>
-                                            <option value="2" selected>Quincenal</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END modal -->
-
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Recursos Humanos</div>
         <div class="ps-3">
@@ -160,12 +10,6 @@
                     <li class="breadcrumb-item active" aria-current="page">Personal</li>
                 </ol>
             </nav>
-        </div>
-        <div class="ms-auto">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Registrar Nuevo</button>
-            </div>
         </div>
     </div>
     <h6 class="mb-0 text-uppercase">LISTA DE DATOS Laborales</h6>
@@ -239,7 +83,6 @@
         let elegido=$(this).val();
         if (elegido != ""){
             $.get('/pensiones/'+elegido, function(data){
-                console.log(data)
                 if(data.estado){
                     $("#afp").html(data.afp).prop('disabled', true);
                     $("#comision").html(data.comision).prop('disabled', true);

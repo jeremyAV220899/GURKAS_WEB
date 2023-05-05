@@ -260,4 +260,28 @@ $(document).ready(function(){
         });
     });
 
+    /* SCRIPT DATOS LABORALES */
+    $("#pensionario").on('change', function () {
+        let elegido=$(this).val();
+        if (elegido != ""){
+            $.get('/pensiones/'+elegido, function(data){
+                if(data.estado){
+                    $("#afp").html(data.afp).prop('disabled', true);
+                    $("#comision").html(data.comision).prop('disabled', true);
+                    $("#movimiento").html(data.movimiento).prop('disabled', true);
+                    $("#afpcuspp").val(data.afpcuspp).prop('disabled', true);
+                }else{
+                    $("#afp").html(data.afp).prop('disabled', false);
+                    $("#comision").html(data.comision).prop('disabled', false);
+                    $("#movimiento").html(data.movimiento).prop('disabled', false);
+                    $("#afpcuspp").val(data.afpcuspp).prop('disabled', false);
+                }
+            });
+        }else{
+            $('#afp').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+            $('#afpcuspp').val('').prop('disabled', true);
+            $('#comision').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+            $('#movimiento').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+        }
+    })
 });

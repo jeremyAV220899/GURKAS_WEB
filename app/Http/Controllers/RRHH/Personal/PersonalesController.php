@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\RRHH\Personal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administrador\Regimen\Pensionario;
 use App\Models\Administrador\Sistema\Armado;
+use App\Models\Administrador\Sistema\Banco;
 use App\Models\Administrador\Sistema\Brevete;
 use App\Models\Administrador\Sistema\Contrato;
 use App\Models\Administrador\Sistema\Documento;
@@ -59,6 +61,8 @@ class PersonalesController extends Controller
             'generos' => Genero::all(),
             'nacionalidades' => Nacionalidad::all(),
             'documentos' => Documento::all(),
+            'bancos' => Banco::all(),
+            'pensionarios' => Pensionario::all(),
             'brevetes' => Brevete::all(),
             'horas' => Hora::all(),
             'tallas' => Talla::all(),
