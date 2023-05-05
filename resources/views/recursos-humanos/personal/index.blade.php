@@ -2,7 +2,7 @@
 @section('content')
     <!-- modal -->
     <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title titulo"></h5>
@@ -17,37 +17,37 @@
                                 <form id="formulario" class="row g-3" method="POST" action="{{ route('personal.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Código Empleado</label>
                                         <input type="text" id="cod_empleado" name="cod_empleado" class="form-control"
                                             readonly>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Nombres</label>
                                         <input type="text" id="nombre_empleado" name="nombre_empleado"
                                             class="form-control" required>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Apellido Paterno</label>
                                         <input type="text" id="apellido_paterno" name="apellido_paterno"
                                             class="form-control" required>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Apellido Materno</label>
                                         <input type="text" id="apellido_materno" name="apellido_materno"
                                             class="form-control" required>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label for="formFile" class="form-label">Foto</label>
                                         <input class="form-control" id="imagen" name="imagen" type="file"
                                             id="formFile">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Fech. Nacimiento</label>
                                         <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"
                                             class="form-control" required>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Sexo</label>
                                         <select class="form-select" id="genero_id" name="genero_id"
                                             aria-label="Default select example" required>
@@ -57,7 +57,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Tipo Documento</label>
                                         <select class="form-select" id="documento_id" name="documento_id"
                                             aria-label="Default select example" required>
@@ -67,24 +67,24 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Núm. Documento</label>
                                         <input type="text" id="doc_ident" name="doc_ident" class="form-control" required>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Fech. Emisión</label>
                                         <input type="date" id="fecha_emision" name="fecha_emision" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Fech. Caducación</label>
                                         <input type="date" id="fecha_caducidad" name="fecha_caducidad"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Código Ubigeo</label>
                                         <input type="text" id="cod_ubigeo" name="cod_ubigeo" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Categoría Brevete</label>
                                         <select class="form-select" id="brevete_id" name="brevete_id"
                                             aria-label="Default select example" required>
@@ -94,11 +94,11 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Núm. Brevete</label>
                                         <input type="text" id="num_brevete" name="num_brevete" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Nacionalidad</label>
                                         <select class="form-select" id="nacionalidad_id" name="nacionalidad_id"
                                             aria-label="Default select example" required>
@@ -109,20 +109,20 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Departamento</label>
                                         <select class="form-select" id="departamento" name="departamento"
                                             aria-label="Default select example" required>
                                             <option value="" selected>--- Seleccionar ---</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Provincia</label>
                                         <select class="form-select" id="provincia" name="provincia"
                                             aria-label="Default select example" required>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Distrito</label>
                                         <select class="form-select" id="distrito" name="distrito"
                                             aria-label="Default select example" required>
@@ -132,19 +132,19 @@
                                         <label class="form-label">Dirección</label>
                                         <textarea class="form-control" id="direccion_personal" name="direccion_personal" rows="2" cols="4"></textarea>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Telefono</label>
                                         <input type="text" id="telefono" name="telefono" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Celular</label>
                                         <input type="text" id="celular" name="celular" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Correo</label>
                                         <input type="email" id="correo" name="correo" class="form-control" required>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Horas Laborales</label>
                                         <select class="form-select" id="horas_id" name="horas_id"
                                             aria-label="Default select example" required>
@@ -177,7 +177,7 @@
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
                                     <hr />
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Estado</label>
                                         <select class="form-select" id="estado_id" name="estado_id"
                                             aria-label="Default select example" required>
@@ -187,7 +187,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Cargo Laboral</label>
                                         <select class="form-select" id="puesto_id" name="puesto_id"
                                             aria-label="Default select example" required>
@@ -199,7 +199,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Empresa</label>
                                         <select class="form-select" id="empresa_id" name="empresa_id"
                                             aria-label="Default select example" required>
@@ -209,7 +209,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Tipo Contrato</label>
                                         <select class="form-select" id="contrato_id" name="contrato_id"
                                             aria-label="Default select example" required>
@@ -219,34 +219,17 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Fecha de Inicio</label>
                                         <input type="date" id="fecha_inicio_contrato" name="fecha_inicio_contrato"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Fecha Fin</label>
                                         <input type="date" id="fecha_fin_contrato" name="fecha_fin_contrato"
                                             class="form-control">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Unidad</label>
-                                        <select class="form-select" id="unidad_id" name="unidad_id"
-                                            aria-label="Default select example" required>
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                            @foreach ($unidades as $unidad)
-                                                <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Sede</label>
-                                        <select class="form-select" id="sede_id" name="sede_id"
-                                            aria-label="Default select example" required>
-                                            <option value="" selected>--- Seleccionar ---</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
+                                    </div>                                    
+                                    <div class="col-3">
                                         <label class="form-label">Turno</label>
                                         <select class="form-select" id="turno_id" name="turno_id"
                                             aria-label="Default select example" required>
@@ -256,7 +239,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Armado</label>
                                         <select class="form-select" id="armado_id" name="armado_id"
                                             aria-label="Default select example" required>
@@ -266,9 +249,26 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Unidad</label>
+                                        <select class="form-select" id="unidad_id" name="unidad_id"
+                                            aria-label="Default select example" required>
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                            @foreach ($unidades as $unidad)
+                                                <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Sede</label>
+                                        <select class="form-select" id="sede_id" name="sede_id"
+                                            aria-label="Default select example" required>
+                                            <option value="" selected>--- Seleccionar ---</option>
+                                        </select>
+                                    </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Tallas</h6>
                                     <hr />
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Talla Camisa</label>
                                         <select class="form-select" id="talla_id" name="talla_id"
                                             aria-label="Default select example" required>
@@ -278,33 +278,33 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Estatura</label>
                                         <input type="text" id="estatura" name="estatura" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Talla Pantalon</label>
                                         <input type="text" id="talla_pantalon" name="talla_pantalon"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-3">
                                         <label class="form-label">Talla Calzado</label>
                                         <input type="text" id="talla_calzado" name="talla_calzado"
                                             class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Fechas Registros</h6>
                                     <hr />
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Fecha Inicio Laboral</label>
                                         <input type="date" id="fecha_inicio_laboral" name="fecha_inicio_laboral"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Fecha Fin Laboral</label>
                                         <input type="date" id="fecha_fin_laboral" name="fecha_fin_laboral"
                                             class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Fecha de Activación</label>
                                         <input type="date" id="fecha_activacion_laboral"
                                             name="fecha_activacion_laboral" class="form-control">

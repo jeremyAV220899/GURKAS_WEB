@@ -195,7 +195,7 @@
                                         <input id="longitud_ver" name="longitud_ver" type="text" class="form-control"
                                             readonly>
                                     </div>
-                                    <hr/>
+                                    <hr />
                                     <h6 class="text-uppercase">UNIDAD ASIGNADA</h6>
                                     <div class="col-12">
                                         <label class="form-label">Unidad</label>
@@ -207,30 +207,30 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <hr/>
+                                    <hr />
                                     <h6 class="text-uppercase">REPRESENTANTE</h6>
-                                    <div class="col-12 row g-2">                                        
-                                            <div class="col-6">
-                                                <label class="form-label">Contacto</label>
-                                                <input id="contacto_ver" name="contacto_ver" type="text"
-                                                    class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Correo</label>
-                                                <input id="correo_ver" name="correo_ver" type="text"
-                                                    class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Celular</label>
-                                                <input id="celular_ver" name="celular_ver" type="text"
-                                                    class="form-control" readonly>
-                                            </div>
-                                            <div class="col-6">
-                                                <label class="form-label">Centro de Costo</label>
-                                                <input id="centro_costo_ver" name="centro_costo_ver" type="text"
-                                                    class="form-control" readonly>
-                                            </div>
-                                        
+                                    <div class="col-12 row g-2">
+                                        <div class="col-6">
+                                            <label class="form-label">Contacto</label>
+                                            <input id="contacto_ver" name="contacto_ver" type="text"
+                                                class="form-control" readonly>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">Correo</label>
+                                            <input id="correo_ver" name="correo_ver" type="text" class="form-control"
+                                                readonly>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">Celular</label>
+                                            <input id="celular_ver" name="celular_ver" type="text"
+                                                class="form-control" readonly>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">Centro de Costo</label>
+                                            <input id="centro_costo_ver" name="centro_costo_ver" type="text"
+                                                class="form-control" readonly>
+                                        </div>
+
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-body">
@@ -241,7 +241,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -307,7 +307,9 @@
                                             <td>{{ Util::codigoSede($sede->id) }}</td>
                                             <td>{{ $sede->nombre_sede }}</td>
                                             <td>{{ $sede->unidad->razon_social }}</td>
-                                            <td>{{ $sede->estado->nombre }}</td>
+                                            <td><span
+                                                    class="badge bg-light-{{ Util::estadoPersonalColor($sede->estado->id) }} text-{{ Util::estadoPersonalColor($sede->estado->id) }} w-100">{{ $sede->estado->nombre }}</span>
+                                            </td>
                                             <td>
                                                 <div class="table-actions d-flex align-items-center fs-6">
                                                     <button class="btn text-success " type="button" title="exportar">

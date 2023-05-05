@@ -2,7 +2,7 @@
 @section('content')
     <!-- modal -->
     <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Registrar Datos Laborales</h5>
@@ -12,17 +12,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos Personales</h6>
-                                <hr />
                                 <form class="row g-3" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="col-">
-                                        <label class="form-label">Código Empleado</label>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
                                     <h6 class="mb-0 text-uppercase">Detalle Contrato</h6>
                                     <hr />
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Unidad</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -30,7 +24,7 @@
                                             <option value="E">Extranjera</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Sede</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -40,7 +34,7 @@
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos de Banco</h6>
                                     <hr />
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Tipo Moneda</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -48,7 +42,7 @@
                                             <option value="2">Dólares</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Banco Sueldo</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -57,13 +51,13 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-4">
                                         <label class="form-label">Cta. Bancaria</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Regimen Pensionario</h6>
                                     <hr />
-                                    <div class="col-12">
+                                    <div class="col-4">
                                         <label class="form-label">Regimen Pensionario</label>
                                         <select class="form-select" aria-label="Default select example" name="pensionario" id="pensionario">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -72,23 +66,23 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-4">
                                         <label class="form-label">AFP / ONP</label>
                                         <select class="form-select" aria-label="Default select example" name="afp" id="afp">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-4">
                                         <label class="form-label">AFP CUSPP</label>
                                         <input type="text" class="form-control" id="afpcuspp" name="afpcuspp" value="">
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Tipo de Comisión</label>
                                         <select class="form-select" aria-label="Default select example" name="comision" id="comision">
                                             <option value="">--- Seleccionar ---</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Movimiento AFP</label>
                                         <select class="form-select" aria-label="Default select example" name="movimiento" id="movimiento">
                                             <option value="">--- Seleccionar ---</option>
@@ -96,7 +90,7 @@
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Datos Laborales</h6>
                                     <hr />
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Tipo Trabajador</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -105,15 +99,15 @@
                                             <option value="3">Obrero</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Sueldo Básico</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Sueldo Bruto</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Asignación Familiar</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="" selected>--- Seleccionar ---</option>
@@ -121,7 +115,7 @@
                                             <option value="2">Si</option>
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <label class="form-label">Tipo Pago</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="">--- Seleccionar ---</option>
@@ -129,7 +123,7 @@
                                             <option value="2">Efectivo</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-4">
                                         <label class="form-label">Periodidad de la Remuneración</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="">--- Seleccionar ---</option>
@@ -169,7 +163,7 @@
             </div>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">REGISTRO DE DATOS Laborales</h6>
+    <h6 class="mb-0 text-uppercase">LISTA DE DATOS Laborales</h6>
     <hr>
     <div class="card">
         <div class="card-body">
@@ -206,94 +200,6 @@
                                         <td>Juan Manuel</td>
                                         <td>Ubillus</td>
                                         <td>Rivera</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP75857456</td>
-                                        <td>Jeremy Josue</td>
-                                        <td>Apaico</td>
-                                        <td>Villena</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP78525475</td>
-                                        <td>Pedro Pablo</td>
-                                        <td>Kuczynski</td>
-                                        <td>Godard</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Views" aria-label="Views"><i
-                                                        class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Edit" aria-label="Edit"><i
-                                                        class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete"><i
-                                                        class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">AVP79625874</td>
-                                        <td>Alan Gabriel Ludwing</td>
-                                        <td>García</td>
-                                        <td>Pérez</td>
                                         <td>
                                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"

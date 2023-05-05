@@ -221,7 +221,7 @@
                                         <div class="col-12">
                                             <label class="form-label">Dirección</label>
                                             <textarea id="direccion_ver" name="direccion_ver" class="form-control" rows="2" cols="4" readonly></textarea>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                     <h6 class="mb-0 text-uppercase">Representante</h6>
                                     <hr />
@@ -333,7 +333,9 @@
                                             <td>{{ Util::codigoUnidad($unidad->id) }}</td>
                                             <td>{{ $unidad->razon_social }}</td>
                                             <td>{{ $unidad->ruc }}</td>
-                                            <td>{{ $unidad->estado->nombre }}</td>
+                                            <td><span
+                                                    class="badge bg-light-{{ Util::estadoPersonalColor($unidad->estado->id) }} text-{{ Util::estadoPersonalColor($unidad->estado->id) }} w-100">{{ $unidad->estado->nombre }}</span>
+                                            </td>
                                             <td>{{ $unidad->empresa->nombre }}</td>
                                             <td>
                                                 <div class="table-actions d-flex align-items-center fs-6">

@@ -93,7 +93,7 @@
                             <th>Foto</th>
                             <th>DNI</th>
                             <th>Correo</th>
-                            <th>Correo</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
