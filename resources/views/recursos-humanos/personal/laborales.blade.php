@@ -234,33 +234,49 @@
     </div>
 @endsection
 @section('script')
-    <script lenguaje="javascript">
-        $("#pensionario").on('change', function() {
-            $("#pensionario option:selected").each(function() {
-                let elegido = $(this).val();
-                $.get('/afps/' + elegido, function(data) {
-                    $("#afp").html(data);
-                    $("#afpcuspp").val(data);
-                });
+<script lenguaje="javascript">
+    $("#pensionario").on('change', function () {
+        let elegido=$(this).val();
+        if (elegido != ""){
+            $.get('/pensiones/'+elegido, function(data){
+                console.log(data)
+                if(data.estado){
+                    $("#afp").html(data.afp).prop('disabled', true);
+                    $("#comision").html(data.comision).prop('disabled', true);
+                    $("#movimiento").html(data.movimiento).prop('disabled', true);
+                    $("#afpcuspp").val(data.afpcuspp).prop('disabled', true);
+                }else{
+                    $("#afp").html(data.afp).prop('disabled', false);
+                    $("#comision").html(data.comision).prop('disabled', false);
+                    $("#movimiento").html(data.movimiento).prop('disabled', false);
+                    $("#afpcuspp").val(data.afpcuspp).prop('disabled', false);
+                }
             });
-        })
+        }else{
+            $('#afp').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+            $('#afpcuspp').val('').prop('disabled', true);
+            $('#comision').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+            $('#movimiento').html('<option value="">--- Seleccionar ---</option>').prop('disabled', true);
+        }
+    })
 
-        $("#pensionario").on('change', function() {
-            $("#pensionario option:selected").each(function() {
-                let elegido = $(this).val();
-                $.get('/comisiones/' + elegido, function(data) {
-                    $("#comision").html(data);
-                });
+    /*$("#pensionario").on('change', function () {
+        $("#pensionario option:selected").each(function () {
+            let elegido=$(this).val();
+            $.get('/comisiones/'+elegido, function(data){
+                $("#comision").html(data);
             });
         });
+    });
 
-        $("#pensionario").on('change', function() {
-            $("#pensionario option:selected").each(function() {
-                let elegido = $(this).val();
-                $.get('/movimientos/' + elegido, function(data) {
-                    $("#movimiento").html(data);
-                });
+    $("#pensionario").on('change', function () {
+        $("#pensionario option:selected").each(function () {
+            let elegido=$(this).val();
+            $.get('/movimientos/'+elegido, function(data){
+                $("#movimiento").html(data);
             });
         });
-    </script>
+    });*/
+</script>
 @endsection
+
