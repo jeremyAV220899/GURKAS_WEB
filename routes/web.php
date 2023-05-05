@@ -335,7 +335,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::controller(ApiController::class)->group(function (){
-        Route::get('/afps/{pensionari}', 'afp');
+        Route::get('/pensiones/{pensionari}', 'afp');
         Route::get('/comisiones/{afp}', 'comision');
         Route::get('/movimientos/{comision}', 'movimiento');
     });
