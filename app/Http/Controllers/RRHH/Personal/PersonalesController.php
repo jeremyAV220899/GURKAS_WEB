@@ -240,6 +240,24 @@ class PersonalesController extends Controller
         return redirect()->route('personal.index');
     }
 
+    public function contador() {
+        $personales = Personal::all();
+        $contador = count($personales);
+        return Response::json($contador);
+    }
+
+    public function contadorActivo() {
+        $personales = Personal::where('estado_id','!=','2')->get();
+        $contador = count($personales);
+        return Response::json($contador);
+    }
+
+    public function contadorBaja() {
+        $personales = Personal::where('estado_id','!=','1')->get();
+        $contador = count($personales);
+        return Response::json($contador);
+    }
+
     public function recuperar($id){
         $personal = Personal::find($id);
         

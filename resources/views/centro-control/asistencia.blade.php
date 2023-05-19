@@ -121,7 +121,6 @@
         </div>
     </div>
 
-
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center">
@@ -138,9 +137,7 @@
                         <tr>
                             <th>#</th>
                             <th>Cód. Empleado</th>
-                            <th>Foto</th>
                             <th>Empleado</th>
-                            <th>DNI</th>
                             <th>Marcaciones</th>
                         </tr>
                     </thead>
@@ -148,23 +145,23 @@
                         <tr>
                             <td>1</td>
                             <td>AVP12345678</td>
-                            <td>
-                                <div class="d-flex align-items-center gap-3 cursor-pointer">
-                                    <img src="https://via.placeholder.com/110X110" class="rounded-circle" width="44"
-                                        height="44" alt="">
-                                </div>
-                            </td>
                             <td>Thomas Hardy</td>
-                            <td>12364578</td>
                             <td>
-                                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
-									<option value="" selected>--- SELECCIONAR ---</option>
+                                <select class="form-select" id="#" name="#" aria-label="Default select example">
+                                    <option value="" selected>--- SELECCIONAR ---</option>
 									<option value="1">Asistio</option>
-									<option value="2">Falto</option>
-									<option value="3">Tardanza</option>
+									<option value="2">Baja</option>
+									<option value="3">Descanso</option>
+									<option value="4">Descanso Médico</option>
+									<option value="5">Descanso Trabajado</option>
+									<option value="6">Falta</option>
+									<option value="7">Feriado</option>
+									<option value="8">Licencia</option>
+									<option value="9">Permiso</option>
+									<option value="10">Suspención</option>
+									<option value="11">Vacaciones</option>
 								</select>
                             </td>
-
                         </tr>
                     </tbody>
                 </table>
