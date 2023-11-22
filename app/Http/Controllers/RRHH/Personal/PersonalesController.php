@@ -33,6 +33,7 @@ class PersonalesController extends Controller
 {
 
     public function indexBaja(){
+        set_time_limit(300);
         $datos = [
             'personales' => Personal::where('estado_id','!=','1')->get(),
             'generos' => Genero::all(),
@@ -56,6 +57,7 @@ class PersonalesController extends Controller
     }
 
     public function index(){
+        set_time_limit(300);
         $datos = [
             'personales' => Personal::where('estado_id','!=','2')->get(),
             'generos' => Genero::all(),
@@ -81,6 +83,7 @@ class PersonalesController extends Controller
     }
 
     public function store(Request $request){
+        set_time_limit(300);
         $personal = new Personal();
         $imgDefaultF = 'public/img/mujer.jpg';
         $imgDefaultM = 'public/img/hombre.jpg';

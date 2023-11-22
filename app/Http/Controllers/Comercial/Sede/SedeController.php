@@ -15,6 +15,7 @@ use Response;
 class SedeController extends Controller
 {
     public function index(){
+        set_time_limit(300);
         $sedes = Sede::all();
         $unidades = Unidad::all();
         $estados = Estado::all();
@@ -29,6 +30,7 @@ class SedeController extends Controller
     }
 
     public function store (Request $request){
+        set_time_limit(300);
         $sede = new Sede();
         $sede->nombre_sede=$request->nombre_sede;
         $sede->estado_id=$request->estado_id;

@@ -12,6 +12,7 @@ use Response;
 class UnidadController extends Controller
 {
     public function index(){
+        set_time_limit(300);
         $unidades = Unidad::all();
         $empresas = Empresa::all();
         $estados = Estado::all();
@@ -26,6 +27,7 @@ class UnidadController extends Controller
     }
 
     public function store (Request $request){
+        set_time_limit(300);
         $unidad = new Unidad();
         $unidad->razon_social=$request->razon_social;
         $unidad->ruc=$request->ruc;
