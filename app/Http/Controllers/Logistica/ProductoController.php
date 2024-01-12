@@ -10,4 +10,8 @@ class ProductoController extends Controller
     public function index(){
         return view('logistica.almacen.producto');
     }
+
+    public function index2(){
+        return view('logistica.proveedor.index');
+    }
 }

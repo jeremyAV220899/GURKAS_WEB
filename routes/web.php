@@ -45,6 +45,18 @@ use App\Http\Controllers\Administrador\Regimen\RpensionarioController as AdminRe
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\CentroControl\AsistenciaController as CentroControlController;
 use App\Http\Controllers\Logistica\ProductoController as LogisticaProductoController;
+use App\Http\Controllers\Logistica\TecnologiaController as LogisticaTecnologiaController;
+use App\Http\Controllers\Logistica\CamisaController as LogisticaCamisaController;
+use App\Http\Controllers\Logistica\CalzadoController as LogisticaCalzadoController;
+use App\Http\Controllers\Logistica\PantalonController as LogisticaPantalonController;
+use App\Http\Controllers\Logistica\AccesorioController as LogisticaAccesorioController;
+use App\Http\Controllers\Logistica\UtilController as LogisticaUtilController;
+use App\Http\Controllers\Logistica\EquipamientoController as LogisticaEquipamientoController;
+use App\Http\Controllers\Logistica\ProteccionController as LogisticaProteccionController;
+use App\Http\Controllers\Logistica\MobiliarioController as LogisticaMobiliarioController;
+use App\Http\Controllers\Logistica\VehiculoController as LogisticaVehiculoController;
+use App\Http\Controllers\Logistica\AseoController as LogisticaAseoController;
+use App\Http\Controllers\Logistica\ArmamentoController as LogisticaArmamentoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Artisan;
@@ -291,7 +303,45 @@ Route::middleware(['auth'])->group(function () {
 
     /* ------------------ LOGISTICA ------------------ */
     Route::controller(LogisticaProductoController::class)->group(function () {
+        Route::get('/logistica/almacen/tecnologia', 'tecnologia')->name('logistica.almacen.producto.tecnologia');
         Route::get('/logistica/almacen/producto', 'index')->name('logistica.almacen.producto');
+        Route::get('/logistica/proveedor/listar', 'index2')->name('logistica.proveedor.listar');
+    });
+    Route::controller(LogisticaTecnologiaController::class)->group(function () {
+        Route::get('/logistica/almacen/tecnologia', 'index')->name('logistica.almacen.producto.tecnologia');
+    });
+    Route::controller(LogisticaCamisaController::class)->group(function () {
+        Route::get('/logistica/almacen/camisa', 'index')->name('logistica.almacen.producto.camisa');
+    });
+    Route::controller(LogisticaCalzadoController::class)->group(function () {
+        Route::get('/logistica/almacen/calzado', 'index')->name('logistica.almacen.producto.calzado');
+    });
+    Route::controller(LogisticaPantalonController::class)->group(function () {
+        Route::get('/logistica/almacen/pantalon', 'index')->name('logistica.almacen.producto.pantalon');
+    });
+    Route::controller(LogisticaAccesorioController::class)->group(function () {
+        Route::get('/logistica/almacen/accesorios', 'index')->name('logistica.almacen.producto.accesorios');
+    });
+    Route::controller(LogisticaUtilController::class)->group(function () {
+        Route::get('/logistica/almacen/utiles', 'index')->name('logistica.almacen.producto.utiles');
+    });
+    Route::controller(LogisticaEquipamientoController::class)->group(function () {
+        Route::get('/logistica/almacen/equipamiento', 'index')->name('logistica.almacen.producto.equipamiento');
+    });
+    Route::controller(LogisticaProteccionController::class)->group(function () {
+        Route::get('/logistica/almacen/proteccion', 'index')->name('logistica.almacen.producto.proteccion');
+    });
+    Route::controller(LogisticaMobiliarioController::class)->group(function () {
+        Route::get('/logistica/almacen/mobiliario', 'index')->name('logistica.almacen.producto.mobiliario');
+    });
+    Route::controller(LogisticaVehiculoController::class)->group(function () {
+        Route::get('/logistica/almacen/vehiculo', 'index')->name('logistica.almacen.producto.vehiculo');
+    });
+    Route::controller(LogisticaAseoController::class)->group(function () {
+        Route::get('/logistica/almacen/aseo', 'index')->name('logistica.almacen.producto.aseo');
+    });
+    Route::controller(LogisticaArmamentoController::class)->group(function () {
+        Route::get('/logistica/almacen/armamento', 'index')->name('logistica.almacen.producto.armamento');
     });
 
     Route::controller(AdminRegimenPensionarioController::class)->group(function () {

@@ -761,9 +761,24 @@
                             <ul>
                                 <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Producto</a>
                                     <ul>
-                                        <li> <a href="{{ route('logistica.almacen.producto') }}"><i class="bi bi-circle"></i>Nuevo Producto</a></li>
-                                        <li> <a href="#"><i class="bi bi-circle"></i>Listar Producto</a></li>
-                                        <li> <a href="#"><i class="bi bi-circle"></i>Generar Código de Barra</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.tecnologia') }}"><i class="bi bi-circle"></i>Tecnología</a></li>
+                                        <ul>
+                                            <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Uniforme</a>
+                                                <ul>
+                                                    <li> <a href="{{ route('logistica.almacen.producto.camisa') }}"><i class="bi bi-circle"></i>Camisas</a></li>
+                                                    <li> <a href="{{ route('logistica.almacen.producto.calzado') }}"><i class="bi bi-circle"></i>Calzado</a></li>
+                                                    <li> <a href="{{ route('logistica.almacen.producto.pantalon') }}"><i class="bi bi-circle"></i>Pantalon</a></li>
+                                                    <li> <a href="{{ route('logistica.almacen.producto.accesorios') }}"><i class="bi bi-circle"></i>Accesorios</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <li> <a href="{{ route('logistica.almacen.producto.utiles') }}"><i class="bi bi-circle"></i>Utiles Escritorio</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.equipamiento') }}"><i class="bi bi-circle"></i>Equipamiento Logístico</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.proteccion') }}"><i class="bi bi-circle"></i>Equipamiento Protección Personal</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.mobiliario') }}"><i class="bi bi-circle"></i>Mobiliario</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.vehiculo') }}"><i class="bi bi-circle"></i>Vehiculos</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.aseo') }}"><i class="bi bi-circle"></i>Utiles de Aseo</a></li>
+                                        <li> <a href="{{ route('logistica.almacen.producto.armamento') }}"><i class="bi bi-circle"></i>Armamento</a></li>
                                     </ul>
                                 </li>
                                 <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Despacho</a>
@@ -794,7 +809,7 @@
                     <ul>
                         <li> <a class="has-arrow" href="javascript:;"><i class="bi bi-circle"></i>Proveedores</a>
                             <ul>
-                                <li> <a href="#"><i class="bi bi-circle"></i>Registrar Proveedor</a></li>
+                                <li> <a href="{{route('logistica.proveedor.listar')}}"><i class="bi bi-circle"></i>Registrar Proveedor</a></li>
                                 <li> <a href="#"><i class="bi bi-circle"></i>Listar Proveedor</a></li>
                             </ul>
                         </li>
