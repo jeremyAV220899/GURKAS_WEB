@@ -1,57 +1,32 @@
 @extends('layouts.apps')
 @section('content')
-    <!-- modal -->
-    <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
+    <!-- modal renganche -->
+    <div class="modal fade" id="renganche" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Buscar Personal</h5>
+                    <h5 class="modal-title">Renganche de Personal</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Personal Asignado</h6>
+                                <h6 class="mb-0 text-uppercase">Personal de Renganche</h6>
                                 <hr />
-                                <form id="formulario" class="row g-3" method="POST" action="{{ route('sede.store') }}">
+                                <form id="formulario" class="row g-3" method="POST" action="">
                                     @csrf
                                     <div class="col-12">
-                                        <label class="form-label">Unidad</label>
-                                        <select id="cod_unidad" name="cod_unidad" class="form-select"
+                                        <label class="form-label">Personal</label>
+                                        <select id="personal_id" name="personal_id" class="form-select"
                                             aria-label="Default select example">
                                             <option selected="">--- Seleccionar ---</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Sede</label>
-                                        <select id="cod_unidad" name="cod_unidad" class="form-select"
-                                            aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Turno</label>
-                                        <select id="cod_unidad" name="cod_unidad" class="form-select"
-                                            aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Empresa</label>
-                                        <select id="cod_unidad" name="cod_unidad" class="form-select"
-                                            aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-
                                         </select>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary btnRegistrar">Buscar Personal</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
                                     </div>
                                 </form>
                             </div>
@@ -62,6 +37,45 @@
         </div>
     </div>
     <!-- END modal -->
+
+    <!-- modal tardanza -->
+    <div class="modal fade" id="tardanza" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tardanza de Personal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="border p-3 rounded">
+                                <h6 class="mb-0 text-uppercase">Tardanza de Renganche</h6>
+                                <hr />
+                                <form id="formulario" class="row g-3" method="POST" action="">
+                                    @csrf
+                                    <div class="col-12">
+                                        <label class="form-label">Personal</label>
+                                        <select id="personal_id" name="personal_id" class="form-select"
+                                            aria-label="Default select example">
+                                            <option selected="">--- Seleccionar ---</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END modal -->
+
 
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Centro Control</div>
@@ -80,26 +94,10 @@
     <div class="card">
         <div class="card-body row g-3">
             <div class="d-flex align-items-center">
-                <h5 class="mb-0">Buscar Personal</h5>
+                <h5 class="mb-0">Asistencia</h5>
             </div>
             <hr />
-            <div class="col-6">
-                <label class="form-label">Unidad</label>
-                <select class="single-select" id="unidad_id" name="unidad_id">
-                    <option value="" selected>--- Seleccionar ---</option>
-                    @foreach ($unidades as $unidad)
-                        <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-6">
-                <label class="form-label">Sede</label>
-                <select class="single-select" id="sede_id" name="sede_id">
-                    <option value="" selected>--- Seleccionar ---</option>
-                </select>
-            </div>
-
-            <div class="col-6">
+            <div class="col-4">
                 <label class="form-label">Turno</label>
                 <select class="form-select" id="turno_id" name="turno_id" aria-label="Default select example">
                     <option value="" selected>--- Seleccionar ---</option>
@@ -108,19 +106,73 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-4">
+                <label class="form-label">Unidad</label>
+                <select class="single-select" id="unidad_id" name="unidad_id">
+                    <option value="" selected>--- Seleccionar ---</option>
+                    @foreach ($unidades as $unidad)
+                        <option value="{{ $unidad->id }}">{{ $unidad->razon_social }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-4">
+                <label class="form-label">Sede</label>
+                <select class="single-select" id="sede_id" name="sede_id">
+                    <option value="" selected>--- Seleccionar ---</option>
+                </select>
+            </div>            
+            <div class="col-4">
                 <label class="form-label">Empresa</label>
                 <select class="form-select" id="empresa_id" name="empresa_id" aria-label="Default select example">
                     <option value="" selected>--- Seleccionar ---</option>
                 </select>
             </div>
-            <div class="btn-group col-2">
-                <button type="button" class="btn btn-primary btnCrearSede" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Buscar Personal</button>
+            <div class="col-4">
+                <label class="form-label">Fecha</label>
+                <input id="fecha_id" name="fecha_id" type="date"
+                                            class="form-control">
+            </div>
+            <div class="col-4">
+                <label class="form-label">Horas Trabajadas</label>
+                <select class="form-select" id="horas_id" name="horas_id" aria-label="Default select example">
+                    <option value="" selected>--- Seleccionar ---</option>
+                </select>
+            </div>
+
+            <div class="ms-auto">
+                <button type="button" class="btn btn-success btnCrearSede">Buscar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#renganche">Renganche</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                data-bs-target="#tardanza">Tardanza</button>
             </div>
         </div>
     </div>
 
+    <div class="card">
+        <div class="card-body row g-3">
+            <div class="d-flex align-items-center">
+                <h5 class="mb-0">Buscar Código AVP</h5>
+            </div>
+            <hr />
+            <div class="col-6">
+                <label class="form-label">Empleado</label>
+                <select class="form-select" id="empleado_id" name="empleado_id" aria-label="Default select example">
+                    <option value="" selected>--- Seleccionar ---</option>
+                </select>
+            </div>          
+            <div class="col-6">
+                <label class="form-label">Código AVP</label>
+                <input id="codigoAvp" name="codigoAvp" type="text"
+                                            class="form-control" readonly>
+            </div>
+
+            <div class="ms-auto">
+                <button type="button" class="btn btn-success btnCrearSede">Buscar AVP</button>
+            </div>
+        </div>
+    </div>
+    
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center">
