@@ -13,27 +13,14 @@
             </nav>
         </div>
     </div>
-    <h6 class="mb-0 text-uppercase">Asistencia por Sede</h6>
+    <h6 class="mb-0 text-uppercase">Asistencia General de Personal</h6>
     <hr>
-
     <div class="card">
         <div class="card-body row g-3">
             <div class="d-flex align-items-center">
-                <h5 class="mb-0">Asistencia General de Personal por Sede</h5>
+                <h5 class="mb-0">Asistencia de Personal</h5>
             </div>
             <hr />
-            <div class="col-6">
-                <label class="form-label">Unidad</label>
-                <select class="form-select" id="empleado_id" name="empleado_id" aria-label="Default select example">
-                    <option value="" selected>--- Seleccionar ---</option>
-                </select>
-            </div>  
-            <div class="col-6">
-                <label class="form-label">Sede</label>
-                <select class="form-select" id="empleado_id" name="empleado_id" aria-label="Default select example">
-                    <option value="" selected>--- Seleccionar ---</option>
-                </select>
-            </div>         
             <div class="col-6">
                 <label class="form-label">Desde</label>
                 <input id="desde" name="desde" type="date"

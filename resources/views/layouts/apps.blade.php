@@ -565,7 +565,7 @@
                                         <li> <a href="{{ route('reportes.asistencia-personal') }}"><i class="bi bi-circle"></i>Asistencia de Personal</a>
                                         <li> <a href="{{ route('reportes.asistencia-unidad') }}"><i class="bi bi-circle"></i>Asistencia por Unidad</a>
                                         <li> <a href="{{ route('reportes.asistencia-sede') }}"><i class="bi bi-circle"></i>Asistencia por Sede</a>
-                                        <li> <a href="#"><i class="bi bi-circle"></i>Asistencia General de Personal</a>
+                                        <li> <a href="{{ route('reportes.asistencia-general') }}"><i class="bi bi-circle"></i>Asistencia General de Personal</a>
                                         </li>
                                     </ul>
                                 </li>

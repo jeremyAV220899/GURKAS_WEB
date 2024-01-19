@@ -1,50 +1,5 @@
 @extends('layouts.apps')
 @section('content')
-    <!-- modal -->
-    <div class="modal fade" id="registrar" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Asistencia de Personal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="border p-3 rounded">
-                                <h6 class="mb-0 text-uppercase">Datos Personales</h6>
-                                <hr/>
-                                <form class="row g-3" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="col-12">
-                                        <label class="form-label">Personal</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected="">--- Seleccionar ---</option>
-                                            <option value="P">Peruana</option>
-                                            <option value="E">Extranjera</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Desde</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                    <div class="col-6">
-                                        <label class="form-label">Hasta</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END modal -->
 
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Reportes</div>
@@ -57,15 +12,38 @@
                 </ol>
             </nav>
         </div>
-        <div class="ms-auto">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#registrar">Buscar</button>
-            </div>
-        </div>
     </div>
     <h6 class="mb-0 text-uppercase">Asistencia Personal</h6>
     <hr>
+    <div class="card">
+        <div class="card-body row g-3">
+            <div class="d-flex align-items-center">
+                <h5 class="mb-0">Asistencia de Personal</h5>
+            </div>
+            <hr />
+            <div class="col-4">
+                <label class="form-label">Empleado</label>
+                <select class="form-select" id="empleado_id" name="empleado_id" aria-label="Default select example">
+                    <option value="" selected>--- Seleccionar ---</option>
+                </select>
+            </div>          
+            <div class="col-4">
+                <label class="form-label">Desde</label>
+                <input id="desde" name="desde" type="date"
+                                            class="form-control">
+            </div>
+            <div class="col-4">
+                <label class="form-label">Hasta</label>
+                <input id="hasta" name="hasta" type="date"
+                                            class="form-control">
+            </div>
+
+            <div class="ms-auto">
+                <button type="button" class="btn btn-success btnCrearSede">Buscar</button>
+            </div>
+        </div>
+    </div>
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">

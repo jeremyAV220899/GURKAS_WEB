@@ -6,6 +6,7 @@ use App\Http\Controllers\RRHH\Personal\LaboralesController as DatosLaboralesCont
 use App\Http\Controllers\RRHH\Reportes\Personal\C4Controller as ReportePersonalC4Controller;
 use App\Http\Controllers\RRHH\Reportes\Personal\EstadoController as ReportePersonalEstadoController;
 use App\Http\Controllers\RRHH\Reportes\Asistencia\PersonalController as ReporteAsistenciaPersonalController;
+use App\Http\Controllers\RRHH\Reportes\Asistencia\GeneralController as ReporteAsistenciaGenerallController;
 use App\Http\Controllers\RRHH\Reportes\Asistencia\UnidadController as ReporteAsistenciaUnidadController;
 use App\Http\Controllers\RRHH\Reportes\Asistencia\SedeController as ReporteAsistenciaSedeController;
 use App\Http\Controllers\RRHH\BusquedaPersonal\UnidadController as BusquedaUnidadController;
@@ -115,6 +116,9 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::controller(ReporteAsistenciaSedeController::class)->group(function () {
         Route::get('/rrhh/reportes/asistencia/sede', 'index')->name('reportes.asistencia-sede');
+    });
+    Route::controller(ReporteAsistenciaGenerallController::class)->group(function () {
+        Route::get('/rrhh/reportes/asistencia/general', 'index')->name('reportes.asistencia-general');
     });
 
     /* ----- BUSQUEDA PERSONAL ----- */
